@@ -1,7 +1,8 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
+
 import "./globals.css";
-import React from "react";
 
 const vazirmatn = Vazirmatn({
   subsets: ["latin", "arabic"],
@@ -20,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir={"rtl"} className={vazirmatn.className}>
-      <body>{children}</body>
+      <body>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
