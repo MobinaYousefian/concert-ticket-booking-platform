@@ -1,27 +1,26 @@
-type Post = {
-    id: number,
-    title: string,
-}
+import { ReactElement } from "react";
 
-export default async function Home() {
-    const res: Response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-        cache: "no-store"
-    });
+import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
+import TamashachiLogo from "@/logo/tamashachi-logo";
 
-    const posts: Post[] = await res.json();
+import styles from "./page.module.css";
 
-    return (
-        <main>
-            <h1>به تماشاچی خوش اومدی!</h1>
-            <hr/>
-            <h2>Test Request (Dynamic Route)</h2>
-            <ul>
-                {
-                    posts.map((post: Post) => (
-                        <li key={post.id}>{post.title}</li>
-                    ))
-                }
-            </ul>
-        </main>
-    );
+export default function Home(): ReactElement {
+  return (
+    <div className={styles.home}>
+      <h1>
+        <TamashachiLogo />
+        تماشاچی
+      </h1>
+      <GlobalSearchBoxComponent />
+      <div className={styles.history}>
+        <div className={styles.title}>آخرین جستجوهای شما</div>
+        <ul>
+          <li>کنسرت تهران</li>
+          <li>نمایش پرویز و پریزاد</li>
+          <li>محسن یگانه</li>
+        </ul>
+      </div>
+    </div>
+  );
 }

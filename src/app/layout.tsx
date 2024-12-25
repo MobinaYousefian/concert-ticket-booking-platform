@@ -1,12 +1,16 @@
-import type { Metadata } from "next";
-import { Vazirmatn } from 'next/font/google'
-import "./globals.css";
 import React from "react";
+import type { Metadata } from "next";
+import { Vazirmatn } from "next/font/google";
+
+import HeaderComponent from "@/components/header/header.component";
+import FooterComponent from "@/components/footer/footer.component";
+
+import "./globals.css";
 
 const vazirmatn = Vazirmatn({
-    subsets: ['latin', 'arabic'],
-    display: 'swap',
-})
+  subsets: ["latin", "arabic"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "تماشاچی | خرید آنلاین بلیط کنسرت و تئاتر",
@@ -21,7 +25,12 @@ export default function RootLayout({
   return (
     <html lang="fa" dir={"rtl"} className={vazirmatn.className}>
       <body>
-        {children}
+        <HeaderComponent />
+        <main>{children}</main>
+        <p className={"tagline"}>
+          رزرو بلیط، اطلاع از آخرین کنسرت‌ها و نمایش‌های هنری
+        </p>
+        <FooterComponent />
       </body>
     </html>
   );
