@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 
 import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
-import TamashachiLogo from "@/logo/tamashachi-logo";
+import TamashachiSolidLogo from "@/logo/t-solid-logo";
 
 import styles from "./page.module.css";
 
@@ -9,7 +9,7 @@ export default function Home(): ReactElement {
   return (
     <div className={styles.home}>
       <h1>
-        <TamashachiLogo />
+        <TamashachiSolidLogo />
         تماشاچی
       </h1>
       <GlobalSearchBoxComponent />
