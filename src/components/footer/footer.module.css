@@ -27,6 +27,9 @@
       justify-content: center;
       gap: 0.75rem;
 
+      font-size: var(--fz-500);
+      font-weight: 800;
+
       @media screen and (min-width: 768px) {
         justify-content: start;
       }
@@ -39,7 +42,7 @@
     }
 
     .description {
-      font-size: 0.875rem;
+      font-size: var(--fz-300);
     }
   }
 
@@ -65,7 +68,7 @@
   .copy {
     grid-area: copy;
     text-align: center;
-    font-size: 0.75rem;
+    font-size: var(--fz-200);
 
     a {
       padding: 0 0.25rem;

@@ -69,6 +69,7 @@ html {
 }
 
 body {
+  font-size: var(--fz-400);
   background-color: var(--color-default-background);
   color: var(--color-default-foreground);
 
