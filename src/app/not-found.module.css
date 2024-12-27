@@ -47,7 +47,7 @@
 
       cursor: pointer;
 
-      font-size: var(--fz-200);
+      font-size: var(--fz-300);
       font-weight: 500;
 
       &:hover,
