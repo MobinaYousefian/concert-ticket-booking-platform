@@ -6,6 +6,7 @@ import TamashachiSolidLogo from "@/logo/t-solid-logo";
 import styles from "./page.module.css";
 
 export default function Home(): ReactElement {
+  throw new Error("yechizi error");
   return (
     <div className={styles.home}>
       <h1>
