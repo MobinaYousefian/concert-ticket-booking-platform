@@ -1,10 +1,10 @@
 "use client";
 import { ReactElement } from "react";
+import Image from "next/image";
 
 import errorImage from "@/assets/illustrations/warning.svg";
 
 import styles from "./error.module.css";
-import Image from "next/image";
 
 type Props = {
   error: Error & { digest?: string };
