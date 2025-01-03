@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
 
-    font-size: 1.25rem;
+    font-size: var(--fz-500);
   }
   > input {
     flex: 1 1 0;
@@ -22,10 +22,10 @@
 
     padding: 1rem;
     border: none;
+    min-inline-size: 0;
 
-    &::placeholder {
-      font-size: 0.875rem;
-    }
+    font-size: var(--fz-300);
+
     &:focus {
       outline: none;
     }
@@ -50,11 +50,11 @@
 
       cursor: pointer;
 
-      font-size: 0.875rem;
+      font-size: var(--fz-300);
       font-weight: 500;
 
       svg {
-        font-size: 1.25rem;
+        font-size: var(--fz-500);
       }
       &:hover {
         background-color: var(--color-gray-16);

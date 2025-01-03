@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-export function HugeiconsLinkedin02(props: SVGProps<SVGSVGElement>) {
+function HugeiconsLinkedin02(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

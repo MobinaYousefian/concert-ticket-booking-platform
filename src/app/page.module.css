@@ -4,18 +4,16 @@
   align-content: center;
   gap: 2rem;
 
-  min-block-size: 100%;
+  grid-template-columns: minmax(0, 1fr);
+
+  margin-bottom: 1rem;
 
   > h1 {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
 
-    font-size: 2.5rem;
-
-    > svg {
-      font-size: 1.25em;
-    }
+    font-size: var(--fz-700);
   }
 
   .history {
@@ -24,16 +22,19 @@
     align-items: center;
     gap: 1rem;
 
+    inline-size: min(50rem, 100%);
+
     .title {
-      font-size: 0.875rem;
+      font-size: var(--fz-300);
     }
 
     > ul {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 1rem;
 
-      font-size: 0.75rem;
+      font-size: var(--fz-200);
 
       > li {
         background-color: var(--color-gray-20);

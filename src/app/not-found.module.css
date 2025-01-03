@@ -1,0 +1,66 @@
+.not-found {
+  display: grid;
+  grid-template-areas: "writings" "cta" "visuals";
+  place-content: center;
+  row-gap: 1rem;
+
+  @media screen and (min-width: 768px) {
+    grid-template-areas: "writings cta" "visuals visuals";
+    column-gap: 1rem;
+  }
+
+  min-block-size: 100%;
+
+  .writings {
+    grid-area: writings;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: var(--fz-700);
+    }
+
+    h2 {
+      font-size: var(--fz-500);
+    }
+  }
+
+  .cta {
+    grid-area: cta;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    button {
+      background-color: var(--color-primary);
+      color: var(--color-primary-opposite);
+
+      padding: 0.5rem 1.5rem;
+
+      border: none;
+      border-radius: var(--border-radius);
+
+      cursor: pointer;
+
+      font-size: var(--fz-400);
+      font-weight: 900;
+
+      &:hover,
+      &:focus {
+        background-color: var(--color-primary-lighter);
+        color: var(--color-primary-opposite);
+      }
+    }
+  }
+
+  .visuals {
+    grid-area: visuals;
+
+    img {
+      inline-size: 100%;
+    }
+  }
+}

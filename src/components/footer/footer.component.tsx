@@ -6,8 +6,8 @@ import HugeiconsLinkedin02 from "@/icons/HugeiconsLinkedin02";
 import HugeiconsYoutube from "@/icons/HugeiconsYoutube";
 import HugeiconsTelegram from "@/icons/HugeiconsTelegram";
 import HugeiconsInstagram from "@/icons/HugeiconsInstagram";
+import TamashachiLogo from "@/logo/t-colored-logo";
 
-import tamashachiLogo from "@/assets/logo/T-logo-red.svg";
 import enamadLogo from "@/assets/logo/E-namad-w.svg";
 import guildLogo from "@/assets/logo/guild-w.svg";
 import nrLogo from "@/assets/logo/NR-badge-w.svg";
@@ -64,12 +64,7 @@ export default function FooterComponent(): ReactElement {
       <div className={styles.branding}>
         <div className={styles.logo}>
           <Link href={"/"}>
-            <Image
-              src={tamashachiLogo}
-              alt={"تماشاچی"}
-              width={56}
-              height={56}
-            />
+            <TamashachiLogo />
           </Link>
           <div>تماشاچی</div>
         </div>

@@ -1,6 +1,6 @@
 import { ReactElement, SVGProps } from "react";
 
-export default function TamashachiLogo(
+export default function TamashachiSolidLogo(
   props: SVGProps<SVGSVGElement>,
 ): ReactElement {
   return (
