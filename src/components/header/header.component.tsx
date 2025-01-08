@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 
 import { clsx } from "clsx";
 
+import DarkModeComponent from "@/components/header/dark-mode/dark-mode.component";
+
 import styles from "./header.module.css";
 
 type NavMenu = {
@@ -42,6 +44,7 @@ export default function HeaderComponent(): ReactElement {
         </ul>
       </nav>
       <button className={styles.cta}>ثبت‌نام | ورود</button>
+      <DarkModeComponent />
     </header>
   );
 }

@@ -1,0 +1,21 @@
+.dark-mode {
+  block-size: 0;
+  min-block-size: 100%;
+  align-content: center;
+
+  > button {
+    background-color: transparent;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > svg {
+      grid-row-start: 1;
+
+      font-size: var(--fz-500);
+      cursor: pointer;
+    }
+  }
+}
