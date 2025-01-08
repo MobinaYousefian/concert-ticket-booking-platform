@@ -1,0 +1,94 @@
+.search {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  column-gap: 1rem;
+  align-items: start;
+
+  margin-block: 2rem;
+
+  .filters {
+    border-radius: var(--border-radius);
+
+    padding: 0.75rem;
+    background-color: var(--color-gray-20);
+  }
+
+  .result {
+    display: grid;
+    align-content: start;
+    grid-template-columns: repeat(3, minmax(5rem, auto));
+    gap: 2rem;
+
+    .card {
+      background-color: var(--color-gray-30);
+
+      border-radius: var(--border-radius);
+      aspect-ratio: 1/1;
+
+      .visuals {
+        display: grid;
+        justify-items: end;
+
+        block-size: min(16rem, 100%);
+
+        border-top-right-radius: var(--border-radius);
+        border-top-left-radius: var(--border-radius);
+
+        position: relative;
+        overflow: hidden;
+
+        > img {
+          grid-column: 1;
+          grid-row: 1;
+
+          block-size: 100%;
+          inline-size: 100%;
+
+          object-fit: cover;
+        }
+
+        .badge {
+          grid-column: 1;
+          grid-row: 1;
+
+          background-color: var(--color-gray-30);
+
+          block-size: max-content;
+
+          padding: 0.25rem 1rem;
+          margin: 0.5rem;
+
+          font-size: var(--fz-300);
+          border-radius: 999px;
+        }
+
+        .gradient {
+          grid-column: 1;
+          grid-row: 1;
+
+          block-size: 100%;
+
+          background: var(--color-primary-darker);
+        }
+      }
+
+      .writings {
+        display: grid;
+        row-gap: 0.5rem;
+
+        padding: 1.5rem 1rem;
+
+        .title {
+          font-size: var(--fz-400);
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+        > p {
+          font-size: var(--fz-200);
+        }
+      }
+    }
+  }
+}
