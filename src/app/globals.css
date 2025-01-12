@@ -34,7 +34,7 @@
   --animation-duration-slow: 0.6s;
 }
 
-:root.dark-theme {
+[data-theme="dark"] {
   --color-gray-98: hsl(0deg 0% 98%);
   --color-gray-90: hsl(0deg 0% 90%);
   --color-gray-80: hsl(0deg 0% 80%);
@@ -50,43 +50,6 @@
   --color-default-foreground: var(--color-gray-98);
 
   --color-primary-opposite: var(--color-gray-98);
-}
-
-@media (prefers-color-scheme: dark) {
-  /* defaults to dark theme */
-  :root {
-    --color-gray-98: hsl(0deg 0% 98%);
-    --color-gray-90: hsl(0deg 0% 90%);
-    --color-gray-80: hsl(0deg 0% 80%);
-    --color-gray-70: hsl(0deg 0% 70%);
-    --color-gray-40: hsl(0deg 0% 40%);
-    --color-gray-30: hsl(0deg 0% 30%);
-    --color-gray-20: hsl(0deg 0% 20%);
-    --color-gray-16: hsl(0deg 0% 16%);
-    --color-gray-12: hsl(0deg 0% 12%);
-    --color-gray-10: hsl(0deg 0% 10%);
-
-    --color-default-background: var(--color-gray-10);
-    --color-default-foreground: var(--color-gray-98);
-
-    --color-primary-opposite: var(--color-gray-98);
-  }
-
-  :root.light-theme {
-    --color-gray-10: hsl(0deg 0% 98%);
-    --color-gray-12: hsl(0deg 0% 90%);
-    --color-gray-16: hsl(0deg 0% 80%);
-    --color-gray-20: hsl(0deg 0% 70%);
-    --color-gray-30: hsl(0deg 0% 40%);
-    --color-gray-40: hsl(0deg 0% 30%);
-    --color-gray-70: hsl(0deg 0% 20%);
-    --color-gray-80: hsl(0deg 0% 16%);
-    --color-gray-90: hsl(0deg 0% 12%);
-    --color-gray-98: hsl(0deg 0% 10%);
-
-    --color-default-background: var(--color-gray-10);
-    --color-default-foreground: var(--color-gray-98);
-  }
 }
 
 *,
@@ -139,6 +102,9 @@ body {
 
   min-block-size: 100vh;
   min-block-size: 100dvh;
+
+  transition: var(--animation-duration-slow) ease-in-out;
+  transition-property: background-color, color;
 
   > * {
     padding-inline: var(--full-width-padding-inline);

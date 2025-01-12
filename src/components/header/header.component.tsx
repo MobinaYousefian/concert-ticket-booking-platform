@@ -8,6 +8,8 @@ import { clsx } from "clsx";
 import DarkModeComponent from "@/components/header/dark-mode/dark-mode.component";
 
 import styles from "./header.module.css";
+import HugeiconsSun03 from "@/icons/HugeiconsSun03";
+import HugeiconsMoon02 from "@/icons/HugeiconsMoon02";
 
 type NavMenu = {
   url: string;
@@ -44,7 +46,12 @@ export default function HeaderComponent(): ReactElement {
         </ul>
       </nav>
       <button className={styles.cta}>ثبت‌نام | ورود</button>
-      <DarkModeComponent />
+      <DarkModeComponent theme={"light"}>
+        <HugeiconsSun03 className={styles.sun} />
+      </DarkModeComponent>
+      <DarkModeComponent theme={"dark"}>
+        <HugeiconsMoon02 className={styles.moon} />
+      </DarkModeComponent>
     </header>
   );
 }
