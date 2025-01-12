@@ -1,4 +1,4 @@
-interface AvailableEvent {
+export interface AvailableEvent {
   id: number;
   banner: string;
   title: string;

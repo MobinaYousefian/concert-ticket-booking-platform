@@ -1,0 +1,121 @@
+.event-card {
+  background-color: var(--color-gray-30);
+
+  border-radius: var(--border-radius);
+  aspect-ratio: 1/1;
+
+  .visuals {
+    display: grid;
+    aspect-ratio: 1/1;
+
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+
+    overflow: hidden;
+
+    > img {
+      grid-column: 1;
+      grid-row: 1;
+
+      block-size: 100%;
+      inline-size: 100%;
+
+      object-fit: cover;
+    }
+
+    .badge {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: end;
+
+      background-color: var(--color-gray-30);
+
+      block-size: max-content;
+
+      padding: 0.25rem 1rem;
+      margin: 0.5rem;
+
+      font-size: var(--fz-300);
+      border-radius: 999px;
+
+      z-index: 1;
+    }
+
+    .gradient {
+      grid-column: 1;
+      grid-row: 1;
+
+      block-size: 100%;
+
+      background: linear-gradient(
+        to bottom,
+        rgba(41, 41, 41, 0.66),
+        rgba(31, 31, 31, 0),
+        rgba(31, 31, 31, 0),
+        rgba(31, 31, 31, 0),
+        rgba(41, 41, 41, 0.78)
+      );
+    }
+  }
+
+  .writings {
+    display: grid;
+    row-gap: 0.5rem;
+
+    padding: 1rem;
+
+    white-space: nowrap;
+
+    > * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .title {
+      font-size: var(--fz-400);
+    }
+
+    .date,
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      > p {
+        font-size: var(--fz-200);
+      }
+    }
+  }
+
+  .cta {
+    display: grid;
+
+    padding: 0.25rem 1rem 1rem;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+
+      background-color: var(--color-gray-98);
+      color: var(--color-gray-16);
+
+      border: none;
+      border-radius: var(--border-radius);
+
+      padding: 0.5rem 2rem;
+
+      cursor: pointer;
+
+      transition: var(--animation-duration-normal) ease-in-out;
+      transition-property: background-color, color;
+
+      &:hover,
+      &:focus {
+        background-color: var(--color-primary-darker);
+        color: var(--color-gray-98);
+      }
+    }
+  }
+}
