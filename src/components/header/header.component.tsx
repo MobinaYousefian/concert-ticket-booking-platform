@@ -6,10 +6,10 @@ import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 
 import DarkModeComponent from "@/components/header/dark-mode/dark-mode.component";
-
-import styles from "./header.module.css";
 import HugeiconsSun03 from "@/icons/HugeiconsSun03";
 import HugeiconsMoon02 from "@/icons/HugeiconsMoon02";
+
+import styles from "./header.module.css";
 
 type NavMenu = {
   url: string;

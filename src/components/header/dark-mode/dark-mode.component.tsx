@@ -1,5 +1,12 @@
 "use client";
-import { PropsWithChildren, ReactElement, useLayoutEffect } from "react";
+import {
+  PropsWithChildren,
+  ReactElement,
+  useLayoutEffect,
+  useState,
+} from "react";
+
+import { clsx } from "clsx";
 
 import styles from "./dark-mode.module.css";
 
@@ -11,9 +18,12 @@ export default function DarkModeComponent({
   theme,
   children,
 }: Props): ReactElement {
+  const [themeState, setThemeState] = useState<string | null>(null);
+
   const setTheme = () => {
     document.body.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
+    setThemeState(theme);
   };
 
   useLayoutEffect(() => {
@@ -25,13 +35,19 @@ export default function DarkModeComponent({
     }
 
     const selectedTheme = localStorage.getItem("theme");
+    setThemeState(selectedTheme);
     if (selectedTheme && bodyElement !== null) {
       bodyElement.setAttribute("data-theme", selectedTheme);
     }
   }, []);
 
   return (
-    <div className={styles["dark-mode"]}>
+    <div
+      className={clsx(
+        styles["dark-mode"],
+        themeState !== theme && styles.active,
+      )}
+    >
       <button onClick={setTheme}>{children}</button>
     </div>
   );

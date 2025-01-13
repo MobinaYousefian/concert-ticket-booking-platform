@@ -1,18 +1,25 @@
 .dark-mode {
+  display: none;
+
   block-size: 0;
   min-block-size: 100%;
   align-content: center;
+
+  &.active {
+    display: block;
+  }
 
   > button {
     background-color: transparent;
     border: none;
 
-    display: flex;
+    display: grid;
     justify-content: center;
-    align-items: center;
 
     > svg {
       grid-row-start: 1;
+
+      color: var(--color-gray-98);
 
       font-size: var(--fz-500);
       cursor: pointer;
