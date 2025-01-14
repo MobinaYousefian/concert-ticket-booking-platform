@@ -19,7 +19,7 @@
     gap: 2rem;
 
     > * {
-      flex-basis: 17rem;
+      flex-basis: 12rem;
       flex-grow: 1;
     }
 

@@ -82,7 +82,7 @@
       gap: 0.5rem;
 
       > p {
-        font-size: var(--fz-200);
+        font-size: var(--fz-100);
       }
     }
   }

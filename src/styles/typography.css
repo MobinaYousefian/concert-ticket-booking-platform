@@ -1,5 +1,5 @@
 :root {
-  --fz-100: ;
+  --fz-100: clamp(0.625rem, 0.5714rem + 0.2381vw, 0.75rem);
   --fz-200: clamp(0.625rem, 0.5179rem + 0.4762vw, 0.875rem);
   --fz-300: clamp(0.75rem, 0.6429rem + 0.4762vw, 1rem);
   --fz-400: clamp(1rem, 1rem + 0vw, 1rem);
