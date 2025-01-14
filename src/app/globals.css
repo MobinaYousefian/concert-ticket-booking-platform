@@ -116,3 +116,18 @@ body {
     text-align: center;
   }
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(182, 86, 122, 0.74);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-40);
+  border-radius: 100px;
+}

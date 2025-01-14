@@ -11,7 +11,7 @@ type Option = {
 };
 
 type Props = {
-  title: string;
+  title?: string;
   options: Option[];
 };
 

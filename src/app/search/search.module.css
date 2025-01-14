@@ -7,18 +7,45 @@
 
   .filters {
     display: grid;
+    gap: 1rem;
+
+    .cities {
+      background-color: var(--color-gray-20);
+
+      padding: 1rem;
+      border-radius: var(--border-radius);
+
+      > ul {
+        block-size: 16rem;
+        overflow-y: auto;
+
+        cursor: pointer;
+
+        > li {
+          font-size: var(--fz-300);
+          border-block-end: 1px solid var(--color-gray-30);
+          padding: 0.75rem 0.5rem;
+
+          transition: var(--animation-duration-fast) all ease-in-out;
+
+          &:hover {
+            background-color: var(--color-gray-30);
+            border-radius: var(--border-radius);
+          }
+        }
+
+        :last-child {
+          border-block-end: none;
+        }
+      }
+    }
   }
 
   .result {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     justify-content: center;
     gap: 2rem;
-
-    > * {
-      flex-basis: 12rem;
-      flex-grow: 1;
-    }
   }
 }
 
