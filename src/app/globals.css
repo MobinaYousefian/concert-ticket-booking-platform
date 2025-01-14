@@ -14,7 +14,7 @@
   --color-default-foreground: var(--color-gray-98);
 
   --color-primary: hsl(338deg 75% 62%);
-  --color-primary-fade: hsl(338deg 75% 94%);
+  --color-primary-fade: hsl(338deg 75% 100%);
   --color-primary-lighter: hsl(338deg 75% 66%);
   --color-primary-darker: hsl(338deg 75% 58%);
   --color-primary-opposite: var(--color-gray-10);
