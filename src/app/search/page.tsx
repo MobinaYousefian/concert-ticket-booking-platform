@@ -4,6 +4,7 @@ import EventCardComponent from "@/components/event-card/event-card.component";
 import FilterComponent from "@/app/search/components/filter/filter.component";
 
 import FiltersProvider from "@/app/search/providers/filters.provider";
+
 import { eventsData } from "@/lib/data";
 
 import styles from "./search.module.css";
@@ -15,8 +16,8 @@ export default function SearchPage(): ReactElement {
         <div className={styles.filters}>
           <FilterComponent
             options={[
-              { value: "concert", label: "کنسرت‌ها" },
-              { value: "show", label: "نمایش‌ها" },
+              { key: "concert", label: "کنسرت‌ها" },
+              { key: "show", label: "نمایش‌ها" },
             ]}
           />
           <div className={styles.cities}>
