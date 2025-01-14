@@ -1,0 +1,18 @@
+.filter {
+  .title {
+    font-size: var(--fz-400);
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    margin-block-start: 0.5rem;
+
+    > * {
+      flex: 1 0 auto;
+      font-size: var(--fz-300);
+    }
+  }
+}

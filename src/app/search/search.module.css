@@ -7,16 +7,6 @@
 
   .filters {
     display: grid;
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-
-      > * {
-        flex: 1 0 auto;
-      }
-    }
   }
 
   .result {
