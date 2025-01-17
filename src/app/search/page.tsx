@@ -20,16 +20,21 @@ export default function SearchPage(): ReactElement {
               { key: "show", label: "نمایش‌ها" },
             ]}
           />
-          <div className={styles.cities}>
-            <ul>
-              <li>تهران</li>
-              <li>اصفهان</li>
-              <li>رشت</li>
-              <li>شیراز</li>
-              <li>یزد</li>
-              <li>کرج</li>
-            </ul>
-          </div>
+          <FilterComponent
+            title={"شهر برگزار کننده"}
+            options={[
+              { key: "tehran", label: "تهران" },
+              { key: "esfahan", label: "اصفهان" },
+              { key: "rasht", label: "رشت" },
+              { key: "shiraz", label: "شیراز" },
+              { key: "yazd", label: "یزد" },
+              { key: "karaj", label: "کرج" },
+              { key: "gorgan", label: "گرگان" },
+              { key: "tabriz", label: "تبریز" },
+              { key: "ghazvin", label: "قزوین" },
+            ]}
+            isListFilter={true}
+          />
         </div>
         <ul className={styles.result}>
           {eventsData.map((event) => (
