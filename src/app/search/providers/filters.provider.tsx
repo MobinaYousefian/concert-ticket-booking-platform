@@ -6,7 +6,7 @@ import {
   useState,
 } from "react";
 
-import { FiltersType } from "@/app/search/types/filters.type";
+import { FiltersType } from "@/types/filters.type";
 
 type ContextValue = {
   filters: FiltersType;

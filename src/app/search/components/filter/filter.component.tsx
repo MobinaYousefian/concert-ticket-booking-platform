@@ -6,7 +6,7 @@ import FilterCardComponent from "@/components/filter-card/filter-card.component"
 
 import { FiltersContext } from "@/app/search/providers/filters.provider";
 
-import { FiltersType } from "@/app/search/types/filters.type";
+import { FiltersType } from "@/types/filters.type";
 
 import styles from "./filter.module.css";
 import { clsx } from "clsx";
