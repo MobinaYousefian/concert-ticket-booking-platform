@@ -11,11 +11,12 @@
   }
   > button {
     grid-area: button;
+    justify-self: flex-end;
 
     background-color: var(--color-danger);
     color: var(--color-danger-fade);
 
-    padding: 0.25rem;
+    padding: 0.25rem 0.75rem;
 
     border: 1px solid var(--color-danger);
     border-radius: 999px;
@@ -42,7 +43,7 @@
       background-color: var(--color-gray-70);
       color: var(--color-gray-16);
 
-      padding: 0.5rem 0.75rem;
+      padding: 0.25rem 0.75rem;
 
       border: 1px solid currentColor;
       border-radius: 999px;
