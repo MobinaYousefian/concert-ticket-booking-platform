@@ -60,7 +60,10 @@ function doesEventInclude(event: AvailableEvent, query?: string): boolean {
     return true;
   }
 
-  return doesSomeInclude([event.title, event.location, event.eventType], query);
+  return doesSomeInclude(
+    [event.title, event.location, event.eventType, event.city, event.date],
+    query,
+  );
 }
 
 function doesSomeInclude(items: string[], query?: string): boolean {
