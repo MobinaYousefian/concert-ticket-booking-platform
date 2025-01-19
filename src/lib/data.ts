@@ -18,7 +18,7 @@ export const eventsData: AvailableEvent[] = [
     date: "جمعه ۲۸ دی",
     location: "سالن میلاد نمایشگاه بین المللی",
     city: "تهران",
-    eventType: "concert",
+    eventType: "کنسرت‌ها",
     remainingTickets: 20,
   },
   {
@@ -29,7 +29,7 @@ export const eventsData: AvailableEvent[] = [
     date: "چهارشنبه ۲۶ دی تا ۳ بهمن",
     location: "پردیس تئاتر شهرزاد",
     city: "تهران",
-    eventType: "show",
+    eventType: "تئاترها",
     remainingTickets: 200,
   },
   {
@@ -40,7 +40,7 @@ export const eventsData: AvailableEvent[] = [
     date: "پنجشنبه ۴ بهمن",
     location: "سالن تئاتر مرکزی",
     city: "تهران",
-    eventType: "show",
+    eventType: "تئاترها",
     remainingTickets: 0,
   },
   {
@@ -51,7 +51,7 @@ export const eventsData: AvailableEvent[] = [
     date: "سه شنبه ۲۵ دی",
     location: "سالن شرق مال",
     city: "تهران",
-    eventType: "show",
+    eventType: "تئاترها",
     remainingTickets: 64,
   },
   {
@@ -62,7 +62,7 @@ export const eventsData: AvailableEvent[] = [
     date: "سه شنبه ۲۵ تا ۳۰ دی",
     location: "تالار مرکزی",
     city: "شیراز",
-    eventType: "concert",
+    eventType: "کنسرت‌ها",
     remainingTickets: 117,
   },
   {
@@ -73,7 +73,7 @@ export const eventsData: AvailableEvent[] = [
     date: "شنبه ۲۲ تا ۲۳ دی",
     location: "سالن اجرای موسیقی",
     city: "کرج",
-    eventType: "concert",
+    eventType: "کنسرت‌ها",
     remainingTickets: 35,
   },
   {
@@ -84,7 +84,7 @@ export const eventsData: AvailableEvent[] = [
     date: "شنبه ۲۹ دی تا ۲ بهمن",
     location: "سالن تئاتر شهر",
     city: "اصفهان",
-    eventType: "show",
+    eventType: "تئاترها",
     remainingTickets: 72,
   },
   {
@@ -95,7 +95,7 @@ export const eventsData: AvailableEvent[] = [
     date: "سه شنبه ۲۵ تا ۲۶ دی",
     location: "سالن موسیقی مرکزی",
     city: "اصفهان",
-    eventType: "concert",
+    eventType: "کنسرت‌ها",
     remainingTickets: 94,
   },
   {
@@ -106,7 +106,7 @@ export const eventsData: AvailableEvent[] = [
     date: "سه شنبه ۲۵ دی",
     location: "سالن برج میلاد",
     city: "تهران",
-    eventType: "concert",
+    eventType: "کنسرت‌ها",
     remainingTickets: 13,
   },
   {
@@ -117,7 +117,7 @@ export const eventsData: AvailableEvent[] = [
     date: "پنجشنبه ۲۷ دی",
     location: "تالار اصلی شهر",
     city: "رشت",
-    eventType: "concert",
+    eventType: "کنسرت‌ها",
     remainingTickets: 98,
   },
   {
@@ -128,7 +128,7 @@ export const eventsData: AvailableEvent[] = [
     date: "جمعه ۲۸ دی",
     location: "سالن تئاتر شهر",
     city: "تهران",
-    eventType: "show",
+    eventType: "تئاترها",
     remainingTickets: 0,
   },
   {
@@ -139,7 +139,7 @@ export const eventsData: AvailableEvent[] = [
     date: "چهارشنبه ۳ تا ۵ بهمن",
     location: "سالن تئاتر شهر",
     city: "کرج",
-    eventType: "show",
+    eventType: "تئاترها",
     remainingTickets: 70,
   },
   {
@@ -150,7 +150,7 @@ export const eventsData: AvailableEvent[] = [
     date: "پنجشنبه ۲۷ دی",
     location: "تالار بزرگ مال",
     city: "تهران",
-    eventType: "concert",
+    eventType: "کنسرت‌ها",
     remainingTickets: 0,
   },
   {
@@ -161,7 +161,7 @@ export const eventsData: AvailableEvent[] = [
     date: "سه شنبه ۲ تا ۵ بهمن",
     location: "سالن شهرداری",
     city: "گرگان",
-    eventType: "show",
+    eventType: "تئاترها",
     remainingTickets: 120,
   },
   {
@@ -172,7 +172,7 @@ export const eventsData: AvailableEvent[] = [
     date: "پنجشنبه ۴ تا ۵ بهمن",
     location: "سالن موسیقی مرکزی",
     city: "تبریز",
-    eventType: "concert",
+    eventType: "کنسرت‌ها",
     remainingTickets: 234,
   },
   {
@@ -183,7 +183,7 @@ export const eventsData: AvailableEvent[] = [
     date: "سه شنبه ۲۵ دی",
     location: "سالن مال غربی",
     city: "تهران",
-    eventType: "concert",
+    eventType: "کنسرت‌ها",
     remainingTickets: 102,
   },
   {
@@ -194,7 +194,7 @@ export const eventsData: AvailableEvent[] = [
     date: "سه شنبه ۲۵ دی",
     location: "سالن مال غربی",
     city: "تهران",
-    eventType: "show",
+    eventType: "تئاترها",
     remainingTickets: 0,
   },
   {
@@ -205,7 +205,7 @@ export const eventsData: AvailableEvent[] = [
     date: "شنبه ۲۹ دی تا ۱ بهمن",
     location: "تالار بزرگ شهر",
     city: "قزوین",
-    eventType: "show",
+    eventType: "تئاترها",
     remainingTickets: 67,
   },
 ];
