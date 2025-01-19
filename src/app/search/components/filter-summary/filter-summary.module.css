@@ -34,6 +34,7 @@
     grid-area: filters;
     display: flex;
     flex-wrap: wrap;
+    gap: 0.5rem;
 
     > li {
       display: flex;

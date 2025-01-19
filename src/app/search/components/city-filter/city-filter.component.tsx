@@ -1,10 +1,13 @@
 "use client";
 import { ReactElement, useContext } from "react";
 
+import { clsx } from "clsx";
+
 import FilterCardComponent from "@/components/filter-card/filter-card.component";
 
-import styles from "./city-filter.module.css";
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
+
+import styles from "./city-filter.module.css";
 
 const options: string[] = [
   "تهران",
@@ -18,10 +21,11 @@ const options: string[] = [
 ];
 
 export default function CityFilterComponent(): ReactElement {
-  const { dispatchFilters } = useContext(FiltersContext);
+  const { filters, dispatchFilters } = useContext(FiltersContext);
 
   const handleChangeFilter = (value: string): void => {
     dispatchFilters({ type: "updated_filter", key: "city", value });
+    /* add the filter to query param */
   };
 
   return (
@@ -30,7 +34,13 @@ export default function CityFilterComponent(): ReactElement {
         <div className={styles.title}>شهر برگزارکننده</div>
         <ul className={styles.city}>
           {options.map((option) => (
-            <li key={option} onClick={() => handleChangeFilter(option)}>
+            <li
+              className={clsx(
+                Object.values(filters).includes(option) && styles.active,
+              )}
+              key={option}
+              onClick={() => handleChangeFilter(option)}
+            >
               {option}
             </li>
           ))}

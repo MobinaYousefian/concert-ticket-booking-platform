@@ -24,6 +24,7 @@
         background-color: var(--color-gray-30);
         border-radius: var(--border-radius);
       }
+
       &.active {
         background-color: var(--color-primary);
         color: var(--color-primary-opposite);
