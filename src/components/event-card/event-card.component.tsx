@@ -17,7 +17,7 @@ export default function EventCardComponent({
   eventsData,
 }: Props): ReactElement {
   return (
-    <li className={styles["event-card"]}>
+    <div className={styles["event-card"]}>
       <div className={styles.visuals}>
         {/* add sold out image here */}
         <Image
@@ -46,6 +46,6 @@ export default function EventCardComponent({
           خرید بلیط
         </button>
       </div>
-    </li>
+    </div>
   );
 }
