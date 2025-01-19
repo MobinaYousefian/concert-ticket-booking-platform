@@ -1,15 +1,18 @@
-import { ReactElement } from "react";
+"use client";
+import { ReactElement, useContext } from "react";
 
 import EventCardComponent from "@/components/event-card/event-card.component";
 
-import { eventsData } from "@/lib/data";
+import { EventsContext } from "@/app/search/providers/events/events.provider";
 
-import styles from "./result.module.css";
+// import styles from "./result.module.css";
 
 export default function ResultComponent(): ReactElement {
+  const { filteredEvents } = useContext(EventsContext);
+
   return (
     <>
-      {eventsData.map((event) => (
+      {filteredEvents.map((event) => (
         <EventCardComponent key={event.id} eventsData={event} />
       ))}
     </>

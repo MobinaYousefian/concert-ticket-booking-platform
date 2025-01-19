@@ -5,6 +5,7 @@ import GlobalSearchBoxComponent from "@/components/global-search-box/global-sear
 import EventTypeFilterComponent from "@/app/search/components/event-type-filter/event-type-filter.component";
 import FilterSummaryComponent from "@/app/search/components/filter-summary/filter-summary.component";
 import CityFilterComponent from "@/app/search/components/city-filter/city-filter.component";
+import StatsComponent from "@/app/search/components/stats/stats.component";
 
 import FiltersProvider from "@/app/search/providers/filters/filters.provider";
 import EventsProvider from "@/app/search/providers/events/events.provider";
@@ -45,6 +46,11 @@ export default async function SearchPage({
             <FilterSummaryComponent />
             <EventTypeFilterComponent />
             <CityFilterComponent />
+          </div>
+          <div className={styles.toolbar}>
+            <div className={styles.stats}>
+              <StatsComponent />
+            </div>
           </div>
           <div className={styles.result}>
             <ResultComponent />
