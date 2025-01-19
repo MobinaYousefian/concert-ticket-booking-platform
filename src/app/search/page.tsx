@@ -6,11 +6,10 @@ import EventTypeFilterComponent from "@/app/search/components/event-type-filter/
 import FilterSummaryComponent from "@/app/search/components/filter-summary/filter-summary.component";
 import CityFilterComponent from "@/app/search/components/city-filter/city-filter.component";
 import StatsComponent from "@/app/search/components/stats/stats.component";
+import FiltersCapsuleComponent from "@/app/search/components/mobile-filters/filters-capsule.component";
 
 import FiltersProvider from "@/app/search/providers/filters/filters.provider";
 import EventsProvider from "@/app/search/providers/events/events.provider";
-
-import HugeiconsFilter from "@/icons/HugeiconsFilter";
 
 import { eventsData } from "@/lib/data";
 
@@ -37,10 +36,7 @@ export default async function SearchPage({
             <GlobalSearchBoxComponent />
           </div>
           <div className={styles["mobile-filters"]}>
-            <button>
-              فیلترها
-              <HugeiconsFilter />
-            </button>
+            <FiltersCapsuleComponent />
           </div>
           <div className={styles.filters}>
             <FilterSummaryComponent />

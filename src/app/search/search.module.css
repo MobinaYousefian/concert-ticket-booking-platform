@@ -17,38 +17,6 @@
 
   .mobile-filters {
     grid-area: mobile-filters;
-
-    > button {
-      background-color: transparent;
-      color: var(--color-gray-70);
-
-      display: flex;
-      justify-content: start;
-      align-items: center;
-      gap: 0.5rem;
-
-      inline-size: max-content;
-
-      padding: 0.5rem 1rem;
-
-      border: 1px solid var(--color-border);
-      border-radius: 999px;
-
-      cursor: pointer;
-      transition:
-        var(--animation-duration-normal) background-color,
-        color ease-in-out;
-
-      &:hover,
-      &:focus {
-        background-color: var(--color-gray-70);
-        color: var(--color-gray-16);
-      }
-
-      > svg {
-        font-size: var(--fz-500);
-      }
-    }
   }
 
   .filters {
