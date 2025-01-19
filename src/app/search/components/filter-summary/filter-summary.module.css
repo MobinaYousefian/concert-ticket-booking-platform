@@ -1,0 +1,66 @@
+.filter-summary {
+  display: grid;
+  grid-template-areas: "title button" "filters filters";
+  align-items: baseline;
+
+  .title {
+    grid-area: title;
+
+    font-size: var(--fz-400);
+    margin-block-end: 1rem;
+  }
+  > button {
+    grid-area: button;
+
+    background-color: var(--color-danger);
+    color: var(--color-danger-fade);
+
+    padding: 0.25rem;
+
+    border: 1px solid var(--color-danger);
+    border-radius: 999px;
+
+    font-size: var(--fz-300);
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-danger-lighter);
+    }
+  }
+
+  .filters {
+    grid-area: filters;
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      background-color: var(--color-gray-70);
+      color: var(--color-gray-16);
+
+      padding: 0.5rem 0.75rem;
+
+      border: 1px solid currentColor;
+      border-radius: 999px;
+
+      font-size: var(--fz-300);
+
+      cursor: pointer;
+
+      > svg {
+        font-size: var(--fz-500);
+      }
+
+      &:hover {
+        background-color: var(--color-danger);
+        color: var(--color-danger-fade);
+
+        border-color: var(--color-danger);
+      }
+    }
+  }
+}
