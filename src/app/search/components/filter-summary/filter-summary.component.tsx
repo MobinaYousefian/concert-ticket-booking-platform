@@ -3,12 +3,13 @@ import { ReactElement, useContext, useMemo } from "react";
 
 import FilterCardComponent from "@/components/filter-card/filter-card.component";
 
+import HugeiconsCancel01 from "@/icons/HugeiconsCancel01";
+
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
 import { FiltersType } from "@/types/filters.type";
 
 import styles from "./filter-summary.module.css";
-import HugeiconsCancel01 from "@/icons/HugeiconsCancel01";
 
 export default function FilterSummaryComponent(): ReactElement | null {
   const { filters, dispatchFilters } = useContext(FiltersContext);
