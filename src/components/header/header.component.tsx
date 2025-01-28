@@ -5,6 +5,10 @@ import { usePathname } from "next/navigation";
 
 import { clsx } from "clsx";
 
+import DarkModeComponent from "@/components/header/dark-mode/dark-mode.component";
+import HugeiconsSun03 from "@/icons/HugeiconsSun03";
+import HugeiconsMoon02 from "@/icons/HugeiconsMoon02";
+
 import styles from "./header.module.css";
 
 type NavMenu = {
@@ -42,6 +46,12 @@ export default function HeaderComponent(): ReactElement {
         </ul>
       </nav>
       <button className={styles.cta}>ثبت‌نام | ورود</button>
+      <DarkModeComponent theme={"light"}>
+        <HugeiconsSun03 className={styles.sun} />
+      </DarkModeComponent>
+      <DarkModeComponent theme={"dark"}>
+        <HugeiconsMoon02 className={styles.moon} />
+      </DarkModeComponent>
     </header>
   );
 }

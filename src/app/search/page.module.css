@@ -1,0 +1,49 @@
+.page {
+  display: grid;
+  grid-template-areas: "search" "mobile-filters" "toolbar" "result";
+  gap: 1rem;
+  align-items: start; /* items won`t get stretched all the way down */
+
+  margin-block: 2rem;
+
+  .search {
+    grid-area: search;
+    margin-block-end: 1rem;
+
+    > * {
+      margin-inline: auto;
+    }
+  }
+
+  .mobile-filters {
+    grid-area: mobile-filters;
+  }
+
+  .filters {
+    grid-area: filters;
+    display: none;
+  }
+
+  .toolbar {
+    grid-area: toolbar;
+
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page {
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: "search search" "filters toolbar" "filters result";
+
+    .mobile-filters {
+      display: none;
+    }
+
+    .filters {
+      display: grid;
+      gap: 1rem;
+    }
+  }
+}

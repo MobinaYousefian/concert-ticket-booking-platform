@@ -1,0 +1,33 @@
+.city-filter {
+  overflow-y: auto;
+  block-size: 16rem;
+
+  .item {
+    background-color: transparent;
+    color: var(--color-gray-80);
+
+    padding: 0.75rem 0.5rem;
+
+    border-block-end: 1px solid var(--color-border);
+
+    cursor: pointer;
+    transition: var(--animation-duration-fast) ease-in-out;
+    transition-property: background-color, color;
+
+    &:hover {
+      background-color: var(--color-gray-30);
+      border-radius: var(--border-radius);
+    }
+
+    &.active {
+      background-color: var(--color-primary);
+      color: var(--color-primary-opposite);
+
+      border-radius: var(--border-radius);
+    }
+
+    &:last-child {
+      border-block-end: none;
+    }
+  }
+}

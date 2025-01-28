@@ -6,7 +6,7 @@
 
   grid-template-columns: minmax(0, 1fr);
 
-  margin-bottom: 1rem;
+  min-block-size: 100%;
 
   > h1 {
     display: inline-flex;
@@ -22,7 +22,7 @@
     align-items: center;
     gap: 1rem;
 
-    inline-size: min(50rem, 100%);
+    margin-block-end: 1rem;
 
     .title {
       font-size: var(--fz-300);

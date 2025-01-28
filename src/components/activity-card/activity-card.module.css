@@ -1,0 +1,124 @@
+.activity-card {
+  background-color: var(--color-gray-40);
+
+  border-radius: var(--border-radius);
+  aspect-ratio: 1/1;
+
+  box-shadow: var(--shadow-700);
+
+  .visuals {
+    display: grid;
+    aspect-ratio: 1/1;
+
+    border-start-start-radius: var(--border-radius);
+    border-start-end-radius: var(--border-radius);
+
+    overflow: hidden;
+
+    > img {
+      grid-column: 1;
+      grid-row: 1;
+
+      block-size: 100%;
+      inline-size: 100%;
+
+      object-fit: cover;
+    }
+
+    .badge {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: end;
+
+      background-color: hsl(338deg 10% 80%);
+      color: var(--color-black);
+
+      block-size: max-content;
+
+      padding: 0.25rem 1rem;
+
+      font-size: var(--fz-300);
+      border-top-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+
+      z-index: 1;
+    }
+
+    .overlay {
+      grid-column: 1;
+      grid-row: 1;
+
+      block-size: 100%;
+
+      background: linear-gradient(
+        to bottom,
+        hsla(0, 0%, 16%, 0.66),
+        hsla(0, 0%, 12%, 0),
+        hsla(0, 0%, 12%, 0),
+        hsla(0, 0%, 12%, 0),
+        hsla(0, 0%, 16%, 0.78)
+      );
+    }
+  }
+
+  .writings {
+    display: grid;
+    row-gap: 0.5rem;
+
+    padding: 1rem;
+
+    white-space: nowrap;
+
+    > * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .title {
+      font-size: var(--fz-400);
+    }
+
+    .date,
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      > p {
+        font-size: var(--fz-100);
+      }
+    }
+  }
+
+  .cta {
+    display: grid;
+
+    padding: 0.25rem 1rem 1rem;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+
+      background-color: var(--color-gray-93);
+      color: var(--color-gray-16);
+
+      border: none;
+      border-radius: var(--border-radius);
+
+      padding: 0.5rem 2rem;
+
+      cursor: pointer;
+
+      transition: var(--animation-duration-normal) ease-in-out;
+      transition-property: background-color, color;
+
+      &:hover,
+      &:focus {
+        background-color: var(--color-primary-darker);
+        color: var(--color-primary-opposite);
+      }
+    }
+  }
+}

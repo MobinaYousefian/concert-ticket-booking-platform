@@ -1,5 +1,4 @@
-import { JSX, ReactElement } from "react";
-import Image from "next/image";
+import { ReactElement } from "react";
 import Link from "next/link";
 
 import HugeiconsLinkedin02 from "@/icons/HugeiconsLinkedin02";
@@ -8,53 +7,62 @@ import HugeiconsTelegram from "@/icons/HugeiconsTelegram";
 import HugeiconsInstagram from "@/icons/HugeiconsInstagram";
 import TamashachiLogo from "@/logo/t-colored-logo";
 
-import enamadLogo from "@/assets/logo/E-namad-w.svg";
-import guildLogo from "@/assets/logo/guild-w.svg";
-import nrLogo from "@/assets/logo/NR-badge-w.svg";
+import ENamad from "@/logo/e-namad";
+import Senf from "@/logo/senf";
+import SabtMeli from "@/logo/sabt-meli";
 
 import styles from "./footer.module.css";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/mobina-yousefian/";
 
 type SocialIcons = {
-  title: string;
-  icon: JSX.Element;
+  key: number;
+  alt: string;
+  icon: ReactElement;
 };
 const socialIcons: SocialIcons[] = [
   {
-    title: "linkedin",
+    key: 1,
+    alt: "linkedin",
     icon: <HugeiconsLinkedin02 />,
   },
   {
-    title: "youtube",
+    key: 2,
+    alt: "youtube",
     icon: <HugeiconsYoutube />,
   },
   {
-    title: "telegram",
+    key: 3,
+    alt: "telegram",
     icon: <HugeiconsTelegram />,
   },
   {
-    title: "instagram",
+    key: 4,
+    alt: "instagram",
     icon: <HugeiconsInstagram />,
   },
 ];
 
 type Certificate = {
+  key: number;
   alt: string;
-  logo: string;
+  logo: ReactElement;
 };
 const certificates: Certificate[] = [
   {
+    key: 1,
     alt: "نظام صنفی",
-    logo: guildLogo,
+    logo: <Senf />,
   },
   {
+    key: 2,
     alt: "نشان ملی ثبت",
-    logo: nrLogo,
+    logo: <SabtMeli />,
   },
   {
+    key: 3,
     alt: "اینماد",
-    logo: enamadLogo,
+    logo: <ENamad />,
   },
 ];
 
@@ -74,17 +82,15 @@ export default function FooterComponent(): ReactElement {
       </div>
       <div className={styles.socials}>
         <ul className={styles.certificate}>
-          {certificates.map(({ alt, logo }) => (
-            <li key={alt}>
-              <Link href={"/"}>
-                <Image src={logo} alt={alt} />
-              </Link>
+          {certificates.map(({ logo, key }) => (
+            <li key={key}>
+              <Link href={"/"}>{logo}</Link>
             </li>
           ))}
         </ul>
         <ul className={styles.icons}>
-          {socialIcons.map(({ title, icon }) => (
-            <li key={title}>
+          {socialIcons.map(({ icon, key }) => (
+            <li key={key}>
               <Link href={LINKEDIN_URL} target={"_blank"}>
                 {icon}
               </Link>

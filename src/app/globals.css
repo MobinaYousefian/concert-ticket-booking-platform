@@ -1,37 +1,88 @@
 :root {
-  --color-gray-98: hsl(0deg 0% 98%);
-  --color-gray-90: hsl(0deg 0% 90%);
-  --color-gray-80: hsl(0deg 0% 80%);
-  --color-gray-70: hsl(0deg 0% 70%);
-  --color-gray-40: hsl(0deg 0% 40%);
-  --color-gray-30: hsl(0deg 0% 30%);
-  --color-gray-20: hsl(0deg 0% 20%);
-  --color-gray-16: hsl(0deg 0% 16%);
-  --color-gray-12: hsl(0deg 0% 12%);
-  --color-gray-10: hsl(0deg 0% 10%);
+  --color-gray-10: hsl(338deg 10% 99%);
+  --color-gray-12: hsl(338deg 10% 97%);
+  --color-gray-16: hsl(338deg 10% 93%);
+  --color-gray-20: hsl(338deg 10% 89%);
+  --color-gray-30: hsl(338deg 10% 80%);
+  --color-gray-40: hsl(338deg 10% 70%);
+  --color-gray-50: hsl(338deg 10% 60%);
+  --color-gray-70: hsl(338deg 10% 40%);
+  --color-gray-80: hsl(338deg 10% 30%);
+  --color-gray-90: hsl(338deg 10% 20%);
+  --color-gray-93: hsl(338deg 10% 16%);
+  --color-gray-97: hsl(338deg 10% 12%);
+  --color-gray-99: hsl(338deg 10% 10%);
 
-  --color-default-background: var(--color-gray-10);
-  --color-default-foreground: var(--color-gray-98);
+  --color-surface-300: var(--color-gray-16);
+  --color-surface-400: var(--color-gray-12);
+  --color-surface-700: var(--color-gray-10);
+
+  --color-text-400: var(--color-gray-99);
+  --color-text-700: var(--color-gray-70);
+  --color-black: hsl(338deg 10% 12%);
 
   --color-primary: hsl(338deg 75% 62%);
-  --color-primary-fade: hsl(338deg 75% 94%);
+  --color-primary-fade: hsl(338deg 75% 95%);
   --color-primary-lighter: hsl(338deg 75% 66%);
   --color-primary-darker: hsl(338deg 75% 58%);
-  --color-primary-opposite: var(--color-gray-10);
+  --color-primary-opposite: hsl(338deg 10% 95%);
 
-  --color-secondary: hsl(188deg 36% 70%);
-  --color-secondary-fade: hsl(188deg 36% 94%);
-  --color-secondary-lighter: hsl(188deg 36% 74%);
-  --color-secondary-darker: hsl(188deg 36% 66%);
+  --color-secondary: hsl(174deg 45% 71%);
+  --color-secondary-fade: hsl(174deg 45% 94%);
+  --color-secondary-lighter: hsl(174deg 45% 75%);
+  --color-secondary-darker: hsl(174deg 45% 67%);
 
-  --border-radius: 0.875rem;
+  --color-danger: hsl(10deg 70% 48%);
+  --color-danger-fade: hsl(10deg 70% 96%);
+  --color-danger-lighter: hsl(10deg 70% 52%);
+  --color-danger-darker: hsl(10deg 70% 44%);
+  --color-danger-opposite: var(--color-gray-99);
+
+  --border-radius: 0.75rem;
+  --color-border: var(--color-gray-30);
+
+  --color-scrollbar-thumb: hsla(338, 40%, 53%, 0.74);
+
+  --shadow-300: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-400: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-500: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-700: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-800: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-900: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 
   --full-width: 75rem;
   --full-width-padding-inline: calc(max(100% - var(--full-width), 2rem) / 2);
 
   --animation-duration-fast: 0.1s;
-  --animation-duration-normal: 0.5s;
-  --animation-duration-slow: 1s;
+  --animation-duration-normal: 0.2s;
+  --animation-duration-slow: 0.6s;
+}
+
+[data-theme="dark"] {
+  --color-gray-99: hsl(338deg 10% 99%);
+  --color-gray-97: hsl(338deg 10% 97%);
+  --color-gray-93: hsl(338deg 10% 93%);
+  --color-gray-90: hsl(338deg 10% 89%);
+  --color-gray-80: hsl(338deg 10% 80%);
+  --color-gray-70: hsl(338deg 10% 70%);
+  --color-gray-50: hsl(338deg 10% 60%);
+  --color-gray-40: hsl(338deg 10% 40%);
+  --color-gray-30: hsl(338deg 10% 30%);
+  --color-gray-20: hsl(338deg 10% 20%);
+  --color-gray-16: hsl(338deg 10% 16%);
+  --color-gray-12: hsl(338deg 10% 12%);
+  --color-gray-10: hsl(338deg 10% 10%);
+
+  --color-surface-300: var(--color-gray-16);
+  --color-surface-400: var(--color-gray-12);
+  --color-surface-700: var(--color-gray-10);
+
+  --color-text-400: var(--color-gray-99);
+  --color-text-700: var(--color-gray-70);
+
+  --color-border: var(--color-gray-30);
 }
 
 *,
@@ -70,14 +121,15 @@ p {
 }
 
 html {
-  color-scheme: dark;
   scroll-behavior: smooth;
+  accent-color: var(--color-primary);
+  caret-color: var(--color-primary);
 }
 
 body {
   font-size: var(--fz-400);
-  background-color: var(--color-default-background);
-  color: var(--color-default-foreground);
+  background-color: var(--color-surface-400);
+  color: var(--color-text-400);
 
   display: grid;
   grid-template-rows: auto 1fr auto auto;
@@ -85,13 +137,31 @@ body {
   min-block-size: 100vh;
   min-block-size: 100dvh;
 
+  transition: var(--animation-duration-slow) ease-in-out;
+  transition-property: background-color, color;
+
   > * {
     padding-inline: var(--full-width-padding-inline);
   }
 
   .tagline {
-    background-color: var(--color-gray-16);
+    background-color: var(--color-gray-20);
     padding-block: 1rem;
     text-align: center;
   }
+}
+
+::-webkit-scrollbar {
+  width: 0.3125rem;
+  height: 0.3125rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb);
+  border-radius: 6.25rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-40);
+  border-radius: 6.25rem;
 }

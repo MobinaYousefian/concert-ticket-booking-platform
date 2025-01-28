@@ -1,25 +1,18 @@
 .error {
   display: grid;
   grid-template-areas: "writings" "actions" "visuals" "log";
-  grid-template-columns: repeat(2, minmax(0, auto));
+  grid-template-columns: repeat(auto-fit, minmax(0, auto));
   place-content: center;
   row-gap: 1rem;
 
+  justify-items: center;
+
   min-block-size: 100%;
-
-  @media screen and (min-width: 768px) {
-    grid-template-areas: "writings visuals" "actions visuals" "log log";
-    column-gap: 1rem;
-  }
-
-  margin-bottom: 1rem;
 
   .writings {
     grid-area: writings;
 
-    @media screen and (max-width: 767px) {
-      text-align: center;
-    }
+    text-align: center;
 
     h1 {
       margin-block-end: 1rem;
@@ -35,11 +28,6 @@
     grid-area: actions;
 
     margin-block-start: 0.5rem;
-
-    @media screen and (max-width: 767px) {
-      display: flex;
-      justify-content: center;
-    }
 
     button {
       background-color: var(--color-primary);
@@ -69,6 +57,7 @@
     inline-size: 0;
 
     margin-block-start: 2rem;
+    margin-block-end: 1rem;
 
     details {
       border: none;
@@ -89,19 +78,28 @@
   .visuals {
     grid-area: visuals;
 
-    @media screen and (max-width: 767px) {
-      min-inline-size: 100%;
-      inline-size: 0;
-    }
-
-    @media screen and (min-width: 768px) {
-      min-block-size: 100%;
-      block-size: 0;
-    }
+    max-inline-size: 20rem;
 
     img {
       block-size: 100%;
       inline-size: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .error {
+    grid-template-areas: "writings visuals" "actions visuals" "log log";
+    column-gap: 1rem;
+    justify-items: start;
+
+    .writings {
+      text-align: initial;
+    }
+
+    .visuals {
+      min-block-size: 100%;
+      block-size: 0;
     }
   }
 }
