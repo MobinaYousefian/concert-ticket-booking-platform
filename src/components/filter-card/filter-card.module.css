@@ -4,7 +4,10 @@
   padding: 1rem;
   background-color: var(--color-gray-20);
 
-  @media (prefers-color-scheme: light) {
-    box-shadow: var(--shadow-700);
+  box-shadow: var(--shadow-700);
+
+  .title {
+    font-size: var(--fz-400);
+    margin-block-end: 1rem;
   }
 }

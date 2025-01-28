@@ -2,20 +2,20 @@ import { ReactElement } from "react";
 
 import ResultComponent from "@/app/search/components/result/result.component";
 import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
-import EventTypeFilterComponent from "@/app/search/components/event-type-filter/event-type-filter.component";
+import ActivityTypeFilterComponent from "@/app/search/components/activity-type-filter/activity-type-filter.component";
 import FilterSummaryComponent from "@/app/search/components/filter-summary/filter-summary.component";
 import CityFilterComponent from "@/app/search/components/city-filter/city-filter.component";
 import StatsComponent from "@/app/search/components/stats/stats.component";
 import FiltersCapsuleComponent from "@/app/search/components/mobile-filters/filters-capsule.component";
 
 import FiltersProvider from "@/app/search/providers/filters/filters.provider";
-import EventsProvider from "@/app/search/providers/events/events.provider";
+import ActivityProvider from "@/app/search/providers/activity/activity.provider";
 
-import { eventsData } from "@/lib/data";
+import { activity } from "@/lib/data";
 
 import { FiltersType } from "@/types/filters.type";
 
-import styles from "./search.module.css";
+import styles from "./page.module.css";
 
 type SearchParams = { [key: string]: string | string[] | undefined };
 
@@ -30,7 +30,7 @@ export default async function SearchPage({
 
   return (
     <FiltersProvider defaultFilters={defaultFilters}>
-      <EventsProvider eventsData={eventsData}>
+      <ActivityProvider activity={activity}>
         <div className={styles.page}>
           <div className={styles.search}>
             <GlobalSearchBoxComponent />
@@ -40,7 +40,7 @@ export default async function SearchPage({
           </div>
           <div className={styles.filters}>
             <FilterSummaryComponent />
-            <EventTypeFilterComponent />
+            <ActivityTypeFilterComponent />
             <CityFilterComponent />
           </div>
           <div className={styles.toolbar}>
@@ -48,21 +48,19 @@ export default async function SearchPage({
               <StatsComponent />
             </div>
           </div>
-          <div className={styles.result}>
-            <ResultComponent />
-          </div>
+          <ResultComponent />
         </div>
-      </EventsProvider>
+      </ActivityProvider>
     </FiltersProvider>
   );
 }
 
 function generateDefaultFilters(searchParams: SearchParams): FiltersType {
-  const { query, eventType, city } = searchParams;
+  const { query, activityType, city } = searchParams;
 
   return {
     query: normalizeFilter(query),
-    eventType: normalizeFilter(eventType),
+    activityType: normalizeFilter(activityType),
     city: normalizeFilter(city),
   };
 }

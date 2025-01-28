@@ -1,20 +1,20 @@
 "use client";
 import { ReactElement, useContext } from "react";
 
-import EventCardComponent from "@/components/event-card/event-card.component";
+import ActivityCardComponent from "@/components/activity-card/activity-card.component";
 
-import { EventsContext } from "@/app/search/providers/events/events.provider";
+import { activityContext } from "@/app/search/providers/activity/activity.provider";
 
-// import styles from "./result.module.css";
+import styles from "./result.module.css";
 
 export default function ResultComponent(): ReactElement {
-  const { filteredEvents } = useContext(EventsContext);
+  const { filteredActivity } = useContext(activityContext);
 
   return (
-    <>
-      {filteredEvents.map((event) => (
-        <EventCardComponent key={event.id} eventsData={event} />
+    <div className={styles.result}>
+      {filteredActivity.map((activity) => (
+        <ActivityCardComponent key={activity.id} activity={activity} />
       ))}
-    </>
+    </div>
   );
 }

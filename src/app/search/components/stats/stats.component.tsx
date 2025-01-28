@@ -1,18 +1,16 @@
 "use client";
 import { ReactElement, useContext } from "react";
 
-import { EventsContext } from "@/app/search/providers/events/events.provider";
-
-import { faNumber } from "@/lib/utils";
+import { activityContext } from "@/app/search/providers/activity/activity.provider";
 
 import styles from "./stats.module.css";
 
 export default function StatsComponent(): ReactElement {
-  const { filteredEvents } = useContext(EventsContext);
+  const { filteredActivity } = useContext(activityContext);
 
   return (
     <div className={styles.stats}>
-      {faNumber(filteredEvents.length.toLocaleString())} نتیجه
+      {filteredActivity.length.toLocaleString()} نتیجه
     </div>
   );
 }

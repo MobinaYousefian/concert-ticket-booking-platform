@@ -41,6 +41,8 @@
   --border-radius: 0.75rem;
   --color-border: var(--color-gray-30);
 
+  --color-scrollbar-thumb: hsla(338, 40%, 53%, 0.74);
+
   --shadow-300: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-400: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-500: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -119,7 +121,6 @@ p {
 }
 
 html {
-  color-scheme: light dark;
   scroll-behavior: smooth;
   accent-color: var(--color-primary);
   caret-color: var(--color-primary);
@@ -151,16 +152,16 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 0.3125rem;
+  height: 0.3125rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(182, 86, 122, 0.74);
-  border-radius: 100px;
+  background: var(--color-scrollbar-thumb);
+  border-radius: 6.25rem;
 }
 
 ::-webkit-scrollbar-track {
   background: var(--color-gray-40);
-  border-radius: 100px;
+  border-radius: 6.25rem;
 }

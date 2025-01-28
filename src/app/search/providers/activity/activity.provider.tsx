@@ -11,57 +11,63 @@ import {
 
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
-import { AvailableEvent } from "@/lib/data";
+import { Activity } from "@/lib/data.type";
 
 type ContextValue = {
-  filteredEvents: AvailableEvent[];
+  filteredActivity: Activity[];
 };
 
-export const EventsContext = createContext<ContextValue>({
-  filteredEvents: [],
+export const activityContext = createContext<ContextValue>({
+  filteredActivity: [],
 });
 
 type Props = PropsWithChildren & {
-  eventsData: AvailableEvent[];
+  activity: Activity[];
 };
 
-export default function EventsProvider({
+export default function ActivityProvider({
   children,
-  eventsData,
+  activity,
 }: Props): ReactElement {
   const { filters } = useContext(FiltersContext);
 
-  const [filteredEvents, setFilteredEvents] = useState<AvailableEvent[]>([]);
+  const [filteredActivity, setFilteredActivity] = useState<Activity[]>([]);
 
   const isVisible = useCallback(
-    (event: AvailableEvent): boolean => {
+    (activity: Activity): boolean => {
       return (
-        doesEventInclude(event, filters.query) &&
-        doesInclude(event.eventType, filters.eventType) &&
-        doesInclude(event.city, filters.city)
+        doesActivityInclude(activity, filters.query) &&
+        doesInclude(activity.activityType, filters.activityType) &&
+        doesInclude(activity.city, filters.city)
       );
     },
     [filters],
   );
 
   useEffect(() => {
-    setFilteredEvents(eventsData.filter(isVisible));
-  }, [isVisible, eventsData]);
+    setFilteredActivity(activity.filter(isVisible));
+  }, [isVisible, activity]);
 
   return (
-    <EventsContext.Provider value={{ filteredEvents }}>
+    <activityContext.Provider value={{ filteredActivity }}>
       {children}
-    </EventsContext.Provider>
+    </activityContext.Provider>
   );
 }
 
-function doesEventInclude(event: AvailableEvent, query?: string): boolean {
+function doesActivityInclude(activity: Activity, query?: string): boolean {
   if (!query) {
     return true;
   }
 
   return doesSomeInclude(
-    [event.title, event.location, event.eventType, event.city, event.date],
+    [
+      activity.title,
+      activity.location,
+      activity.activityType,
+      activity.city,
+      activity.date,
+    ],
     query,
   );
 }

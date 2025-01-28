@@ -1,5 +1,5 @@
 export type FiltersType = {
   query?: string;
-  eventType?: string;
+  activityType?: string;
   city?: string;
 };

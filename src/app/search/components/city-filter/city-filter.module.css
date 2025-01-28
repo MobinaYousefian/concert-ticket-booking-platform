@@ -1,41 +1,33 @@
 .city-filter {
-  .title {
-    font-size: var(--fz-400);
-    margin-block-end: 1rem;
-  }
+  overflow-y: auto;
+  block-size: 16rem;
 
-  .city {
-    overflow-y: auto;
-    block-size: 16rem;
+  .item {
+    background-color: transparent;
+    color: var(--color-gray-80);
 
-    > li {
-      background-color: transparent;
-      color: var(--color-gray-80);
+    padding: 0.75rem 0.5rem;
 
-      padding: 0.75rem 0.5rem;
+    border-block-end: 1px solid var(--color-border);
 
-      border-block-end: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: var(--animation-duration-fast) ease-in-out;
+    transition-property: background-color, color;
 
-      cursor: pointer;
-      transition:
-        var(--animation-duration-fast) background-color,
-        color ease-in-out;
+    &:hover {
+      background-color: var(--color-gray-30);
+      border-radius: var(--border-radius);
+    }
 
-      &:hover {
-        background-color: var(--color-gray-30);
-        border-radius: var(--border-radius);
-      }
+    &.active {
+      background-color: var(--color-primary);
+      color: var(--color-primary-opposite);
 
-      &.active {
-        background-color: var(--color-primary);
-        color: var(--color-primary-opposite);
+      border-radius: var(--border-radius);
+    }
 
-        border-radius: var(--border-radius);
-      }
-
-      &:last-child {
-        border-block-end: none;
-      }
+    &:last-child {
+      border-block-end: none;
     }
   }
 }

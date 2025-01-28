@@ -33,9 +33,8 @@
     font-weight: 700;
 
     cursor: pointer;
-    transition:
-      var(--animation-duration-normal) background-color,
-      color ease-in-out;
+    transition: var(--animation-duration-fast) ease-in-out;
+    transition-property: background-color, color;
 
     &:hover {
       background-color: var(--color-primary);

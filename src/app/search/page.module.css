@@ -29,16 +29,6 @@
 
     display: flex;
     flex-direction: row-reverse;
-    .stats {
-    }
-  }
-
-  .result {
-    grid-area: result;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-    justify-content: center;
-    gap: 2rem;
   }
 }
 

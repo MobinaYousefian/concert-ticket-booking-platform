@@ -3,6 +3,13 @@
   grid-template-areas: "title button" "filters filters";
   align-items: baseline;
 
+  border-radius: var(--border-radius);
+
+  padding: 1rem;
+  background-color: var(--color-gray-20);
+
+  box-shadow: var(--shadow-700);
+
   .title {
     grid-area: title;
 

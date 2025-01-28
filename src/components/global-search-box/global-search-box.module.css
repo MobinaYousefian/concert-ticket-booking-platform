@@ -9,6 +9,8 @@
 
   padding-inline: 1rem;
 
+  box-shadow: var(--shadow-400);
+
   .search {
     display: flex;
     align-items: center;

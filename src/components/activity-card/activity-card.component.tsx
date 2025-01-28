@@ -5,39 +5,39 @@ import HugeiconsCalendar03 from "@/icons/HugeiconsCalendar03";
 import HugeiconsLocation04 from "@/icons/HugeiconsLocation04";
 import HugeiconsShoppingBag02 from "@/icons/HugeiconsShoppingBag02";
 
-import { AvailableEvent } from "@/lib/data";
+import { Activity } from "@/lib/data.type";
 
-import styles from "./event-card.module.css";
+import styles from "./activity-card.module.css";
 
 type Props = {
-  eventsData: AvailableEvent;
+  activity: Activity;
 };
 
-export default function EventCardComponent({
-  eventsData,
+export default function ActivityCardComponent({
+  activity,
 }: Props): ReactElement {
   return (
-    <div className={styles["event-card"]}>
+    <div className={styles["activity-card"]}>
       <div className={styles.visuals}>
-        {/* add sold out image here */}
+        {/* todo: add sold out image here */}
         <Image
-          src={eventsData.banner}
-          alt={eventsData.title}
-          width={2000}
-          height={2000}
+          src={activity.banner}
+          alt={activity.title}
+          width={500}
+          height={500}
         />
-        <div className={styles.badge}>{eventsData.city}</div>
-        <div className={styles.gradient}></div>
+        <div className={styles.badge}>{activity.city}</div>
+        <div className={styles.overlay}></div>
       </div>
       <div className={styles.writings}>
-        <h3 className={styles.title}>{eventsData.title}</h3>
+        <h3 className={styles.title}>{activity.title}</h3>
         <div className={styles.date}>
           <HugeiconsCalendar03 />
-          <p>{eventsData.date}</p>
+          <p>{activity.date}</p>
         </div>
         <div className={styles.location}>
           <HugeiconsLocation04 />
-          <p>{eventsData.location}</p>
+          <p>{activity.location}</p>
         </div>
       </div>
       <div className={styles.cta}>
