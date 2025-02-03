@@ -95,7 +95,7 @@
 
     padding: 0.25rem 1rem 1rem;
 
-    button {
+    a {
       display: flex;
       justify-content: center;
       align-items: center;
