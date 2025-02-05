@@ -1,17 +1,5 @@
 :root {
   /* new color pallet *********************************/
-  /*--color-slate-50: hsl(210 40% 98%);*/
-  /*--color-slate-100: hsl(210 40% 96.1%);*/
-  /*--color-slate-200: hsl(214.3 31.8% 91.4%);*/
-  /*--color-slate-300: hsl(212.7 26.8% 83.9%);*/
-  /*--color-slate-400: hsl(215 20.2% 65.1%);*/
-  /*--color-slate-500: hsl(215.4 16.3% 46.9%);*/
-  /*--color-slate-600: hsl(215.3 19.3% 34.5%);*/
-  /*--color-slate-700: hsl(215.3 25% 26.7%);*/
-  /*--color-slate-800: hsl(217.2 32.6% 17.5%);*/
-  /*--color-slate-900: hsl(222.2 47.4% 11.2%);*/
-  /*--color-slate-950: hsl(222.2 84% 4.9%);*/
-
   --color-zinc-50: hsl(0 0% 98%);
   --color-zinc-100: hsl(240 4.8% 95.9%);
   --color-zinc-200: hsl(240 5.9% 90%);
@@ -55,6 +43,9 @@
 
   --border-radius: 0.75rem;
   --color-border: hsl(240 5.9% 90%);
+
+  --color-hover-favorite: hsl(346.8 62% 49.8%);
+  --color-hover-share: hsl(200.4 98% 39.4%);
 
   --color-scrollbar-thumb: hsla(176 50% 21% / 0.8);
 
@@ -144,5 +135,35 @@ body {
     background-color: var(--color-surface-90);
     padding-block: 1rem;
     text-align: center;
+  }
+
+  .perforations {
+    position: relative;
+
+    inline-size: 100%;
+    border-block-end: 2px dashed var(--color-border);
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: var(--color-surface-97);
+
+      inline-size: 1.25rem;
+      block-size: 1.5rem;
+
+      border-radius: 50%;
+
+      position: absolute;
+      z-index: 1;
+      inset-block-end: -0.75rem;
+    }
+
+    &::before {
+      inset-inline-end: -1.75rem;
+    }
+
+    &::after {
+      inset-inline-start: -1.75rem;
+    }
   }
 }

@@ -6,51 +6,6 @@
 
   margin-block: 1rem;
 
-  .writings {
-    grid-area: writings;
-
-    > h1 {
-      font-size: var(--fz-500);
-      margin-block-end: 1rem;
-    }
-
-    > ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-
-      > li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.25rem;
-
-        .icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          background-color: var(--color-primary-fade);
-
-          padding: 0.5rem;
-          border-radius: var(--border-radius);
-
-          > svg {
-            color: var(--color-text);
-          }
-        }
-
-        > p {
-          font-size: var(--fz-300);
-        }
-
-        .label {
-          font-weight: 600;
-        }
-      }
-    }
-  }
-
   .banner {
     grid-area: banner;
     justify-self: center;
@@ -68,11 +23,121 @@
       border-radius: var(--border-radius);
     }
   }
+
+  .writings {
+    grid-area: writings;
+
+    .heading {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 0.5rem;
+
+      margin-block-end: 1.5rem;
+
+      > h1 {
+        font-size: var(--fz-500);
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        flex-flow: row-reverse wrap;
+        gap: 0.625rem;
+
+        .cta {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+
+          cursor: pointer;
+
+          > span {
+            font-size: var(--fz-200);
+            color: var(--color-zinc-700);
+          }
+        }
+
+        #favorite {
+          &:hover {
+            > * {
+              color: var(--color-hover-favorite);
+            }
+          }
+        }
+
+        #share {
+          &:hover {
+            > * {
+              color: var(--color-hover-share);
+            }
+          }
+        }
+      }
+    }
+
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      margin-block-end: 1.25rem;
+
+      > li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          font-size: var(--fz-500);
+          color: var(--color-primary);
+        }
+
+        > p {
+          font-size: var(--fz-300);
+        }
+
+        .label {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .notice {
+    > ul {
+      display: grid;
+      gap: 0.5rem;
+
+      margin-block: 1.25rem;
+
+      color: var(--color-zinc-700);
+      font-size: var(--fz-300);
+
+      > li {
+        list-style: inside;
+
+        &::marker {
+          color: var(--color-primary);
+        }
+
+        .terms {
+          padding-inline: 0.25rem;
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
   .page {
-    grid-template-areas: "writings banner" "details details";
+    grid-template-areas: "writings banner";
     grid-template-columns: 3fr 1fr;
 
     .writings {
