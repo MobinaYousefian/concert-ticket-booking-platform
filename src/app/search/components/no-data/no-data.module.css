@@ -1,0 +1,22 @@
+.no-data {
+  grid-area: result;
+  display: grid;
+  justify-items: center;
+
+  .visuals {
+    inline-size: min(16rem, 100%);
+    block-size: min(16rem, 100%);
+
+    margin-block-end: 1.5rem;
+
+    > img {
+      inline-size: 100%;
+      block-size: 100%;
+    }
+  }
+
+  > p {
+    font-size: var(--fz-400);
+    color: var(--color-text);
+  }
+}
