@@ -20,7 +20,7 @@ export default function ActivityCardComponent({
   const ACTIVITY_PAGE_URL = `/activity/${activity.id.toString()}`;
 
   return (
-    <div className={styles["activity-card"]}>
+    <section className={styles["activity-card"]}>
       <div className={styles.visuals}>
         {/* todo: add sold out image here */}
         <Image
@@ -49,6 +49,6 @@ export default function ActivityCardComponent({
           خرید بلیط
         </Link>
       </div>
-    </div>
+    </section>
   );
 }

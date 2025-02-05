@@ -36,11 +36,11 @@ export default function SearchPage({ searchParams }: Props): ReactElement {
           {/*<div className={styles["mobile-filters"]}>*/}
           {/*  <FiltersCapsuleComponent />*/}
           {/*</div>*/}
-          <div className={styles.filters}>
+          <aside className={styles.filters}>
             <FilterSummaryComponent />
             <ActivityTypeFilterComponent />
             <CityFilterComponent />
-          </div>
+          </aside>
           <div className={styles.toolbar}>
             <div className={styles.stats}>
               <StatsComponent />
