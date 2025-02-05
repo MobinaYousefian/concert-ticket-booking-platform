@@ -45,7 +45,7 @@
 
       &:hover,
       &:focus {
-        background-color: var(--color-primary-lighter);
+        background-color: var(--color-primary-700);
       }
     }
   }

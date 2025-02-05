@@ -19,7 +19,7 @@
     > svg {
       grid-row-start: 1;
 
-      color: var(--color-gray-99);
+      color: var(--color-text);
 
       font-size: var(--fz-500);
       cursor: pointer;

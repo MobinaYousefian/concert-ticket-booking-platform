@@ -4,6 +4,9 @@
   gap: 1rem;
   padding-block: 1rem;
 
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-400);
+
   nav {
     > ul {
       display: flex;

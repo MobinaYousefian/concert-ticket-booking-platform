@@ -1,10 +1,10 @@
 .filter-card {
+  background-color: var(--color-surface);
+
   border-radius: var(--border-radius);
-
   padding: 1rem;
-  background-color: var(--color-gray-20);
 
-  box-shadow: var(--shadow-700);
+  box-shadow: var(--shadow-500);
 
   .title {
     font-size: var(--fz-400);

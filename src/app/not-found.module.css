@@ -43,7 +43,7 @@
 
       &:hover,
       &:focus {
-        background-color: var(--color-primary-lighter);
+        background-color: var(--color-primary-700);
         color: var(--color-primary-opposite);
       }
     }
