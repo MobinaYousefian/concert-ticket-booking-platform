@@ -10,6 +10,7 @@ export interface Activity {
   activityType: string;
   noticeList: string[];
   sessions: ActivitySession[];
+  remainingSessions: number;
 }
 
 export type ActivitySession = {
