@@ -5,7 +5,24 @@ export interface Activity {
   date: string;
   time: string;
   location: string;
+  hallId: number;
   city: string;
   activityType: string;
-  remainingTickets: number;
+  noticeList: string[];
+  sessions: ActivitySession[];
 }
+
+export type ActivitySession = {
+  id: number;
+  remainingTickets: number;
+  date: string;
+  time: string;
+};
+
+export type Hall = {
+  id: number;
+  name: string;
+  capacity: number;
+  city: string;
+  /* todo: add data about seat map */
+};

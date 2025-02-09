@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 
 import SectionCardComponent from "@/app/activity/[id]/components/section-card/section-card.component";
+import SessionsComponent from "@/app/activity/[id]/components/sessions/sessions.component";
 
 import HugeiconsCalendar03 from "@/icons/HugeiconsCalendar03";
 import HugeiconsLocation04 from "@/icons/HugeiconsLocation04";
@@ -11,7 +12,6 @@ import HugeiconsFavourite from "@/icons/HugeiconsFavourite";
 import HugeiconsShare08 from "@/icons/HugeiconsShare08";
 
 import { activity } from "@/lib/data";
-import { Activity } from "@/lib/data.type";
 
 import styles from "./page.module.css";
 
@@ -37,7 +37,7 @@ type DateTimeInfo = {
   id: number;
   icon: ReactElement;
   label: string;
-  data: keyof Activity;
+  data: "date" | "time" | "location";
 };
 const dateTimeInfo: DateTimeInfo[] = [
   {
@@ -60,17 +60,14 @@ const dateTimeInfo: DateTimeInfo[] = [
   },
 ];
 
-const noticeList: string[] = [
-  "توجه فرمایید برای کودکان ۴ سال به بالا نیاز به دریافت بلیت می‌باشد.",
-  "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
-];
-
 type Props = {
   params: { id: string };
 };
 
 export default function Page({ params }: Props): ReactElement {
-  const activityData = activity.find((item) => item.id === +params.id);
+  const activityData = activity.find(
+    (item) => item.id.toString() === params.id,
+  );
 
   if (!activityData) {
     return notFound();
@@ -84,6 +81,7 @@ export default function Page({ params }: Props): ReactElement {
           alt={activityData.title}
           width={600}
           height={900}
+          priority
         />
       </div>
       <SectionCardComponent>
@@ -104,7 +102,10 @@ export default function Page({ params }: Props): ReactElement {
               <li key={id}>
                 <div className={styles.icon}>{icon}</div>
                 <p className={styles.label}>{label}</p>
-                <p>{activityData[data]}</p>
+                <p>
+                  {data === "location" && `${activityData.city}،` + " "}
+                  {activityData[data]}
+                </p>
               </li>
             ))}
           </ul>
@@ -112,7 +113,7 @@ export default function Page({ params }: Props): ReactElement {
         </div>
         <div className={styles.notice}>
           <ul role={"list"}>
-            {noticeList.map((item) => (
+            {activityData.noticeList.map((item) => (
               <li key={item}>{item}</li>
             ))}
             <li>
@@ -123,6 +124,11 @@ export default function Page({ params }: Props): ReactElement {
           </ul>
         </div>
       </SectionCardComponent>
+      <section className={styles.sessions}>
+        {activityData.sessions.map((session) => (
+          <SessionsComponent key={session.id} session={session} />
+        ))}
+      </section>
     </div>
   );
 }

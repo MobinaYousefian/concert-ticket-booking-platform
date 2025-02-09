@@ -1,10 +1,10 @@
 .page {
   display: grid;
-  grid-template-areas: "banner" "writings";
+  grid-template-areas: "banner" "writings" "session";
   align-items: start;
   gap: 1rem;
 
-  margin-block: 1rem;
+  margin-block: 2rem;
 
   .banner {
     grid-area: banner;
@@ -114,7 +114,7 @@
       display: grid;
       gap: 0.5rem;
 
-      margin-block: 1.25rem;
+      margin-block: 1.75rem 1.5rem;
 
       color: var(--color-zinc-700);
       font-size: var(--fz-300);
@@ -133,11 +133,20 @@
       }
     }
   }
+
+  .sessions {
+    grid-area: session;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+    gap: 1.5rem;
+
+    margin-block-start: 1rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .page {
-    grid-template-areas: "writings banner";
+    grid-template-areas: "writings banner" "session session";
     grid-template-columns: 3fr 1fr;
 
     .writings {
