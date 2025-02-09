@@ -2,6 +2,8 @@ import { ReactElement } from "react";
 
 import { clsx } from "clsx";
 
+import ButtonComponent from "@/components/button/button.component";
+
 import { ActivitySession } from "@/lib/data.type";
 
 import HugeiconsCheckmarkCircle01 from "@/icons/HugeiconsCheckmarkCircle01";
@@ -21,7 +23,7 @@ const stock = {
     label: "موجودی: محدود",
   },
   OUT: {
-    icon: <HugeiconsCancelCircle className={styles.danger} />,
+    icon: <HugeiconsCancelCircle className={styles.destructive} />,
     label: "موجودی: ندارد",
   },
 };
@@ -68,10 +70,10 @@ export default function SessionsComponent({ session }: Props): ReactElement {
             )}
           </span>
         </div>
-        <button disabled={remainingTickets === 0}>
+        <ButtonComponent disabled={remainingTickets === 0}>
           <HugeiconsShoppingBag02 />
           خرید بلیت
-        </button>
+        </ButtonComponent>
       </div>
     </div>
   );

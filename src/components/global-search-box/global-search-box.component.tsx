@@ -8,6 +8,8 @@ import {
 } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
+import ButtonComponent from "@/components/button/button.component";
+
 import HugeiconsSearch01 from "@/icons/HugeiconsSearch01";
 import HugeiconsLocation04 from "@/icons/HugeiconsLocation04";
 
@@ -71,10 +73,10 @@ export default function GlobalSearchBoxComponent(): ReactElement {
       />
       <div className={styles.divider}></div>
       <div className={styles.cities}>
-        <button>
+        <ButtonComponent variant={"muted"}>
           <HugeiconsLocation04 />
           همه شهرها
-        </button>
+        </ButtonComponent>
       </div>
     </form>
   );

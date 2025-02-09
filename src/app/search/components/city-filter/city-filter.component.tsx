@@ -21,13 +21,16 @@ export default function CityFilterComponent(): ReactElement {
     <FilterCardComponent title={"شهر برگزارکننده"}>
       <ul className={styles["city-filter"]}>
         {options.map((option) => (
-          <FilterContentComponent
-            key={option}
-            option={option}
-            filterKey={"city"}
-            className={styles.item}
-            activeClassName={styles.active}
-          />
+          <li key={option}>
+            <FilterContentComponent
+              option={option}
+              filterKey={"city"}
+              className={styles.item}
+              activeClassName={styles.active}
+              buttonVariant={"muted"}
+              buttonShape={"ghost"}
+            />
+          </li>
         ))}
       </ul>
     </FilterCardComponent>

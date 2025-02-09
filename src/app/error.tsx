@@ -2,6 +2,8 @@
 import { ReactElement } from "react";
 import Image from "next/image";
 
+import ButtonComponent from "@/components/button/button.component";
+
 import errorImage from "@/assets/illustrations/warning.svg";
 
 import styles from "./error.module.css";
@@ -19,7 +21,9 @@ export default function Error({ error, reset }: Props): ReactElement {
         <p>با عرض پوزش لطفا با پشتیبانی تماس بگیرید</p>
       </div>
       <div className={styles.actions}>
-        <button onClick={reset}>تلاش مجدد</button>
+        <ButtonComponent onClick={reset} size={"lg"}>
+          تلاش مجدد
+        </ButtonComponent>
       </div>
       <div className={styles.log}>
         <details>

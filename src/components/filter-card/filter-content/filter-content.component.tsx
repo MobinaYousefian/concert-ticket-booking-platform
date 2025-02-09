@@ -2,14 +2,21 @@
 import { ComponentProps, ReactElement, useContext } from "react";
 import { clsx } from "clsx";
 
+import ButtonComponent, {
+  ButtonShape,
+  ButtonVariant,
+} from "@/components/button/button.component";
+
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
 import { FiltersType } from "@/types/filters.type";
 
-type Props = ComponentProps<"li"> & {
+type Props = ComponentProps<"button"> & {
   option: string;
   filterKey: keyof FiltersType;
   activeClassName: string;
+  buttonShape?: ButtonShape;
+  buttonVariant?: ButtonVariant;
 };
 
 export default function FilterContentComponent({
@@ -17,6 +24,8 @@ export default function FilterContentComponent({
   filterKey,
   className,
   activeClassName,
+  buttonShape = "solid",
+  buttonVariant = "primary",
   ...otherProps
 }: Props): ReactElement {
   const { filters, dispatchFilters } = useContext(FiltersContext);
@@ -27,7 +36,9 @@ export default function FilterContentComponent({
   };
 
   return (
-    <li
+    <ButtonComponent
+      shape={buttonShape}
+      variant={buttonVariant}
       className={clsx(
         className,
         filters[filterKey] === option && activeClassName,
@@ -36,6 +47,6 @@ export default function FilterContentComponent({
       {...otherProps}
     >
       {option}
-    </li>
+    </ButtonComponent>
   );
 }

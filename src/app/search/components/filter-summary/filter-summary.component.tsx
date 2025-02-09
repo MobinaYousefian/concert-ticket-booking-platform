@@ -1,6 +1,8 @@
 "use client";
 import { ReactElement, useContext, useMemo } from "react";
 
+import ButtonComponent from "@/components/button/button.component";
+
 import HugeiconsCancel01 from "@/icons/HugeiconsCancel01";
 
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
@@ -29,26 +31,38 @@ export default function FilterSummaryComponent(): ReactElement | null {
   return (
     <div className={styles["filter-summary"]}>
       <div className={styles.title}>فیلترها</div>
-      <button type="button" onClick={handleRemoveAll}>
+      <ButtonComponent
+        variant={"destructive"}
+        size={"sm"}
+        type="button"
+        onClick={handleRemoveAll}
+        className={styles["remove-all"]}
+      >
         حذف همه
-      </button>
+      </ButtonComponent>
       <ul className={styles.filters}>
         {filters.query && (
           <li onClick={() => handleRemoveFilter("query")}>
-            {filters.query}
-            <HugeiconsCancel01 />
+            <ButtonComponent variant={"muted"} size={"sm"}>
+              {filters.query}
+              <HugeiconsCancel01 />
+            </ButtonComponent>
           </li>
         )}
         {filters.activityType && (
           <li onClick={() => handleRemoveFilter("activityType")}>
-            {filters.activityType}
-            <HugeiconsCancel01 />
+            <ButtonComponent variant={"muted"} size={"sm"}>
+              {filters.activityType}
+              <HugeiconsCancel01 />
+            </ButtonComponent>
           </li>
         )}
         {filters.city && (
           <li onClick={() => handleRemoveFilter("city")}>
-            {filters.city}
-            <HugeiconsCancel01 />
+            <ButtonComponent variant={"muted"} size={"sm"}>
+              {filters.city}
+              <HugeiconsCancel01 />
+            </ButtonComponent>
           </li>
         )}
       </ul>

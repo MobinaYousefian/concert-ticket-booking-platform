@@ -1,40 +1,25 @@
 .filter-summary {
   display: grid;
   grid-template-areas: "title button" "filters filters";
-  align-items: baseline;
+  align-items: start;
+  column-gap: 0.5rem;
+  row-gap: 1rem;
+
+  background-color: var(--color-surface);
 
   border-radius: var(--border-radius);
-
   padding: 1rem;
-  background-color: var(--color-surface);
 
   box-shadow: var(--shadow-500);
 
   .title {
     grid-area: title;
-
-    font-size: var(--fz-400);
-    margin-block-end: 1rem;
   }
-  > button {
+
+  .remove-all {
     grid-area: button;
-    justify-self: flex-end;
-
-    background-color: var(--color-danger);
-    color: var(--color-danger-opposite);
-
-    padding: 0.25rem 0.75rem;
-
-    border: 1px solid var(--color-danger);
-    border-radius: 999px;
-
+    justify-self: end;
     font-size: var(--fz-300);
-
-    cursor: pointer;
-
-    &:hover {
-      background-color: var(--color-danger-lighter);
-    }
   }
 
   .filters {
@@ -44,30 +29,16 @@
     gap: 0.5rem;
 
     > li {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      > button {
+        border-radius: 999px;
+        font-size: var(--fz-300);
 
-      background-color: var(--color-surface-muted);
-      color: var(--color-text-muted);
+        &:hover {
+          background-color: var(--color-destructive);
+          color: var(--color-destructive-opposite);
 
-      padding: 0.25rem 0.75rem;
-
-      border-radius: 999px;
-
-      font-size: var(--fz-300);
-
-      cursor: pointer;
-
-      > svg {
-        font-size: var(--fz-500);
-      }
-
-      &:hover {
-        background-color: var(--color-danger);
-        color: var(--color-danger-opposite);
-
-        border-color: var(--color-danger);
+          border-color: var(--color-destructive);
+        }
       }
     }
   }

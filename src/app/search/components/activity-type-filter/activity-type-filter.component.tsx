@@ -12,13 +12,15 @@ export default function ActivityTypeFilterComponent(): ReactElement {
     <FilterCardComponent title={"نوع رویداد"}>
       <ul className={styles["activity-type-filter"]}>
         {options.map((option) => (
-          <FilterContentComponent
-            key={option}
-            option={option}
-            filterKey={"activityType"}
-            className={styles.item}
-            activeClassName={styles.active}
-          />
+          <li key={option}>
+            <FilterContentComponent
+              option={option}
+              filterKey={"activityType"}
+              className={styles.item}
+              activeClassName={styles.active}
+              buttonShape={"outline"}
+            />
+          </li>
         ))}
       </ul>
     </FilterCardComponent>

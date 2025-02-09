@@ -6,7 +6,7 @@
   align-content: center;
 
   &.active {
-    display: block;
+    display: grid;
   }
 
   > button {
@@ -14,13 +14,8 @@
     border: none;
 
     display: grid;
-    justify-content: center;
 
     > svg {
-      grid-row-start: 1;
-
-      color: var(--color-text);
-
       font-size: var(--fz-500);
       cursor: pointer;
     }

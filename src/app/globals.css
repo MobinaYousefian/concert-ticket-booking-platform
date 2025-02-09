@@ -31,7 +31,7 @@
   --color-surface-93: hsl(176 7% 93%); /* 93*/
   --color-surface-97: hsl(176 7% 96%); /* 97*/
   --color-surface: hsl(176 20% 99%); /* 99*/
-  --color-surface-muted: hsl(240 5.9% 94%);
+  --color-surface-muted: hsl(240 5.9% 92%);
 
   --color-text: var(--color-zinc-900);
   --color-text-muted: var(--color-zinc-600);
@@ -39,10 +39,10 @@
   --color-success: hsl(142.1 76.2% 36.3%);
   --color-info: hsl(32.1 94.6% 60%);
 
-  --color-danger: hsl(2 75% 58%);
-  --color-danger-opposite: hsl(2 75% 98%);
-  --color-danger-lighter: hsla(2 75% 62%);
-  --color-danger-darker: hsl(2 75% 54%);
+  --color-destructive: hsl(2 75% 58%);
+  --color-destructive-opposite: hsl(2 75% 98%);
+  --color-destructive-lighter: hsla(2 75% 62%);
+  --color-destructive-darker: hsl(2 75% 54%);
 
   --border-radius: 0.75rem;
   --color-border: hsl(240 5.9% 90%);

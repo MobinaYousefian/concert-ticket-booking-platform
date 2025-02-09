@@ -1,6 +1,7 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   padding-block: 1rem;
 
@@ -24,24 +25,13 @@
   }
 
   .cta {
-    background-color: transparent;
-    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
 
-    margin-inline-start: auto;
-    padding: 0.5rem 1rem;
-
-    border: 1px solid var(--color-primary);
-    border-radius: var(--border-radius);
-
-    font-weight: 700;
-
-    cursor: pointer;
-    transition: var(--animation-duration-fast) ease-in-out;
-    transition-property: background-color, color;
-
-    &:hover {
-      background-color: var(--color-primary);
-      color: var(--color-primary-opposite);
+    .login {
+      font-weight: 700;
     }
   }
 }

@@ -2,6 +2,8 @@ import { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import ButtonComponent from "@/components/button/button.component";
+
 import HugeiconsCalendar03 from "@/icons/HugeiconsCalendar03";
 import HugeiconsLocation04 from "@/icons/HugeiconsLocation04";
 import HugeiconsShoppingBag02 from "@/icons/HugeiconsShoppingBag02";
@@ -45,8 +47,10 @@ export default function ActivityCardComponent({
       </div>
       <div className={styles.cta}>
         <Link href={ACTIVITY_PAGE_URL}>
-          <HugeiconsShoppingBag02 />
-          خرید بلیت
+          <ButtonComponent className={styles.buy}>
+            <HugeiconsShoppingBag02 />
+            خرید بلیت
+          </ButtonComponent>
         </Link>
       </div>
     </section>

@@ -93,32 +93,13 @@
   }
 
   .cta {
-    display: grid;
-
     padding: 0.25rem 1rem 1rem;
 
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
+    .buy {
+      inline-size: 100%;
 
-      background-color: var(--color-primary);
-      color: var(--color-primary-opposite);
-
-      border: none;
-      border-radius: var(--border-radius);
-
-      padding: 0.5rem 2rem;
-
-      cursor: pointer;
-
-      transition: var(--animation-duration-fast) ease-in-out;
-      transition-property: background-color, color;
-
-      &:hover,
-      &:focus {
-        background-color: var(--color-primary-700);
+      > svg {
+        font-size: var(--fz-400);
       }
     }
   }
