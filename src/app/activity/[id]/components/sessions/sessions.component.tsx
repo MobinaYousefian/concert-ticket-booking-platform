@@ -70,7 +70,7 @@ export default function SessionsComponent({ session }: Props): ReactElement {
         </div>
         <button disabled={remainingTickets === 0}>
           <HugeiconsShoppingBag02 />
-          خرید بلیط
+          خرید بلیت
         </button>
       </div>
     </div>

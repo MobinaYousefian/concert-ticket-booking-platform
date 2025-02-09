@@ -98,9 +98,9 @@ export default function ActivityInfoComponent({
             <li key={item}>{item}</li>
           ))}
           <li>
-            تکمیل فرآیند خرید به آن معناست که همه‌
+            تکمیل فرآیند خرید به معنای پذیرفتن‌
             <strong className={styles.terms}>قوانین و شرایط</strong>
-            ‌پذیرفته شده‌است.
+            ‌این وب‌سایت می‌باشد.
           </li>
         </ul>
       </div>

@@ -77,7 +77,7 @@ export default function FooterComponent(): ReactElement {
           <div>تماشاچی</div>
         </div>
         <p className={styles.description}>
-          پلتفرم خرید بلیط کنسرت‌ها و تئاترهای سراسر کشور
+          پلتفرم خرید بلیت کنسرت‌ها و تئاترهای سراسر کشور
         </p>
       </div>
       <div className={styles.socials}>

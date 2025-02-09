@@ -46,7 +46,7 @@ export default function ActivityCardComponent({
       <div className={styles.cta}>
         <Link href={ACTIVITY_PAGE_URL}>
           <HugeiconsShoppingBag02 />
-          خرید بلیط
+          خرید بلیت
         </Link>
       </div>
     </section>
