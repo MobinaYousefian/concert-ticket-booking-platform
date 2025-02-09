@@ -7,6 +7,7 @@ import { ActivitySession } from "@/lib/data.type";
 import HugeiconsCheckmarkCircle01 from "@/icons/HugeiconsCheckmarkCircle01";
 import HugeiconsInformationCircle from "@/icons/HugeiconsInformationCircle";
 import HugeiconsCancelCircle from "@/icons/HugeiconsCancelCircle";
+import HugeiconsShoppingBag02 from "@/icons/HugeiconsShoppingBag02";
 
 import styles from "./sessions.module.css";
 
@@ -67,7 +68,10 @@ export default function SessionsComponent({ session }: Props): ReactElement {
             )}
           </span>
         </div>
-        <button disabled={remainingTickets === 0}>خرید بلیط</button>
+        <button disabled={remainingTickets === 0}>
+          <HugeiconsShoppingBag02 />
+          خرید بلیط
+        </button>
       </div>
     </div>
   );

@@ -37,13 +37,16 @@
   }
 
   .date {
+    display: grid;
+    align-items: center;
+
     background-color: var(--color-primary);
     color: var(--color-primary-opposite);
 
     border-start-start-radius: var(--border-radius);
     border-end-start-radius: var(--border-radius);
 
-    padding-inline-start: 1.5rem;
+    padding-inline-start: 1.25rem;
 
     font-size: var(--fz-300);
     text-align: center;
@@ -66,8 +69,9 @@
 
   .info {
     display: grid;
-    grid-template-columns: 1.75fr 1fr;
     align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(8.875rem, 1fr));
+    gap: 1rem;
 
     border: 2px solid var(--color-border-primary);
     border-inline-start: 0;
@@ -75,7 +79,7 @@
     border-end-end-radius: var(--border-radius);
     border-start-end-radius: var(--border-radius);
 
-    padding-inline-end: 2rem;
+    padding-inline-end: 1.75rem;
 
     transition: var(--animation-duration-normal) ease-in-out;
     transition-property: all;
@@ -103,13 +107,19 @@
     }
 
     > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      justify-self: end;
+
       background-color: var(--color-primary);
       color: var(--color-primary-opposite);
 
       border-radius: var(--border-radius);
       border: none;
 
-      padding: 0.5rem 0.75rem;
+      padding: 0.5rem 1.25rem;
 
       cursor: pointer;
 

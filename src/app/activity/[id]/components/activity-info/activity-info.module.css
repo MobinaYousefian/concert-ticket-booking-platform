@@ -1,0 +1,109 @@
+.activity-info {
+  grid-area: writings;
+
+  .heading {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    margin-block-end: 1.5rem;
+
+    > h1 {
+      font-size: var(--fz-500);
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      flex-flow: row-reverse wrap;
+      gap: 0.625rem;
+
+      .cta {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        cursor: pointer;
+
+        > span {
+          font-size: var(--fz-200);
+          color: var(--color-zinc-700);
+        }
+      }
+
+      #favorite {
+        &:hover {
+          > * {
+            color: var(--color-hover-favorite);
+          }
+        }
+      }
+
+      #share {
+        &:hover {
+          > * {
+            color: var(--color-hover-share);
+          }
+        }
+      }
+    }
+  }
+
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    margin-block-end: 1.25rem;
+
+    > li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: var(--fz-500);
+        color: var(--color-primary);
+      }
+
+      > p {
+        font-size: var(--fz-300);
+      }
+
+      .label {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.notice {
+  > ul {
+    display: grid;
+    gap: 0.5rem;
+
+    margin-block: 1.75rem 1.5rem;
+
+    color: var(--color-zinc-700);
+    font-size: var(--fz-300);
+
+    > li {
+      list-style: inside;
+
+      &::marker {
+        color: var(--color-primary);
+      }
+
+      .terms {
+        padding-inline: 0.25rem;
+        color: var(--color-primary);
+      }
+    }
+  }
+}

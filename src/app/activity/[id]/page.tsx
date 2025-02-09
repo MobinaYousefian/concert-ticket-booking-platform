@@ -2,63 +2,12 @@ import { ReactElement } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-import SectionCardComponent from "@/app/activity/[id]/components/section-card/section-card.component";
+import ActivityInfoComponent from "@/app/activity/[id]/components/activity-info/activity-info.component";
 import SessionsComponent from "@/app/activity/[id]/components/sessions/sessions.component";
-
-import HugeiconsCalendar03 from "@/icons/HugeiconsCalendar03";
-import HugeiconsLocation04 from "@/icons/HugeiconsLocation04";
-import HugeiconsClock01 from "@/icons/HugeiconsClock01";
-import HugeiconsFavourite from "@/icons/HugeiconsFavourite";
-import HugeiconsShare08 from "@/icons/HugeiconsShare08";
 
 import { activity } from "@/lib/data";
 
 import styles from "./page.module.css";
-
-type Action = {
-  id: string;
-  icon: ReactElement;
-  label: string;
-};
-const actions: Action[] = [
-  {
-    id: "favorite",
-    icon: <HugeiconsFavourite />,
-    label: "علاقه‌مندی‌ها",
-  },
-  {
-    id: "share",
-    icon: <HugeiconsShare08 />,
-    label: "اشتراک ‌گذاری",
-  },
-];
-
-type DateTimeInfo = {
-  id: number;
-  icon: ReactElement;
-  label: string;
-  data: "date" | "time" | "location";
-};
-const dateTimeInfo: DateTimeInfo[] = [
-  {
-    id: 1,
-    icon: <HugeiconsCalendar03 />,
-    label: "تاریخ اجرا: ",
-    data: "date",
-  },
-  {
-    id: 2,
-    icon: <HugeiconsClock01 />,
-    label: "ساعت: ",
-    data: "time",
-  },
-  {
-    id: 3,
-    icon: <HugeiconsLocation04 />,
-    label: "محل برگزاری: ",
-    data: "location",
-  },
-];
 
 type Props = {
   params: { id: string };
@@ -84,46 +33,7 @@ export default function Page({ params }: Props): ReactElement {
           priority
         />
       </div>
-      <SectionCardComponent>
-        <div className={styles.writings}>
-          <div className={styles.heading}>
-            <h1>{activityData.title}</h1>
-            <div className={styles.actions}>
-              {actions.map(({ id, icon, label }) => (
-                <div key={id} id={styles[id]} className={styles.cta}>
-                  {icon}
-                  <span>{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <ul>
-            {dateTimeInfo.map(({ id, icon, label, data }) => (
-              <li key={id}>
-                <div className={styles.icon}>{icon}</div>
-                <p className={styles.label}>{label}</p>
-                <p>
-                  {data === "location" && `${activityData.city}،` + " "}
-                  {activityData[data]}
-                </p>
-              </li>
-            ))}
-          </ul>
-          <div className={"perforations"}></div>
-        </div>
-        <div className={styles.notice}>
-          <ul role={"list"}>
-            {activityData.noticeList.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-            <li>
-              تکمیل فرآیند خرید به آن معناست که همه‌
-              <strong className={styles.terms}>قوانین و شرایط</strong>
-              ‌پذیرفته شده‌است.
-            </li>
-          </ul>
-        </div>
-      </SectionCardComponent>
+      <ActivityInfoComponent activityData={activityData} />
       <section className={styles.sessions}>
         {activityData.sessions.map((session) => (
           <SessionsComponent key={session.id} session={session} />
