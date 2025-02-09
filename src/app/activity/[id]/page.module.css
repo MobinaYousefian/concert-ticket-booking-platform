@@ -6,6 +6,8 @@
 
   margin-block: 2rem;
 
+  overflow-x: hidden;
+
   .banner {
     grid-area: banner;
     justify-self: center;
