@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 
 import SectionCardComponent from "@/app/activity/[id]/components/section-card/section-card.component";
+import PriceButtonComponent from "@/app/activity/[id]/components/price-button/price-button.component";
 
 import { Activity } from "@/lib/data.type";
 
@@ -103,6 +104,9 @@ export default function ActivityInfoComponent({
             ‌این وب‌سایت می‌باشد.
           </li>
         </ul>
+        <PriceButtonComponent
+          remainingSessions={activityData.remainingSessions}
+        />
       </div>
     </SectionCardComponent>
   );

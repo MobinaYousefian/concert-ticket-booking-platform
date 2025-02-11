@@ -1,0 +1,40 @@
+.modal-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-surface-modal);
+
+  inline-size: 100%;
+  block-size: 100vh;
+  block-size: 100dvh;
+
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  .modal {
+    background-color: var(--color-surface);
+
+    inline-size: min(34rem, 80%);
+
+    padding: 1rem;
+    border-radius: var(--border-radius);
+
+    box-shadow: var(--shadow-500);
+
+    .close {
+      > button {
+        padding: 0;
+
+        > svg {
+          font-size: var(--fz-500);
+        }
+
+        &:hover {
+          color: var(--color-destructive);
+        }
+      }
+    }
+  }
+}

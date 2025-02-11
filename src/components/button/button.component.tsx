@@ -4,7 +4,7 @@ import { clsx } from "clsx";
 
 import styles from "./button.module.css";
 
-export type ButtonShape = "solid" | "outline" | "link" | "ghost";
+export type ButtonShape = "solid" | "outline" | "link" | "ghost" | "icon";
 export type ButtonVariant = "primary" | "muted" | "destructive";
 export type ButtonSize = "sm" | "md" | "lg";
 
