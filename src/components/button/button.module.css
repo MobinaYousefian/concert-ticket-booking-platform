@@ -17,6 +17,10 @@
     font-size: 1.25em;
   }
 
+  &:disabled {
+    pointer-events: none;
+  }
+
   &.solid {
     background-color: var(--background-color);
     color: var(--color);
