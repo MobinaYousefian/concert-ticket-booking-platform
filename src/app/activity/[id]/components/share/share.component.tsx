@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 import { usePathname } from "next/navigation";
 
 import ButtonComponent from "@/components/button/button.component";
-import { openPopup } from "@/popup/popup/popup.component";
+import { openPopup } from "@/components/popup/popup.component";
 
 import HugeiconsShare08 from "@/icons/HugeiconsShare08";
 

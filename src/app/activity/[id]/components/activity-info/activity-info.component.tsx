@@ -2,8 +2,8 @@ import { ReactElement } from "react";
 
 import SectionCardComponent from "@/app/activity/[id]/components/section-card/section-card.component";
 import PriceButtonComponent from "@/app/activity/[id]/components/price-button/price-button.component";
-import AddFavoriteComponent from "@/components/add-favorite/add-favorite.component";
-import ShareComponent from "@/components/share/share.component";
+import AddFavoriteComponent from "@/app/activity/[id]/components/add-favorite/add-favorite.component";
+import ShareComponent from "@/app/activity/[id]/components/share/share.component";
 
 import { Activity } from "@/lib/data.type";
 

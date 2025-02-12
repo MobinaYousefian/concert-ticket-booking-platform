@@ -57,7 +57,7 @@ export default function PopupComponent({
     </div>
   );
 }
-
+/* todo: fix popup call function */
 export function openPopup({
   children,
   variant = "default",
