@@ -3,3 +3,5 @@ export type FiltersType = {
   activityType?: string;
   city?: string;
 };
+
+export type SessionId = string | undefined;

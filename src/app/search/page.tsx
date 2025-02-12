@@ -11,9 +11,11 @@ import StatsComponent from "@/app/search/components/stats/stats.component";
 import FiltersProvider from "@/app/search/providers/filters/filters.provider";
 import ActivityProvider from "@/app/search/providers/activity/activity.provider";
 
+import { FiltersType } from "@/types/filters.type";
+
 import { activity } from "@/lib/data";
 
-import { FiltersType } from "@/types/filters.type";
+import { normalizeSearchParam } from "@/utils/functions";
 
 import styles from "./page.module.css";
 
@@ -57,18 +59,8 @@ function generateDefaultFilters(searchParams: SearchParams): FiltersType {
   const { query, activityType, city } = searchParams;
 
   return {
-    query: normalizeFilter(query),
-    activityType: normalizeFilter(activityType),
-    city: normalizeFilter(city),
+    query: normalizeSearchParam(query),
+    activityType: normalizeSearchParam(activityType),
+    city: normalizeSearchParam(city),
   };
-}
-
-function normalizeFilter(
-  value: string | string[] | undefined,
-): string | undefined {
-  if (Array.isArray(value)) {
-    return value[0];
-  }
-
-  return value;
 }
