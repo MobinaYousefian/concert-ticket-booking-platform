@@ -116,22 +116,18 @@
 
     &:hover {
       color: var(--color-hover);
-      background-color: var(--background-color-hover);
     }
 
     &.primary {
       --color: var(--color-primary);
-      --background-color-hover: var(--color-primary-opposite);
     }
 
     &.muted {
       --color: var(--color-text-muted);
-      --background-color-hover: var(--color-surface-muted);
     }
 
     &.destructive {
       --color: var(--color-destructive);
-      --background-color-hover: var(--color-destructive-opposite);
     }
   }
 

@@ -2,34 +2,16 @@ import { ReactElement } from "react";
 
 import SectionCardComponent from "@/app/activity/[id]/components/section-card/section-card.component";
 import PriceButtonComponent from "@/app/activity/[id]/components/price-button/price-button.component";
+import AddFavoriteComponent from "@/components/add-favorite/add-favorite.component";
+import ShareComponent from "@/components/share/share.component";
 
 import { Activity } from "@/lib/data.type";
 
-import HugeiconsFavourite from "@/icons/HugeiconsFavourite";
-import HugeiconsShare08 from "@/icons/HugeiconsShare08";
 import HugeiconsCalendar03 from "@/icons/HugeiconsCalendar03";
 import HugeiconsClock01 from "@/icons/HugeiconsClock01";
 import HugeiconsLocation04 from "@/icons/HugeiconsLocation04";
 
 import styles from "./activity-info.module.css";
-
-type Action = {
-  id: string;
-  icon: ReactElement;
-  label: string;
-};
-const actions: Action[] = [
-  {
-    id: "favorite",
-    icon: <HugeiconsFavourite />,
-    label: "علاقه‌مندی‌ها",
-  },
-  {
-    id: "share",
-    icon: <HugeiconsShare08 />,
-    label: "اشتراک ‌گذاری",
-  },
-];
 
 type DateTimeInfo = {
   id: number;
@@ -71,12 +53,8 @@ export default function ActivityInfoComponent({
         <div className={styles.heading}>
           <h1>{activityData.title}</h1>
           <div className={styles.actions}>
-            {actions.map(({ id, icon, label }) => (
-              <div key={id} id={styles[id]} className={styles.cta}>
-                {icon}
-                <span>{label}</span>
-              </div>
-            ))}
+            <AddFavoriteComponent />
+            <ShareComponent />
           </div>
         </div>
         <ul>

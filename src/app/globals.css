@@ -38,7 +38,14 @@
   --color-text-muted: var(--color-zinc-600);
 
   --color-success: hsl(142.1 76.2% 36.3%);
-  --color-info: hsl(32.1 94.6% 60%);
+  --color-success-opposite: hsl(142.1 76.2% 98%);
+  --color-success-lighter: hsla(142.1 76.2% 40.3%);
+  --color-success-darker: hsl(142.1 76.2% 32.3%);
+
+  --color-warning: hsl(32.1 90% 64%);
+  --color-warning-opposite: hsl(32.1 90% 14%);
+  --color-warning-lighter: hsla(32.1 90% 68%);
+  --color-warning-darker: hsl(32.1 90% 62%);
 
   --color-destructive: hsl(2 75% 58%);
   --color-destructive-opposite: hsl(2 75% 98%);
