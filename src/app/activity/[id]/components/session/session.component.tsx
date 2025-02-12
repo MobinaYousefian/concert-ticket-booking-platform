@@ -2,16 +2,15 @@ import { ReactElement } from "react";
 
 import { clsx } from "clsx";
 
-import ButtonComponent from "@/components/button/button.component";
+import BuyButtonComponent from "@/app/activity/[id]/components/session/buy-button/buy-button.component";
 
 import { ActivitySession } from "@/lib/data.type";
 
 import HugeiconsCheckmarkCircle01 from "@/icons/HugeiconsCheckmarkCircle01";
 import HugeiconsInformationCircle from "@/icons/HugeiconsInformationCircle";
 import HugeiconsCancelCircle from "@/icons/HugeiconsCancelCircle";
-import HugeiconsShoppingBag02 from "@/icons/HugeiconsShoppingBag02";
 
-import styles from "./sessions.module.css";
+import styles from "./session.module.css";
 
 const stock = {
   IN: {
@@ -32,7 +31,7 @@ type Props = {
   session: ActivitySession;
 };
 
-export default function SessionsComponent({ session }: Props): ReactElement {
+export default function SessionComponent({ session }: Props): ReactElement {
   const remainingTickets = session.remainingTickets;
 
   const weekday = session.date.split(" ")[0];
@@ -70,10 +69,10 @@ export default function SessionsComponent({ session }: Props): ReactElement {
             )}
           </span>
         </div>
-        <ButtonComponent disabled={remainingTickets === 0}>
-          <HugeiconsShoppingBag02 />
-          خرید بلیت
-        </ButtonComponent>
+        <BuyButtonComponent
+          remainingTickets={remainingTickets}
+          sessionId={session.id}
+        />
       </div>
     </div>
   );
