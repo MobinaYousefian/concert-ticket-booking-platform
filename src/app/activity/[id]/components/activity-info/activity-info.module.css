@@ -18,6 +18,15 @@
       align-items: center;
       flex-flow: row-reverse wrap;
       gap: 0.625rem;
+
+      > * {
+        gap: 0.25rem;
+        padding: 0;
+
+        > svg {
+          font-size: var(--fz-400);
+        }
+      }
     }
   }
 

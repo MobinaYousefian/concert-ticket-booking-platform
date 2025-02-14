@@ -7,9 +7,9 @@ import { openPopup } from "@/components/popup/popup.component";
 
 import HugeiconsShare08 from "@/icons/HugeiconsShare08";
 
-import styles from "./share.module.css";
+import { DOMAIN_URL } from "@/lib/constants";
 
-const DOMAIN_URL = "https://tamashachi.vercel.app";
+import styles from "./share.module.css";
 
 export default function ShareComponent(): ReactElement {
   const pathname = usePathname();
@@ -28,16 +28,14 @@ export default function ShareComponent(): ReactElement {
   };
 
   return (
-    <>
-      <ButtonComponent
-        shape={"ghost"}
-        variant={"muted"}
-        className={styles.share}
-        onClick={handleShare}
-      >
-        <HugeiconsShare08 />
-        <span>اشتراک ‌گذاری</span>
-      </ButtonComponent>
-    </>
+    <ButtonComponent
+      shape={"ghost"}
+      variant={"muted"}
+      className={styles.share}
+      onClick={handleShare}
+    >
+      <HugeiconsShare08 />
+      <span>اشتراک ‌گذاری</span>
+    </ButtonComponent>
   );
 }

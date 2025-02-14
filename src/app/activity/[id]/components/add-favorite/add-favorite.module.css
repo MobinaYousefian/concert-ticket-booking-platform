@@ -1,15 +1,7 @@
 .add-favorite {
-  gap: 0.25rem;
-
-  padding: 0;
-
   > span {
     font-size: var(--fz-200);
     color: var(--color-zinc-700);
-  }
-
-  > svg {
-    font-size: var(--fz-400);
   }
 
   &:hover {
