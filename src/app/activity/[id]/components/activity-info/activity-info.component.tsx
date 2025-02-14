@@ -83,7 +83,7 @@ export default function ActivityInfoComponent({
           </li>
         </ul>
         <PriceButtonComponent
-          remainingSessions={activityData.remainingSessions}
+          remainingShowings={activityData.remainingShowings}
         />
       </div>
     </SectionCardComponent>

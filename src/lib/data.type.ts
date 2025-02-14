@@ -9,11 +9,11 @@ export interface Activity {
   city: string;
   activityType: string;
   noticeList: string[];
-  sessions: ActivitySession[];
-  remainingSessions: number;
+  showings: ActivityShowing[];
+  remainingShowings: number;
 }
 
-export type ActivitySession = {
+export type ActivityShowing = {
   id: number;
   remainingTickets: number;
   date: string;

@@ -1,6 +1,6 @@
 .page {
   display: grid;
-  grid-template-areas: "banner" "writings" "session";
+  grid-template-areas: "banner" "writings" "showings";
   align-items: start;
   gap: 1rem;
 
@@ -26,8 +26,8 @@
     }
   }
 
-  .sessions {
-    grid-area: session;
+  .showings {
+    grid-area: showings;
     display: grid;
     gap: 1.5rem;
 
@@ -37,7 +37,7 @@
 
 @media screen and (min-width: 768px) {
   .page {
-    grid-template-areas: "writings banner" "session session";
+    grid-template-areas: "writings banner" "showings showings";
     grid-template-columns: 3fr 1fr;
 
     .banner {
@@ -50,7 +50,7 @@
       }
     }
 
-    .sessions {
+    .showings {
       grid-template-columns: repeat(2, 1fr);
     }
   }

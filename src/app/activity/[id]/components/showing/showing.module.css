@@ -1,4 +1,4 @@
-.card {
+.showing {
   display: grid;
   grid-template-columns: auto 3fr;
 

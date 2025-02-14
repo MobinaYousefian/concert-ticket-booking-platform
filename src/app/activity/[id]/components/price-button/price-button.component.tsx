@@ -9,11 +9,11 @@ import { openModal } from "@/utils/functions";
 import styles from "./price-button.module.css";
 
 type Props = {
-  remainingSessions: Activity["remainingSessions"];
+  remainingShowings: Activity["remainingShowings"];
 };
 
 export default function PriceButtonComponent({
-  remainingSessions,
+  remainingShowings,
 }: Props): ReactElement {
   const DynamicModal = dynamic(
     () =>
@@ -27,7 +27,7 @@ export default function PriceButtonComponent({
   return (
     <div className={styles["price-button"]}>
       <button
-        disabled={remainingSessions === 0}
+        disabled={remainingShowings === 0}
         onClick={() => openModal<boolean>(setShowModal, true)}
       >
         لیست قیمت بلیت‌ها

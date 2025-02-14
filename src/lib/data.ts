@@ -16,7 +16,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2222,
         remainingTickets: 20,
@@ -24,7 +24,7 @@ export const activity: Activity[] = [
         time: "21:30",
       },
     ],
-    remainingSessions: 1,
+    remainingShowings: 1,
   },
   {
     id: 1112,
@@ -41,7 +41,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2223,
         remainingTickets: 0,
@@ -67,7 +67,7 @@ export const activity: Activity[] = [
         time: "18:00",
       },
     ],
-    remainingSessions: 3,
+    remainingShowings: 3,
   },
   {
     id: 1113,
@@ -84,7 +84,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2227,
         remainingTickets: 0,
@@ -92,7 +92,7 @@ export const activity: Activity[] = [
         time: "20:30",
       },
     ],
-    remainingSessions: 0,
+    remainingShowings: 0,
   },
   {
     id: 1114,
@@ -109,7 +109,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2228,
         remainingTickets: 64,
@@ -117,7 +117,7 @@ export const activity: Activity[] = [
         time: "21:00",
       },
     ],
-    remainingSessions: 1,
+    remainingShowings: 1,
   },
   {
     id: 1115,
@@ -134,7 +134,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2229,
         remainingTickets: 19,
@@ -160,7 +160,7 @@ export const activity: Activity[] = [
         time: "21:30",
       },
     ],
-    remainingSessions: 4,
+    remainingShowings: 4,
   },
   {
     id: 1116,
@@ -177,7 +177,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2235,
         remainingTickets: 2,
@@ -191,7 +191,7 @@ export const activity: Activity[] = [
         time: "19:00",
       },
     ],
-    remainingSessions: 2,
+    remainingShowings: 2,
   },
   {
     id: 1117,
@@ -208,7 +208,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2237,
         remainingTickets: 72,
@@ -222,7 +222,7 @@ export const activity: Activity[] = [
         time: "20:30",
       },
     ],
-    remainingSessions: 2,
+    remainingShowings: 2,
   },
   {
     id: 1118,
@@ -239,7 +239,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2241,
         remainingTickets: 112,
@@ -253,7 +253,7 @@ export const activity: Activity[] = [
         time: "18:30",
       },
     ],
-    remainingSessions: 2,
+    remainingShowings: 2,
   },
   {
     id: 1119,
@@ -270,7 +270,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2243,
         remainingTickets: 13,
@@ -278,7 +278,7 @@ export const activity: Activity[] = [
         time: "18:00",
       },
     ],
-    remainingSessions: 1,
+    remainingShowings: 1,
   },
   {
     id: 1120,
@@ -295,7 +295,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2244,
         remainingTickets: 98,
@@ -303,7 +303,7 @@ export const activity: Activity[] = [
         time: "20:00",
       },
     ],
-    remainingSessions: 1,
+    remainingShowings: 1,
   },
   {
     id: 1121,
@@ -320,7 +320,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2245,
         remainingTickets: 0,
@@ -328,7 +328,7 @@ export const activity: Activity[] = [
         time: "19:00",
       },
     ],
-    remainingSessions: 0,
+    remainingShowings: 0,
   },
   {
     id: 1122,
@@ -345,7 +345,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2246,
         remainingTickets: 0,
@@ -365,7 +365,7 @@ export const activity: Activity[] = [
         time: "21:00",
       },
     ],
-    remainingSessions: 0,
+    remainingShowings: 0,
   },
   {
     id: 1123,
@@ -382,7 +382,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2249,
         remainingTickets: 0,
@@ -390,7 +390,7 @@ export const activity: Activity[] = [
         time: "19:30",
       },
     ],
-    remainingSessions: 0,
+    remainingShowings: 0,
   },
   {
     id: 1124,
@@ -407,7 +407,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2250,
         remainingTickets: 120,
@@ -427,7 +427,7 @@ export const activity: Activity[] = [
         time: "20:00",
       },
     ],
-    remainingSessions: 3,
+    remainingShowings: 3,
   },
   {
     id: 1125,
@@ -444,7 +444,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2253,
         remainingTickets: 234,
@@ -458,7 +458,7 @@ export const activity: Activity[] = [
         time: "18:30",
       },
     ],
-    remainingSessions: 2,
+    remainingShowings: 2,
   },
   {
     id: 1126,
@@ -475,7 +475,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2255,
         remainingTickets: 102,
@@ -483,7 +483,7 @@ export const activity: Activity[] = [
         time: "21:30",
       },
     ],
-    remainingSessions: 1,
+    remainingShowings: 1,
   },
   {
     id: 1127,
@@ -500,7 +500,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2256,
         remainingTickets: 0,
@@ -508,7 +508,7 @@ export const activity: Activity[] = [
         time: "21:00",
       },
     ],
-    remainingSessions: 0,
+    remainingShowings: 0,
   },
   {
     id: 1128,
@@ -525,7 +525,7 @@ export const activity: Activity[] = [
       "برای کودکان 4 سال به بالا نیاز به دریافت بلیت می‌باشد.",
       "لطفا در انتخاب صندلی دقت فرمایید، پس از اتمام خرید امکان جابجایی یا کنسلی وجود ندارد.",
     ],
-    sessions: [
+    showings: [
       {
         id: 2257,
         remainingTickets: 67,
@@ -533,6 +533,6 @@ export const activity: Activity[] = [
         time: "20:00",
       },
     ],
-    remainingSessions: 1,
+    remainingShowings: 1,
   },
 ];

@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 
 import ActivityInfoComponent from "@/app/activity/[id]/components/activity-info/activity-info.component";
-import SessionComponent from "@/app/activity/[id]/components/session/session.component";
-
-import { SessionId } from "@/types/filters.type";
+import ShowingComponent from "@/app/activity/[id]/components/showing/showing.component";
 
 import { activity } from "@/lib/data";
+
+import { ShowingId } from "@/types/showingId.type";
 
 import { normalizeSearchParam } from "@/utils/functions";
 
@@ -25,7 +25,7 @@ export default function Page({ params, searchParams }: Props): ReactElement {
     (item) => item.id.toString() === params.id,
   );
 
-  const defaultSessionId = generateDefaultSessionId(searchParams);
+  const defaultShowingId = generateDefaultShowingId(searchParams);
 
   if (!activityData) return notFound();
   return (
@@ -39,14 +39,14 @@ export default function Page({ params, searchParams }: Props): ReactElement {
           priority
         />
       </div>
-      {defaultSessionId !== undefined ? (
+      {defaultShowingId !== undefined ? (
         <div>اطلاعات این سانس</div>
       ) : (
         <>
           <ActivityInfoComponent activityData={activityData} />
-          <section className={styles.sessions}>
-            {activityData.sessions.map((session) => (
-              <SessionComponent key={session.id} session={session} />
+          <section className={styles.showings}>
+            {activityData.showings.map((showing) => (
+              <ShowingComponent key={showing.id} showing={showing} />
             ))}
           </section>
         </>
@@ -55,7 +55,7 @@ export default function Page({ params, searchParams }: Props): ReactElement {
   );
 }
 
-function generateDefaultSessionId(searchParams: SearchParams): SessionId {
-  const { sessionId } = searchParams;
-  return normalizeSearchParam(sessionId);
+function generateDefaultShowingId(searchParams: SearchParams): ShowingId {
+  const { showingId } = searchParams;
+  return normalizeSearchParam(showingId);
 }

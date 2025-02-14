@@ -6,18 +6,18 @@ import ButtonComponent from "@/components/button/button.component";
 
 import HugeiconsShoppingBag02 from "@/icons/HugeiconsShoppingBag02";
 
-import { ActivitySession } from "@/lib/data.type";
+import { ActivityShowing } from "@/lib/data.type";
 
 import styles from "./buy-button.module.css";
 
 type Props = {
-  remainingTickets: ActivitySession["remainingTickets"];
-  sessionId: ActivitySession["id"];
+  remainingTickets: ActivityShowing["remainingTickets"];
+  showingId: ActivityShowing["id"];
 };
 
 export default function BuyButtonComponent({
   remainingTickets,
-  sessionId,
+  showingId,
 }: Props): ReactElement {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -33,9 +33,9 @@ export default function BuyButtonComponent({
     [searchParams],
   );
 
-  const handleOpenSession = () => {
+  const handleOpenShowing = () => {
     router.push(
-      pathname + "?" + createQueryString("sessionId", sessionId.toString()),
+      pathname + "?" + createQueryString("showingId", showingId.toString()),
     );
   };
 
@@ -43,7 +43,7 @@ export default function BuyButtonComponent({
     <ButtonComponent
       className={styles["buy-button"]}
       disabled={remainingTickets === 0}
-      onClick={handleOpenSession}
+      onClick={handleOpenShowing}
     >
       <HugeiconsShoppingBag02 />
       خرید بلیت

@@ -2,15 +2,15 @@ import { ReactElement } from "react";
 
 import { clsx } from "clsx";
 
-import BuyButtonComponent from "@/app/activity/[id]/components/session/buy-button/buy-button.component";
+import BuyButtonComponent from "@/app/activity/[id]/components/showing/buy-button/buy-button.component";
 
-import { ActivitySession } from "@/lib/data.type";
+import { ActivityShowing } from "@/lib/data.type";
 
 import HugeiconsCheckmarkCircle01 from "@/icons/HugeiconsCheckmarkCircle01";
 import HugeiconsInformationCircle from "@/icons/HugeiconsInformationCircle";
 import HugeiconsCancelCircle from "@/icons/HugeiconsCancelCircle";
 
-import styles from "./session.module.css";
+import styles from "./showing.module.css";
 
 const stock = {
   IN: {
@@ -28,30 +28,33 @@ const stock = {
 };
 
 type Props = {
-  session: ActivitySession;
+  showing: ActivityShowing;
 };
 
-export default function SessionComponent({ session }: Props): ReactElement {
-  const remainingTickets = session.remainingTickets;
+export default function ShowingComponent({ showing }: Props): ReactElement {
+  const remainingTickets = showing.remainingTickets;
 
-  const weekday = session.date.split(" ")[0];
-  const month = session.date.split(" ").slice(1, 3).join(" ");
+  const weekday = showing.date.split(" ")[0];
+  const month = showing.date.split(" ").slice(1, 3).join(" ");
 
   return (
     <div
-      className={clsx(styles.card, remainingTickets === 0 && styles.inactive)}
+      className={clsx(
+        styles.showing,
+        remainingTickets === 0 && styles.inactive,
+      )}
     >
       <div className={styles.date}>
         <h3>
           <span>{weekday}</span>
           <span>{month}</span>
-          <span className={styles.time}>ساعت: {session.time}</span>
+          <span className={styles.time}>ساعت: {showing.time}</span>
         </h3>
       </div>
       <div className={styles.info}>
         <div className={styles["remain-seats"]}>
           <span className={styles.amount}>
-            صندلی‌های باقیمانده: {session.remainingTickets}
+            صندلی‌های باقیمانده: {remainingTickets}
           </span>
           <span className={styles.stats}>
             {remainingTickets > 10 ? (
@@ -71,7 +74,7 @@ export default function SessionComponent({ session }: Props): ReactElement {
         </div>
         <BuyButtonComponent
           remainingTickets={remainingTickets}
-          sessionId={session.id}
+          showingId={showing.id}
         />
       </div>
     </div>
