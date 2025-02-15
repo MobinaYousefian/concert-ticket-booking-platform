@@ -1,0 +1,13 @@
+.Toastify__toast {
+  font-size: var(--fz-300);
+}
+
+.Toastify__toast-icon {
+  margin-inline-end: 6px;
+}
+
+@media only screen and (max-width: 480px) {
+  .Toastify__toast-container--top-right {
+    right: env(safe-area-inset-right);
+  }
+}

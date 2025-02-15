@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-export function HugeiconsInformationCircle(props: SVGProps<SVGSVGElement>) {
+export function HugeiconsAlertCircle(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,10 +17,10 @@ export function HugeiconsInformationCircle(props: SVGProps<SVGSVGElement>) {
         strokeWidth="1.5"
         color="currentColor"
       >
-        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10s10-4.477 10-10"></path>
-        <path d="M12.242 17v-5c0-.471 0-.707-.146-.854c-.147-.146-.382-.146-.854-.146m.75-3h.009"></path>
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M11.992 15h.009M12 12V8"></path>
       </g>
     </svg>
   );
 }
-export default HugeiconsInformationCircle;
+export default HugeiconsAlertCircle;

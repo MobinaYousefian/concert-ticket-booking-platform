@@ -2,29 +2,46 @@
 import { ReactElement } from "react";
 import { usePathname } from "next/navigation";
 
+import { toast } from "react-toastify";
+
 import ButtonComponent from "@/components/button/button.component";
-import { openPopup } from "@/components/popup/popup.component";
 
 import HugeiconsShare08 from "@/icons/HugeiconsShare08";
 
 import { DOMAIN_URL } from "@/lib/constants";
 
+import { Activity } from "@/lib/data.type";
+
 import styles from "./share.module.css";
 
-export default function ShareComponent(): ReactElement {
+type Props = {
+  shareTitle: Activity["title"];
+};
+
+export default function ShareComponent({ shareTitle }: Props): ReactElement {
   const pathname = usePathname();
   const TARGET_URL = `${DOMAIN_URL}/${pathname}`;
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(TARGET_URL).then(() => {
-      openPopup({});
-      /* temp alert */
-      alert("لینک اشتراک گذاری کپی شد ✅");
+      toast.success("لینک اشتراک گذاری کپی شد", {
+        toastId: `copy ${TARGET_URL}`,
+      });
     });
   };
 
   const handleShare = () => {
-    copyToClipboard();
+    if (!navigator.share) {
+      copyToClipboard();
+    }
+
+    navigator
+      .share({ url: TARGET_URL, title: shareTitle, text: shareTitle })
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+        copyToClipboard();
+      });
   };
 
   return (

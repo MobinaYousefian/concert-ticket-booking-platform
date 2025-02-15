@@ -54,7 +54,7 @@ export default function ActivityInfoComponent({
           <h1>{activityData.title}</h1>
           <div className={styles.actions}>
             <AddFavoriteComponent />
-            <ShareComponent />
+            <ShareComponent shareTitle={activityData.title} />
           </div>
         </div>
         <ul>

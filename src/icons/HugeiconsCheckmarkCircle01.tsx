@@ -10,7 +10,7 @@ export function HugeiconsCheckmarkCircle01(props: SVGProps<SVGSVGElement>) {
       {...props}
     >
       <g
-        fill="none"
+        fill={props.fill ? props.fill : "none"}
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"

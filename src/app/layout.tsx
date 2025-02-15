@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
+import dynamic from "next/dynamic";
 
 import HeaderComponent from "@/components/header/header.component";
 import FooterComponent from "@/components/footer/footer.component";
@@ -22,6 +23,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const DynamicToastComponent = dynamic(
+    () =>
+      import("@/components/toastify-container/toastify-container.component"),
+  );
+
   return (
     <html lang="fa" dir={"rtl"}>
       <head>
@@ -38,6 +44,7 @@ export default function RootLayout({
           رزرو بلیت، اطلاع از آخرین کنسرت‌ها و نمایش‌های هنری
         </p>
         <FooterComponent />
+        <DynamicToastComponent />
       </body>
     </html>
   );
