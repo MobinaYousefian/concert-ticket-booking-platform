@@ -36,7 +36,7 @@ export default function ShareComponent({ shareTitle }: Props): ReactElement {
     }
 
     navigator
-      .share({ url: TARGET_URL, title: shareTitle, text: shareTitle })
+      .share({ url: TARGET_URL, title: shareTitle })
       .then(() => {})
       .catch((error) => {
         console.log(error);
