@@ -1,6 +1,6 @@
 "use client";
 import { ReactElement } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 import { toast } from "react-toastify";
 
@@ -20,7 +20,15 @@ type Props = {
 
 export default function ShareComponent({ shareTitle }: Props): ReactElement {
   const pathname = usePathname();
-  const TARGET_URL = `${DOMAIN_URL}/${pathname}`;
+  const searchParams = useSearchParams();
+
+  const showingIdParam = searchParams.get("showingId");
+
+  let TARGET_URL = `${DOMAIN_URL}/${pathname}`;
+
+  if (showingIdParam !== null) {
+    TARGET_URL = `${DOMAIN_URL}/${pathname}?showingId=${showingIdParam}`;
+  }
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(TARGET_URL).then(() => {
