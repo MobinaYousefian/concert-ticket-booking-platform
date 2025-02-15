@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 import { clsx } from "clsx";
 
-import BuyButtonComponent from "@/app/activity/[id]/components/showing/buy-button/buy-button.component";
+import BuyButtonComponent from "@/app/activity/[id]/components/showing-card/buy-button/buy-button.component";
 
 import { ActivityShowing } from "@/lib/data.type";
 
@@ -10,7 +10,7 @@ import HugeiconsCheckmarkCircle01 from "@/icons/HugeiconsCheckmarkCircle01";
 import HugeiconsInformationCircle from "@/icons/HugeiconsInformationCircle";
 import HugeiconsCancelCircle from "@/icons/HugeiconsCancelCircle";
 
-import styles from "./showing.module.css";
+import styles from "./showing-card.module.css";
 
 const stock = {
   IN: {
@@ -31,7 +31,7 @@ type Props = {
   showing: ActivityShowing;
 };
 
-export default function ShowingComponent({ showing }: Props): ReactElement {
+export default function ShowingCardComponent({ showing }: Props): ReactElement {
   const remainingTickets = showing.remainingTickets;
 
   const weekday = showing.date.split(" ")[0];
@@ -40,7 +40,7 @@ export default function ShowingComponent({ showing }: Props): ReactElement {
   return (
     <div
       className={clsx(
-        styles.showing,
+        styles["showing-card"],
         remainingTickets === 0 && styles.inactive,
       )}
     >

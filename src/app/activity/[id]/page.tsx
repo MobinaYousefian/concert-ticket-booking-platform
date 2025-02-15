@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 
 import ActivityInfoComponent from "@/app/activity/[id]/components/activity-info/activity-info.component";
-import ShowingComponent from "@/app/activity/[id]/components/showing/showing.component";
+import ShowingCardComponent from "@/app/activity/[id]/components/showing-card/showing-card.component";
 
 import { activity } from "@/lib/data";
 
@@ -45,9 +45,14 @@ export default function Page({ params, searchParams }: Props): ReactElement {
         <>
           <ActivityInfoComponent activityData={activityData} />
           <section className={styles.showings}>
-            {activityData.showings.map((showing) => (
-              <ShowingComponent key={showing.id} showing={showing} />
-            ))}
+            <div className={styles["showing-header"]}>
+              <h2>انتخاب سانس</h2>
+            </div>
+            <div className={styles["showing-card"]}>
+              {activityData.showings.map((showing) => (
+                <ShowingCardComponent key={showing.id} showing={showing} />
+              ))}
+            </div>
           </section>
         </>
       )}

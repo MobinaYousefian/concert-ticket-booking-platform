@@ -10,7 +10,10 @@
     margin-block-end: 1.5rem;
 
     > h1 {
-      font-size: var(--fz-500);
+      color: var(--color-zinc-800);
+
+      font-size: var(--fz-600);
+      font-weight: 600;
     }
 
     .actions {
