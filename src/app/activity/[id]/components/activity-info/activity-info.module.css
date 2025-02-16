@@ -1,6 +1,4 @@
 .activity-info {
-  grid-area: writings;
-
   .heading {
     display: flex;
     align-items: center;
@@ -61,33 +59,6 @@
 
       .label {
         font-weight: 600;
-      }
-    }
-  }
-}
-
-.notice {
-  > ul {
-    display: grid;
-    gap: 0.5rem;
-
-    margin-block: 2rem;
-
-    color: var(--color-zinc-700);
-    font-size: var(--fz-300);
-
-    > li {
-      list-style: inside;
-
-      &::marker {
-        color: var(--color-primary);
-      }
-
-      .terms {
-        padding-inline: 0.25rem;
-        color: var(--color-primary);
-
-        cursor: pointer;
       }
     }
   }

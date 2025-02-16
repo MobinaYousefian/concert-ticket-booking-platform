@@ -1,11 +1,9 @@
 import { ReactElement } from "react";
 
-import SectionCardComponent from "@/app/activity/[id]/components/section-card/section-card.component";
-import PriceButtonComponent from "@/app/activity/[id]/components/price-button/price-button.component";
 import AddFavoriteComponent from "@/app/activity/[id]/components/add-favorite/add-favorite.component";
 import ShareComponent from "@/app/activity/[id]/components/share/share.component";
 
-import { Activity } from "@/lib/data.type";
+import { ActivityForShowings } from "@/lib/data.type";
 
 import HugeiconsCalendar03 from "@/icons/HugeiconsCalendar03";
 import HugeiconsClock01 from "@/icons/HugeiconsClock01";
@@ -41,51 +39,33 @@ const dateTimeInfo: DateTimeInfo[] = [
 ];
 
 type Props = {
-  activityData: Activity;
+  activityData: ActivityForShowings;
 };
 
 export default function ActivityInfoComponent({
   activityData,
 }: Props): ReactElement {
   return (
-    <SectionCardComponent>
-      <div className={styles["activity-info"]}>
-        <div className={styles.heading}>
-          <h1>{activityData.title}</h1>
-          <div className={styles.actions}>
-            <AddFavoriteComponent />
-            <ShareComponent shareTitle={activityData.title} />
-          </div>
+    <div className={styles["activity-info"]}>
+      <div className={styles.heading}>
+        <h1>{activityData.title}</h1>
+        <div className={styles.actions}>
+          <AddFavoriteComponent />
+          <ShareComponent shareTitle={activityData.title} />
         </div>
-        <ul>
-          {dateTimeInfo.map(({ id, icon, label, data }) => (
-            <li key={id}>
-              <div className={styles.icon}>{icon}</div>
-              <p className={styles.label}>{label}</p>
-              <p>
-                {data === "location" && `${activityData.city}،` + " "}
-                {activityData[data]}
-              </p>
-            </li>
-          ))}
-        </ul>
-        <div className={"perforations"}></div>
       </div>
-      <div className={styles.notice}>
-        <ul role={"list"}>
-          {activityData.noticeList.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-          <li>
-            تکمیل فرآیند خرید به معنای پذیرفتن‌
-            <strong className={styles.terms}>قوانین و شرایط</strong>
-            ‌این وب‌سایت می‌باشد.
+      <ul>
+        {dateTimeInfo.map(({ id, icon, label, data }) => (
+          <li key={id}>
+            <div className={styles.icon}>{icon}</div>
+            <p className={styles.label}>{label}</p>
+            <p>
+              {data === "location" && `${activityData.city}،` + " "}
+              {activityData[data]}
+            </p>
           </li>
-        </ul>
-        <PriceButtonComponent
-          remainingShowings={activityData.remainingShowings}
-        />
-      </div>
-    </SectionCardComponent>
+        ))}
+      </ul>
+    </div>
   );
 }
