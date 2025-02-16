@@ -1,0 +1,8 @@
+.canvas {
+  inline-size: 100%;
+  block-size: 100%;
+
+  background-color: var(--color-surface-muted);
+
+  border-radius: var(--border-radius);
+}

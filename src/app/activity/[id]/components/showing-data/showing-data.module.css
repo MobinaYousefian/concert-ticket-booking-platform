@@ -1,3 +1,35 @@
 .showing-data {
   grid-area: writings;
+
+  .info {
+    margin-block-end: 3rem;
+  }
+
+  .heading {
+    margin-block: 2rem;
+  }
+
+  .tickets {
+    display: grid;
+    grid-template-columns: 4fr 0.25fr 2fr;
+
+    .block-perforations {
+      border: 0;
+      border-inline-start: 2px dashed var(--color-border);
+
+      &::before,
+      &::after {
+        inset-inline: -1rem;
+      }
+
+      &::before {
+        inset-block-start: -2rem;
+        rotate: 180deg;
+      }
+      &::after {
+        inset-block-end: -2rem;
+        rotate: 0deg;
+      }
+    }
+  }
 }

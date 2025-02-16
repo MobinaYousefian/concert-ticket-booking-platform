@@ -44,7 +44,7 @@ export default function Page({ params, searchParams }: Props): ReactElement {
         <>
           <ActivityDetailComponent activityData={activityData} />
           <section className={styles.showings}>
-            <div className={styles["showing-header"]}>
+            <div className={"section-heading"}>
               <h2>انتخاب سانس</h2>
             </div>
             <div className={styles["showing-card"]}>
