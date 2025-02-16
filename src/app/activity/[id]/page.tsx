@@ -2,10 +2,11 @@ import { ReactElement } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-import ActivityInfoComponent from "@/app/activity/[id]/components/activity-info/activity-info.component";
+import ActivityDetailComponent from "@/app/activity/[id]/components/activity-detail/activity-detail.component";
 import ShowingCardComponent from "@/app/activity/[id]/components/showing-card/showing-card.component";
+import ShowingDataComponent from "@/app/activity/[id]/components/showing-data/showing-data.component";
 
-import { activity } from "@/lib/data";
+import { activity } from "@/lib/activity-data";
 
 import { ShowingId } from "@/types/showingId.type";
 
@@ -39,11 +40,9 @@ export default function Page({ params, searchParams }: Props): ReactElement {
           priority
         />
       </div>
-      {defaultShowingId !== undefined ? (
-        <div>اطلاعات این سانس</div>
-      ) : (
+      {!defaultShowingId ? (
         <>
-          <ActivityInfoComponent activityData={activityData} />
+          <ActivityDetailComponent activityData={activityData} />
           <section className={styles.showings}>
             <div className={styles["showing-header"]}>
               <h2>انتخاب سانس</h2>
@@ -55,6 +54,8 @@ export default function Page({ params, searchParams }: Props): ReactElement {
             </div>
           </section>
         </>
+      ) : (
+        <ShowingDataComponent />
       )}
     </div>
   );

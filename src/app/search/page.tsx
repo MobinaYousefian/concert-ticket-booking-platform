@@ -13,7 +13,7 @@ import ActivityProvider from "@/app/search/providers/activity/activity.provider"
 
 import { FiltersType } from "@/types/filters.type";
 
-import { activity } from "@/lib/data";
+import { activity } from "@/lib/activity-data";
 
 import { normalizeSearchParam } from "@/utils/functions";
 

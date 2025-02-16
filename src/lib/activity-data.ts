@@ -198,7 +198,7 @@ export const activity: Activity[] = [
     banner:
       "https://fastly.picsum.photos/id/1014/5000/3324.jpg?hmac=Wk6ynFuJCtugtEXeG6ZMadyuE9ICbZJI-pUMsAKw0y8",
     title: "من بی تو - نمایشنامه خوانی",
-    date: "شنبه 29 تا 30 دی",
+    date: "شنبه 29 دی",
     time: "20:30",
     location: "سالن تئاتر شهر",
     hallId: 116,
@@ -215,21 +215,15 @@ export const activity: Activity[] = [
         date: "شنبه 29 دی",
         time: "20:30",
       },
-      {
-        id: 2238,
-        remainingTickets: 100,
-        date: "یک‌شنبه 30 دی",
-        time: "20:30",
-      },
     ],
-    remainingShowings: 2,
+    remainingShowings: 1,
   },
   {
     id: 1118,
     banner:
       "https://fastly.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4",
     title: "کنسرت خواننده معروف",
-    date: "سه‌شنبه 25 تا 26 دی",
+    date: "سه‌شنبه 25 دی",
     time: "18:30",
     location: "سالن موسیقی مرکزی",
     hallId: 117,
@@ -246,14 +240,8 @@ export const activity: Activity[] = [
         date: "سه‌شنبه 25 دی",
         time: "18:30",
       },
-      {
-        id: 2242,
-        remainingTickets: 98,
-        date: "چهارشنبه 26 دی",
-        time: "18:30",
-      },
     ],
-    remainingShowings: 2,
+    remainingShowings: 1,
   },
   {
     id: 1119,

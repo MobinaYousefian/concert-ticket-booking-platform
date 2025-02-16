@@ -20,6 +20,20 @@ export type ActivityShowing = {
   time: string;
 };
 
+export type ActivityForShowings = Omit<
+  Activity,
+  "banner" | "activityType" | "noticeList" | "showings" | "remainingShowings"
+>;
+
+export type Showing = {
+  id: number;
+  activityData: ActivityForShowings;
+  remainingTickets: number;
+  date: string;
+  time: string;
+  // todo: priceList : ;
+};
+
 export type Hall = {
   id: number;
   name: string;
