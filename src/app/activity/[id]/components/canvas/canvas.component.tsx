@@ -43,6 +43,8 @@ export default function CanvasComponent({
             e.currentTarget.setAttr("fill", "blue");
           }}
         />
+        <Rect fill="red" height={100} width={100} x={200} y={200} />
+        <Rect fill="red" height={100} width={100} x={300} y={300} />
       </Layer>
     </Stage>
   );

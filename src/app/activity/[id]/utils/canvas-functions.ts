@@ -23,6 +23,8 @@ let dragStopped = false;
 export const handleZoomOnTouch = (e: Konva.KonvaEventObject<TouchEvent>) => {
   e.evt.preventDefault();
 
+  Konva.hitOnDragEnabled = true;
+
   const stage = e.target.getStage();
   if (stage === null) return;
 
