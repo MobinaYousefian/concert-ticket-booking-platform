@@ -1,42 +1,49 @@
-"use client";
-import { ComponentProps, ReactElement, useEffect, useRef } from "react";
+import { ReactElement } from "react";
 
-import { clsx } from "clsx";
+import { Layer, Rect, Stage } from "react-konva";
+
+import {
+  handleZoomOnTouch,
+  handleZoomOnTouchEnd,
+  handleZoomOnWheel,
+} from "@/app/activity/[id]/utils/canvas-functions";
 
 import styles from "./canvas.module.css";
 
-type Props = ComponentProps<"canvas"> & {
-  draw(context: CanvasRenderingContext2D): void;
+type Props = {
+  width: number;
+  height: number;
 };
 
 export default function CanvasComponent({
-  id,
   width,
   height,
-  className,
-  draw,
-  ...otherProps
 }: Props): ReactElement {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-
-  useEffect(() => {
-    const context = canvasRef.current?.getContext("2d");
-
-    if (context) {
-      draw(context);
-    }
-  }, [draw]);
-
   return (
-    <canvas
-      id={id}
-      ref={canvasRef}
+    <Stage
       width={width}
       height={height}
-      className={clsx(styles.canvas, className)}
-      {...otherProps}
+      className={styles.stage}
+      draggable
+      onWheel={handleZoomOnWheel}
+      onTouchMove={handleZoomOnTouch}
+      onTouchEnd={handleZoomOnTouchEnd}
     >
-      مرورگر شما از این بخش پشتیبانی نمی‌کند.
-    </canvas>
+      <Layer>
+        <Rect
+          fill="red"
+          height={100}
+          width={100}
+          x={100}
+          y={100}
+          onMouseOver={() => {
+            console.log("hovered");
+          }}
+          onClick={(e) => {
+            e.currentTarget.setAttr("fill", "blue");
+          }}
+        />
+      </Layer>
+    </Stage>
   );
 }

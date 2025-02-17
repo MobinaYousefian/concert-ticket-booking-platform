@@ -6,7 +6,7 @@
 
   margin-block: 2rem;
 
-  overflow-x: hidden;
+  overflow: hidden;
 
   .banner {
     grid-area: banner;
