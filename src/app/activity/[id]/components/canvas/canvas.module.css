@@ -2,9 +2,13 @@
   inline-size: 100%;
   block-size: 100%;
 
-  image-rendering: pixelated;
-
   background-color: var(--color-surface-muted);
 
   border-radius: var(--border-radius);
+
+  > * {
+    > canvas {
+      image-rendering: pixelated;
+    }
+  }
 }
