@@ -1,7 +1,7 @@
 import { ReactElement, useRef } from "react";
 
 import Konva from "konva";
-import { Layer, Path, Stage } from "react-konva";
+import { Group, Layer, Path, Stage, Text } from "react-konva";
 
 import {
   handleZoom,
@@ -12,10 +12,13 @@ import {
 } from "@/app/activity/[id]/utils/canvas-functions";
 
 import ButtonComponent from "@/components/button/button.component";
+import SeatSectionComponent from "@/app/activity/[id]/components/canvas/seat-section/seat-section.component";
 
 import HugeiconsSearchAdd from "@/icons/HugeiconsSearchAdd";
 import HugeiconsCancel01 from "@/icons/HugeiconsCancel01";
 import HugeiconsSearchMinus from "@/icons/HugeiconsSearchMinus";
+
+import { WEST_MALL } from "@/lib/hall-data";
 
 import styles from "./canvas.module.css";
 
@@ -54,6 +57,8 @@ export default function CanvasComponent({
     },
   ];
 
+  const baseOffsetX = width / 20;
+
   return (
     <>
       <div className={styles["zoom-buttons"]}>
@@ -81,10 +86,28 @@ export default function CanvasComponent({
         onTouchEnd={handleZoomOnTouchEnd}
       >
         <Layer>
-          <Path
-            fill={"#71717AFF"}
-            data={`M ${width / 4},0 A ${width / 2} ${width / 2} 0 0, 0 ${(3 * width) / 4}, 0`}
-          />
+          <Group x={baseOffsetX} y={0}>
+            <Path
+              fill={"hsl(240 3.8% 46.1%)"}
+              data={`M ${0},0 A ${width / 2} ${width / 6} 0 0, 0 ${(9 * width) / 10}, 0`}
+            />
+            <Text
+              text={"صحنه اجرا"}
+              x={width / 2.4}
+              y={width / 28}
+              fill={"white"}
+              fontFamily={"Vazirmatn"}
+              fontSize={width / 56}
+            />
+            {WEST_MALL.seatSections.map(({ id, seatByRow }, sectionIndex) => (
+              <SeatSectionComponent
+                key={id}
+                seatByRow={seatByRow}
+                canvasWidth={width}
+                sectionIndex={sectionIndex}
+              />
+            ))}
+          </Group>
         </Layer>
       </Stage>
     </>

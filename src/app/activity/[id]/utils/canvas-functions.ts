@@ -101,7 +101,7 @@ export const handleZoomOnTouchEnd = () => {
 export const handleZoomOnWheel = (e: Konva.KonvaEventObject<WheelEvent>) => {
   e.evt.preventDefault();
 
-  const scaleBy = 1.01;
+  const scaleBy = 1.15;
 
   const stage = e.target.getStage();
   if (stage === null) return;
@@ -135,7 +135,7 @@ export const handleZoom = (
   direction?: 1 | -1,
 ) => {
   if (stageRefCurrent) {
-    const scaleBy = 1.05;
+    const scaleBy = 1.3;
     const oldScale = stageRefCurrent.scaleX();
     const newScale = direction === 1 ? oldScale * scaleBy : oldScale / scaleBy;
 

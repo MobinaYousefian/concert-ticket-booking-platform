@@ -34,10 +34,28 @@ export type Showing = {
   // todo: priceList : ;
 };
 
+/* Hall types */
 export type Hall = {
   id: number;
   name: string;
   capacity: number;
   city: string;
-  /* todo: add data about seat map */
+  seatSections: Section[];
+};
+
+export type Section = {
+  id: number;
+  seatByRow: SeatByRow;
+};
+
+export type SeatByRow = {
+  [key: string]: Seat[];
+};
+
+export type Seat = null | {
+  id: number;
+  rowNumber: number;
+  seatNumber: number;
+  seatPrice: number;
+  status: "free" | "booked" | "pending" | "nonSale";
 };
