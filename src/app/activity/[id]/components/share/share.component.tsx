@@ -24,10 +24,10 @@ export default function ShareComponent({ shareTitle }: Props): ReactElement {
 
   const showingIdParam = searchParams.get("showingId");
 
-  let TARGET_URL = `${DOMAIN_URL}/${pathname}`;
+  let TARGET_URL = `${DOMAIN_URL}${pathname}`;
 
   if (showingIdParam !== null) {
-    TARGET_URL = `${DOMAIN_URL}/${pathname}?showingId=${showingIdParam}`;
+    TARGET_URL = TARGET_URL + `?showingId=${showingIdParam}`;
   }
 
   const copyToClipboard = () => {
