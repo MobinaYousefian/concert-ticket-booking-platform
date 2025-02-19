@@ -49,7 +49,7 @@ export type Section = {
 };
 
 export type SeatByRow = {
-  [key: string]: Seat[];
+  [key: string]: Seat[] | null;
 };
 
 export type Seat = null | {
