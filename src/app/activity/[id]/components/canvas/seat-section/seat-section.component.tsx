@@ -3,18 +3,22 @@ import { ReactElement, useContext } from "react";
 
 import { Group, Rect, Text } from "react-konva";
 
+import { SeatsContext } from "@/app/activity/[id]/providers/seats/seats.provider.component";
+
 import { PopoverContext } from "@/app/activity/[id]/providers/popover/popover.provider";
+import { SeatsAction } from "@/app/activity/[id]/reducers/seats.reducer";
 
 import { handleMouseMove } from "@/app/activity/[id]/utils/canvas-functions";
 
 import { SeatByRow } from "@/lib/data.type";
+import { SeatType } from "@/types/seats.type";
 
 const BookStats = {
   booked: "hsl(2 75% 58%)",
   pending: "hsl(32.1 90% 64%)",
   free: "hsl(142.1 76.2% 36.3%)",
   nonSale: "hsl(240 10% 60%)",
-  selected: "hsl(204 70% 53%)",
+  selected: "hsl(219,70%,53%)",
 };
 
 type Props = {
@@ -37,6 +41,25 @@ export default function SeatSectionComponent({
   const seatHeight = canvasWidth / 50;
 
   const { setPopoverData } = useContext(PopoverContext);
+  const { seats, dispatchSeats } = useContext(SeatsContext);
+
+  const handleToggleSeat = (
+    seatData: SeatsAction,
+    seatStatus: SeatType["status"],
+  ) => {
+    if (seatStatus !== "free") return;
+    dispatchSeats(seatData);
+  };
+
+  const handleChangeFill = (
+    id: SeatType["id"],
+    status: SeatType["status"],
+  ): string => {
+    const isSelected = seats.find((seat) => seat.id === id);
+
+    if (isSelected) return "hsl(219,70%,53%)";
+    return BookStats[status];
+  };
 
   return (
     <Group x={offsetX} y={offsetY}>
@@ -56,13 +79,35 @@ export default function SeatSectionComponent({
                         y={rowIndex * (seatHeight + desktopRectMargin)}
                         width={seatWidth}
                         height={seatHeight}
-                        fill={BookStats[seat.status]}
+                        fill={handleChangeFill(seat.id, seat.status)}
                         onMouseEnter={(e) =>
                           handleMouseMove(e, seat, setPopoverData)
                         }
                         onMouseLeave={() => {
                           setPopoverData(null);
                         }}
+                        onClick={() =>
+                          handleToggleSeat(
+                            {
+                              id: seat.id,
+                              seatNumber: seat.seatNumber,
+                              seatPrice: seat.seatPrice,
+                              rowNumber: seat.rowNumber,
+                            },
+                            seat.status,
+                          )
+                        }
+                        onTap={() =>
+                          handleToggleSeat(
+                            {
+                              id: seat.id,
+                              seatNumber: seat.seatNumber,
+                              seatPrice: seat.seatPrice,
+                              rowNumber: seat.rowNumber,
+                            },
+                            seat.status,
+                          )
+                        }
                       />
                       <Text
                         key={"seat_number" + seat.id}

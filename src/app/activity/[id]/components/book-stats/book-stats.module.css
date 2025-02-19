@@ -1,0 +1,74 @@
+.book-stats {
+  display: grid;
+
+  .writings {
+    .seatNumbers {
+      margin-block: 2rem 0.5rem;
+    }
+
+    .hint {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+
+      margin-block: 1.5rem 1rem;
+
+      .container {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+
+        .circle {
+          inline-size: 0.5rem;
+          block-size: 0.5rem;
+
+          border-radius: 50%;
+        }
+
+        .label {
+          font-size: var(--fz-300);
+        }
+      }
+    }
+  }
+
+  .block-perforations {
+    display: none;
+    border: 0;
+    border-inline-start: 2px dashed var(--color-border);
+
+    margin-inline: 0.75rem;
+
+    &::before,
+    &::after {
+      inset-inline: -1rem;
+    }
+
+    &::before {
+      inset-block-start: -2rem;
+      rotate: 180deg;
+    }
+    &::after {
+      inset-block-end: -2rem;
+      rotate: 0deg;
+    }
+  }
+
+  .inline-perforations {
+    margin-block-end: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .book-stats {
+    grid-template-columns: 4fr 0.25fr 2fr;
+
+    .block-perforations {
+      display: block;
+    }
+
+    .inline-perforations {
+      display: none;
+    }
+  }
+}

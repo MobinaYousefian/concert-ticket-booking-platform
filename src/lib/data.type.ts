@@ -57,5 +57,5 @@ export type Seat = null | {
   rowNumber: number;
   seatNumber: number;
   seatPrice: number;
-  status: "free" | "booked" | "pending" | "nonSale";
+  status: "free" | "booked" | "pending" | "nonSale" | "selected";
 };

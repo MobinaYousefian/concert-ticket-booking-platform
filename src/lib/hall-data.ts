@@ -28,14 +28,14 @@ export const WEST_MALL: Hall = {
             rowNumber: 1,
             seatNumber: 1,
             seatPrice: PRICE_ROW_1,
-            status: "booked",
+            status: "free",
           },
           {
             id: 4,
             rowNumber: 1,
             seatNumber: 2,
             seatPrice: PRICE_ROW_1,
-            status: "booked",
+            status: "free",
           },
           {
             id: 5,
