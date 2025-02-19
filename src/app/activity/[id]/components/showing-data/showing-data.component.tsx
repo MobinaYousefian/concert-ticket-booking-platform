@@ -40,7 +40,13 @@ export default function ShowingDataComponent(): ReactElement | null {
           <h2>انتخاب صندلی</h2>
         </div>
         <SectionCardComponent>
-          <BookStatsComponent />
+          <BookStatsComponent
+            showingSelectData={{
+              activityId: activityData.id,
+              time: showingData.time,
+              date: showingData.date,
+            }}
+          />
         </SectionCardComponent>
       </div>
       <SeatMapComponent />

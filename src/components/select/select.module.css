@@ -1,4 +1,6 @@
 .container {
+  color: var(--color-zinc-700);
+
   position: relative;
 
   display: flex;
@@ -7,12 +9,14 @@
 
   padding: 0.5rem;
 
-  border: 1px solid currentColor;
+  border: 1px solid var(--color-zinc-300);
   border-radius: var(--border-radius);
 
   outline: none;
 
-  cursor: default;
+  cursor: pointer;
+
+  font-size: var(--fz-300);
 
   .title {
     font-size: var(--fz-300);
@@ -25,14 +29,14 @@
 
   .caret {
     border: 0.25em solid transparent;
-    /*border-block-start-color: var(--color-border);*/
+    border-block-start-color: var(--color-text-muted);
 
     transform: translateY(25%);
   }
 
   .options {
-    background-color: var(--color-surface-93);
-    /*box-shadow: var(--shadow-400);*/
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-400);
 
     position: absolute;
     inset-block-start: calc(100% + 0.5rem);
@@ -44,7 +48,7 @@
     min-inline-size: 100%;
     inline-size: max-content;
 
-    border: 1px solid currentColor;
+    border: 1px solid var(--color-zinc-300);
     border-radius: var(--border-radius);
 
     .option {
@@ -80,7 +84,7 @@
 
   &.floating {
     background-color: var(--color-surface-93);
-    /*box-shadow: var(--shadow-400);*/
+    box-shadow: var(--shadow-400);
 
     &:not(&:focus, &.open) {
       border-color: transparent;

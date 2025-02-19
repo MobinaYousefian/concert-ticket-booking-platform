@@ -3,9 +3,10 @@ import { ReactElement, useContext } from "react";
 
 import { clsx } from "clsx";
 
-import { SeatsContext } from "@/app/activity/[id]/providers/seats/seats.provider.component";
 import PriceButtonComponent from "@/app/activity/[id]/components/price-button/price-button.component";
 import CtaSectionComponent from "@/app/activity/[id]/components/book-stats/cta-section/cta-section.component";
+
+import { SeatsContext } from "@/app/activity/[id]/providers/seats/seats.provider.component";
 
 import styles from "./book-stats.module.css";
 
@@ -42,7 +43,18 @@ const hints: Hint[] = [
   },
 ];
 
-export default function BookStatsComponent(): ReactElement {
+export type ShowingSelectData = {
+  activityId: number;
+  time: string;
+  date: string;
+};
+type Props = {
+  showingSelectData: ShowingSelectData;
+};
+
+export default function BookStatsComponent({
+  showingSelectData,
+}: Props): ReactElement {
   const { seats } = useContext(SeatsContext);
 
   const finalPrice = seats.reduce((prev, curr) => {
@@ -77,7 +89,10 @@ export default function BookStatsComponent(): ReactElement {
       <div
         className={clsx("perforations", styles["inline-perforations"])}
       ></div>
-      <CtaSectionComponent finalPrice={finalPrice} />
+      <CtaSectionComponent
+        finalPrice={finalPrice}
+        showingSelectData={showingSelectData}
+      />
     </div>
   );
 }
