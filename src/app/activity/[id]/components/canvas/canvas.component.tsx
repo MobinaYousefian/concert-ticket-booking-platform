@@ -1,7 +1,7 @@
 import { ReactElement, useRef } from "react";
 
 import Konva from "konva";
-import { Layer, Rect, Stage } from "react-konva";
+import { Layer, Path, Stage } from "react-konva";
 
 import {
   handleZoom,
@@ -81,21 +81,10 @@ export default function CanvasComponent({
         onTouchEnd={handleZoomOnTouchEnd}
       >
         <Layer>
-          <Rect
-            fill="red"
-            height={100}
-            width={100}
-            x={100}
-            y={100}
-            onMouseOver={() => {
-              console.log("hovered");
-            }}
-            onClick={(e) => {
-              e.currentTarget.setAttr("fill", "blue");
-            }}
+          <Path
+            fill={"#71717AFF"}
+            data={`M ${width / 4},0 A ${width / 2} ${width / 2} 0 0, 0 ${(3 * width) / 4}, 0`}
           />
-          <Rect fill="red" height={100} width={100} x={200} y={200} />
-          <Rect fill="red" height={100} width={100} x={300} y={300} />
         </Layer>
       </Stage>
     </>
