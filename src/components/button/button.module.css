@@ -19,6 +19,10 @@
 
   &:disabled {
     pointer-events: none;
+    background-color: var(--color-surface-muted);
+    color: var(--color-text-muted);
+
+    border: 1px solid var(--color-border);
   }
 
   &.solid {

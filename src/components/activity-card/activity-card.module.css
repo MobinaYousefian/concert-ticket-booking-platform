@@ -10,7 +10,7 @@
 
   .visuals {
     display: grid;
-    aspect-ratio: 1/1;
+    aspect-ratio: 2/1.5;
 
     border-start-start-radius: var(--border-radius);
     border-start-end-radius: var(--border-radius);
@@ -87,7 +87,7 @@
       gap: 0.5rem;
 
       > p {
-        font-size: var(--fz-100);
+        font-size: var(--fz-200);
       }
     }
   }

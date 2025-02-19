@@ -31,7 +31,6 @@ export type Showing = {
   remainingTickets: number;
   date: string;
   time: string;
-  // todo: priceList : ;
 };
 
 /* Hall types */

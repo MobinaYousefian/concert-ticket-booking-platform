@@ -5,11 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { clsx } from "clsx";
 
-import DarkModeComponent from "@/components/header/dark-mode/dark-mode.component";
 import ButtonComponent from "@/components/button/button.component";
-
-import HugeiconsSun03 from "@/icons/HugeiconsSun03";
-import HugeiconsMoon02 from "@/icons/HugeiconsMoon02";
 
 import styles from "./header.module.css";
 
@@ -51,12 +47,6 @@ export default function HeaderComponent(): ReactElement {
         <ButtonComponent shape={"outline"} className={styles.login}>
           ثبت‌نام | ورود
         </ButtonComponent>
-        <DarkModeComponent theme={"light"}>
-          <HugeiconsSun03 className={styles.sun} />
-        </DarkModeComponent>
-        <DarkModeComponent theme={"dark"}>
-          <HugeiconsMoon02 className={styles.moon} />
-        </DarkModeComponent>
       </div>
     </header>
   );
