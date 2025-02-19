@@ -1,3 +1,21 @@
+.zoom-buttons {
+  position: absolute;
+  z-index: 1;
+
+  background-color: var(--color-surface);
+
+  margin: 0.5rem;
+  border-radius: var(--border-radius);
+
+  .button {
+    padding: 1.4vw;
+
+    > svg {
+      font-size: 1em;
+    }
+  }
+}
+
 .stage {
   inline-size: 100%;
   block-size: 100%;
@@ -9,6 +27,18 @@
   > * {
     > canvas {
       image-rendering: pixelated;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .zoom-buttons {
+    .button {
+      padding: 0.75vw;
+
+      > svg {
+        font-size: 1.2em;
+      }
     }
   }
 }

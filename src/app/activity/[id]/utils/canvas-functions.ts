@@ -128,3 +128,24 @@ export const handleZoomOnWheel = (e: Konva.KonvaEventObject<WheelEvent>) => {
   };
   stage.position(newPos);
 };
+
+/* helper buttons functions */
+export const handleZoom = (
+  stageRefCurrent: Konva.Stage | null,
+  direction?: 1 | -1,
+) => {
+  if (stageRefCurrent) {
+    const scaleBy = 1.05;
+    const oldScale = stageRefCurrent.scaleX();
+    const newScale = direction === 1 ? oldScale * scaleBy : oldScale / scaleBy;
+
+    stageRefCurrent.scale({ x: newScale, y: newScale });
+  }
+};
+
+export const resetScaleZoom = (stageRefCurrent: Konva.Stage | null) => {
+  if (stageRefCurrent) {
+    stageRefCurrent.position({ x: 0, y: 0 });
+    stageRefCurrent.scale({ x: 1, y: 1 });
+  }
+};
