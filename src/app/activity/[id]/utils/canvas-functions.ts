@@ -1,4 +1,10 @@
+import { Dispatch, SetStateAction } from "react";
+
 import Konva from "konva";
+import KonvaEventObject = Konva.KonvaEventObject;
+
+import { SeatType } from "@/types/seats.type";
+import { PopoverType } from "@/types/popover.type";
 
 type P = {
   x: number;
@@ -147,5 +153,27 @@ export const resetScaleZoom = (stageRefCurrent: Konva.Stage | null) => {
   if (stageRefCurrent) {
     stageRefCurrent.position({ x: 0, y: 0 });
     stageRefCurrent.scale({ x: 1, y: 1 });
+  }
+};
+
+export const handleMouseMove = (
+  e: KonvaEventObject<MouseEvent>,
+  seat: SeatType,
+  setPopoverData: Dispatch<SetStateAction<PopoverType>>,
+) => {
+  const seatPos = e.target.getPosition();
+
+  const container = e.target.getStage()?.container();
+  if (container) {
+    if (seat.status === "free") {
+      setPopoverData({
+        position: seatPos,
+        seatPrice: seat.seatPrice,
+        seatLabel: `شماره ${seat.seatNumber} ردیف ${seat.rowNumber}`,
+      });
+      container.style.cursor = "pointer";
+    } else {
+      container.style.cursor = "default";
+    }
   }
 };

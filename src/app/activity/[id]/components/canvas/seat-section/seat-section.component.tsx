@@ -1,6 +1,11 @@
-import { ReactElement } from "react";
+"use client";
+import { ReactElement, useContext } from "react";
 
 import { Group, Rect, Text } from "react-konva";
+
+import { PopoverContext } from "@/app/activity/[id]/providers/popover/popover.provider";
+
+import { handleMouseMove } from "@/app/activity/[id]/utils/canvas-functions";
 
 import { SeatByRow } from "@/lib/data.type";
 
@@ -9,6 +14,7 @@ const BookStats = {
   pending: "hsl(32.1 90% 64%)",
   free: "hsl(142.1 76.2% 36.3%)",
   nonSale: "hsl(240 10% 60%)",
+  selected: "hsl(204 70% 53%)",
 };
 
 type Props = {
@@ -30,6 +36,8 @@ export default function SeatSectionComponent({
   const seatWidth = canvasWidth / 50;
   const seatHeight = canvasWidth / 50;
 
+  const { setPopoverData } = useContext(PopoverContext);
+
   return (
     <Group x={offsetX} y={offsetY}>
       {Object.keys(seatByRow).map((rowKey, rowIndex) => {
@@ -49,6 +57,12 @@ export default function SeatSectionComponent({
                         width={seatWidth}
                         height={seatHeight}
                         fill={BookStats[seat.status]}
+                        onMouseEnter={(e) =>
+                          handleMouseMove(e, seat, setPopoverData)
+                        }
+                        onMouseLeave={() => {
+                          setPopoverData(null);
+                        }}
                       />
                       <Text
                         key={"seat_number" + seat.id}

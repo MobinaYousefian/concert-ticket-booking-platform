@@ -2,6 +2,9 @@
 import { ReactElement, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
+import PopoverProviderComponent from "@/app/activity/[id]/providers/popover/popover.provider";
+import PopoverComponent from "@/app/activity/[id]/components/canvas/popover/popover.component";
+
 import styles from "./seat-map.module.css";
 
 const Canvas = dynamic(
@@ -31,7 +34,10 @@ export default function SeatMapComponent(): ReactElement {
 
   return (
     <section className={styles["seat-map"]} ref={sectionRef}>
-      <Canvas width={canvasWidth} height={canvasHeight} />
+      <PopoverProviderComponent defaultPopoverData={null}>
+        <Canvas width={canvasWidth} height={canvasHeight} />
+        <PopoverComponent />
+      </PopoverProviderComponent>
     </section>
   );
 }
