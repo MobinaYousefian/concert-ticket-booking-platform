@@ -12,14 +12,13 @@ import FiltersProvider from "@/app/search/providers/filters/filters.provider";
 import ActivityProvider from "@/app/search/providers/activity/activity.provider";
 
 import { FiltersType } from "@/types/filters.type";
+import { SearchParams } from "@/types/search-param.type";
 
 import { activity } from "@/lib/activity-data";
 
 import { normalizeSearchParam } from "@/utils/functions";
 
 import styles from "./page.module.css";
-
-type SearchParams = { [key: string]: string | string[] | undefined };
 
 type Props = {
   searchParams: SearchParams;

@@ -8,13 +8,12 @@ import ShowingDataComponent from "@/app/activity/[id]/components/showing-data/sh
 
 import { activity } from "@/lib/activity-data";
 
-import { ShowingId } from "@/types/showingId.type";
-
 import { normalizeSearchParam } from "@/utils/functions";
 
-import styles from "./page.module.css";
+import { ShowingId } from "@/types/showingId.type";
+import { SearchParams } from "@/types/search-param.type";
 
-type SearchParams = { [key: string]: string | string[] | undefined };
+import styles from "./page.module.css";
 
 type Props = {
   params: { id: string };
