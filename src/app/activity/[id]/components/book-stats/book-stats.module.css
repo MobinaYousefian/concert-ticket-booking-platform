@@ -11,7 +11,7 @@
       gap: 1.25rem;
       flex-wrap: wrap;
 
-      margin-block: 1.5rem 1rem;
+      margin-block-start: 1.5rem;
 
       .container {
         display: flex;
@@ -23,51 +23,66 @@
           block-size: 0.5rem;
 
           border-radius: 50%;
+
+          &.booked {
+            background-color: var(--color-destructive);
+          }
+          &.pending {
+            background-color: var(--color-warning);
+          }
+          &.free {
+            background-color: var(--color-success);
+          }
+          &.non-sale {
+            background-color: var(--color-seat-nonSale);
+          }
+          &.selected {
+            background-color: var(--color-seat-selected);
+          }
         }
 
         .label {
           font-size: var(--fz-300);
+
+          &.booked {
+            color: var(--color-destructive);
+          }
+          &.pending {
+            color: var(--color-warning);
+          }
+          &.free {
+            color: var(--color-success);
+          }
+          &.non-sale {
+            color: var(--color-seat-nonSale);
+          }
+          &.selected {
+            color: var(--color-seat-selected);
+          }
         }
       }
     }
   }
 
-  .block-perforations {
+  :global(.block-perforations) {
     display: none;
-    border: 0;
-    border-inline-start: 2px dashed var(--color-border);
-
-    margin-inline: 0.75rem;
-
-    &::before,
-    &::after {
-      inset-inline: -1rem;
-    }
-
-    &::before {
-      inset-block-start: -2rem;
-      rotate: 180deg;
-    }
-    &::after {
-      inset-block-end: -2rem;
-      rotate: 0deg;
-    }
+    margin-inline: 1rem;
   }
 
-  .inline-perforations {
-    margin-block-end: 1.5rem;
+  :global(.inline-perforations) {
+    margin-block: 1.5rem;
   }
 }
 
 @media screen and (min-width: 768px) {
   .book-stats {
-    grid-template-columns: 4fr 0.25fr 2fr;
+    grid-template-columns: 5fr 0.5fr 2.75fr;
 
-    .block-perforations {
+    :global(.block-perforations) {
       display: block;
     }
 
-    .inline-perforations {
+    :global(.inline-perforations) {
       display: none;
     }
   }

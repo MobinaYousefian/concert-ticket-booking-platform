@@ -10,7 +10,7 @@ import ButtonComponent from "@/components/button/button.component";
 
 import HugeiconsCancel01 from "@/icons/HugeiconsCancel01";
 
-import { closeModal } from "@/utils/functions";
+import { closeModal } from "@/utils/modal.utils";
 
 import styles from "./modal-background.module.css";
 
@@ -39,11 +39,7 @@ export default function ModalBackgroundComponent({
     <div className={styles["modal-background"]} onClick={handleClickOutside}>
       <div ref={modalRef} className={styles.modal}>
         <div className={styles.close}>
-          <ButtonComponent
-            shape={"icon"}
-            variant={"muted"}
-            onClick={handleClose}
-          >
+          <ButtonComponent shape="icon" variant="muted" onClick={handleClose}>
             <HugeiconsCancel01 />
           </ButtonComponent>
         </div>

@@ -54,8 +54,8 @@ export default function ShareComponent({ shareTitle }: Props): ReactElement {
 
   return (
     <ButtonComponent
-      shape={"ghost"}
-      variant={"muted"}
+      shape="ghost"
+      variant="muted"
       className={styles.share}
       onClick={handleShare}
     >

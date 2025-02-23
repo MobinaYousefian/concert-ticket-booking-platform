@@ -6,7 +6,7 @@ import Link from "next/link";
 import ButtonComponent from "@/components/button/button.component";
 import SelectComponent from "@/components/select/select.component";
 
-import { ShowingSelectData } from "@/app/activity/[id]/components/book-stats/book-stats.component";
+import { CurrentShowingSelectData } from "@/app/activity/[id]/components/book-stats/book-stats.component";
 
 import { showingsData } from "@/lib/showings-data";
 
@@ -16,24 +16,20 @@ import styles from "./cta-section.module.css";
 
 type Props = {
   finalPrice: number;
-  showingSelectData: ShowingSelectData;
+  currentShowingSelectData: CurrentShowingSelectData;
 };
 
 export default function CtaSectionComponent({
   finalPrice,
-  showingSelectData,
+  currentShowingSelectData,
 }: Props): ReactElement {
-  const [selectedOption, setSelectedOption] = useState<SelectOptionType>({
-    value: "",
-    label: "تغییر سانس",
-  });
-
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const relatedShowings = showingsData.filter(
-    ({ activityData }) => activityData.id === showingSelectData.activityId,
+    ({ activityData }) =>
+      activityData.id === currentShowingSelectData.activityId,
   );
 
   const selectOptions = relatedShowings.map(({ id, date, time }) => {
@@ -41,6 +37,17 @@ export default function CtaSectionComponent({
       value: id.toString(),
       label: `${date} - ${time}`,
     };
+  });
+
+  // const getDefaultOption = () => {
+  //   return selectOptions.filter(
+  //     ({ value }) => value === currentShowingSelectData.showingId.toString(),
+  //   )[0];
+  // };
+
+  const [selectedOption, setSelectedOption] = useState<SelectOptionType>({
+    value: currentShowingSelectData.showingId.toString(),
+    label: "تغییر سانس",
   });
 
   const createQueryString = useCallback(
@@ -66,8 +73,8 @@ export default function CtaSectionComponent({
         <span>(با احتساب 10٪ مالیات)</span>
       </div>
       <div className={styles.cta}>
-        <ButtonComponent size={"lg"}>
-          <Link href={"#"}>ادامه خرید</Link>
+        <ButtonComponent className={styles.button}>
+          <Link href="#">ادامه خرید</Link>
         </ButtonComponent>
         <div className={styles.select}>
           <SelectComponent

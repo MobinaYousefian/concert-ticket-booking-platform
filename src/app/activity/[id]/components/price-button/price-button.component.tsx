@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 
 import { Activity } from "@/lib/data.type";
 
-import { openModal } from "@/utils/functions";
+import { openModal } from "@/utils/modal.utils";
 
 import styles from "./price-button.module.css";
 

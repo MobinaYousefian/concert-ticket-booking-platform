@@ -156,12 +156,12 @@ export const resetScaleZoom = (stageRefCurrent: Konva.Stage | null) => {
   }
 };
 
-export const handleMouseMove = (
+export const handleShowPopover = (
   e: KonvaEventObject<MouseEvent>,
   seat: SeatType,
   setPopoverData: Dispatch<SetStateAction<PopoverType>>,
 ) => {
-  const seatPos = e.target.getPosition();
+  const seatPos = e.target.getAbsolutePosition();
 
   const container = e.target.getStage()?.container();
   if (container) {

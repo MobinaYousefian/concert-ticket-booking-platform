@@ -9,10 +9,10 @@ import {
   handleZoomOnTouch,
   handleZoomOnTouchEnd,
   handleZoomOnWheel,
-} from "@/app/activity/[id]/utils/canvas-functions";
+} from "@/app/activity/[id]/utils/canvas-functions.utils";
 
 import ButtonComponent from "@/components/button/button.component";
-import SeatSectionComponent from "@/app/activity/[id]/components/canvas/seat-section/seat-section.component";
+import SeatsContainerComponent from "@/app/activity/[id]/components/canvas/seats-container/seats-container.component";
 
 import HugeiconsSearchAdd from "@/icons/HugeiconsSearchAdd";
 import HugeiconsCancel01 from "@/icons/HugeiconsCancel01";
@@ -25,7 +25,10 @@ import styles from "./canvas.module.css";
 type ButtonData = {
   id: number;
   icon: ReactElement;
-  onClick: (stageRefCurrent: Konva.Stage | null, direction?: 1 | -1) => void;
+  handleZoomToggle: (
+    stageRefCurrent: Konva.Stage | null,
+    direction?: 1 | -1,
+  ) => void;
 };
 
 type Props = {
@@ -43,17 +46,17 @@ export default function CanvasComponent({
     {
       id: 1,
       icon: <HugeiconsSearchAdd />,
-      onClick: () => handleZoom(stageRef.current, 1),
+      handleZoomToggle: () => handleZoom(stageRef.current, 1),
     },
     {
       id: 2,
       icon: <HugeiconsCancel01 />,
-      onClick: () => resetScaleZoom(stageRef.current),
+      handleZoomToggle: () => resetScaleZoom(stageRef.current),
     },
     {
       id: 3,
       icon: <HugeiconsSearchMinus />,
-      onClick: () => handleZoom(stageRef.current, -1),
+      handleZoomToggle: () => handleZoom(stageRef.current, -1),
     },
   ];
 
@@ -62,14 +65,14 @@ export default function CanvasComponent({
   return (
     <>
       <div className={styles["zoom-buttons"]}>
-        {buttons.map(({ id, icon, onClick }) => (
+        {buttons.map(({ id, icon, handleZoomToggle }) => (
           <ButtonComponent
             key={id}
-            size={"sm"}
-            shape={"ghost"}
-            variant={"muted"}
+            size="sm"
+            shape="ghost"
+            variant="muted"
             className={styles.button}
-            onClick={() => onClick(stageRef.current)}
+            onClick={() => handleZoomToggle(stageRef.current)}
           >
             {icon}
           </ButtonComponent>
@@ -88,19 +91,19 @@ export default function CanvasComponent({
         <Layer>
           <Group x={baseOffsetX} y={0}>
             <Path
-              fill={"hsl(240 3.8% 46.1%)"}
+              fill="hsl(240 3.8% 46.1%)"
               data={`M ${0},0 A ${width / 2} ${width / 6} 0 0, 0 ${(9 * width) / 10}, 0`}
             />
             <Text
-              text={"صحنه اجرا"}
+              text="صحنه اجرا"
               x={width / 2.4}
               y={width / 28}
-              fill={"white"}
-              fontFamily={"Vazirmatn"}
+              fill="white"
+              fontFamily="Vazirmatn"
               fontSize={width / 56}
             />
             {WEST_MALL.seatSections.map(({ id, seatByRow }, sectionIndex) => (
-              <SeatSectionComponent
+              <SeatsContainerComponent
                 key={id}
                 seatByRow={seatByRow}
                 canvasWidth={width}

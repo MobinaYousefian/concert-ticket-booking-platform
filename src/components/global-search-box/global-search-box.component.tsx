@@ -65,15 +65,15 @@ export default function GlobalSearchBoxComponent(): ReactElement {
         <HugeiconsSearch01 />
       </div>
       <input
-        name={"query"}
-        type={"text"}
-        placeholder={"نام خواننده، نمایش صحنه‌ای، گروه اجرا کننده، شهر و ..."}
+        name="query"
+        type="text"
+        placeholder="نام خواننده، نمایش صحنه‌ای، گروه اجرا کننده، شهر و ..."
         value={query}
         onChange={(e) => setQuery(e.currentTarget.value)}
       />
       <div className={styles.divider}></div>
       <div className={styles.cities}>
-        <ButtonComponent variant={"muted"}>
+        <ButtonComponent variant="muted">
           <HugeiconsLocation04 />
           همه شهرها
         </ButtonComponent>

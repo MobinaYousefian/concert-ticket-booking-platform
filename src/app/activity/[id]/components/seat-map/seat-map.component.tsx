@@ -36,7 +36,7 @@ export default function SeatMapComponent(): ReactElement {
     <section className={styles["seat-map"]} ref={sectionRef}>
       <PopoverProviderComponent defaultPopoverData={null}>
         <Canvas width={canvasWidth} height={canvasHeight} />
-        <PopoverComponent />
+        <PopoverComponent canvasWidth={canvasWidth} />
       </PopoverProviderComponent>
     </section>
   );

@@ -18,17 +18,17 @@ const options: string[] = [
 
 export default function CityFilterComponent(): ReactElement {
   return (
-    <FilterCardComponent title={"شهر برگزارکننده"}>
+    <FilterCardComponent title="شهر برگزارکننده">
       <ul className={styles["city-filter"]}>
         {options.map((option) => (
           <li key={option}>
             <FilterContentComponent
               option={option}
-              filterKey={"city"}
+              filterKey="city"
               className={styles.item}
               activeClassName={styles.active}
-              buttonVariant={"muted"}
-              buttonShape={"ghost"}
+              buttonVariant="muted"
+              buttonShape="ghost"
             />
           </li>
         ))}

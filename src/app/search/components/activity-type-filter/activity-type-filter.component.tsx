@@ -9,16 +9,16 @@ const options: string[] = ["کنسرت‌ها", "تئاترها"];
 
 export default function ActivityTypeFilterComponent(): ReactElement {
   return (
-    <FilterCardComponent title={"نوع رویداد"}>
+    <FilterCardComponent title="نوع رویداد">
       <ul className={styles["activity-type-filter"]}>
         {options.map((option) => (
           <li key={option}>
             <FilterContentComponent
               option={option}
-              filterKey={"activityType"}
+              filterKey="activityType"
               className={styles.item}
               activeClassName={styles.active}
-              buttonShape={"outline"}
+              buttonShape="outline"
             />
           </li>
         ))}

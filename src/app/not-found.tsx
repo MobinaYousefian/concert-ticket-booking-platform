@@ -16,7 +16,7 @@ export default function NotFound(): ReactElement {
         <h2>صفحه مورد نظر یافت نشد!</h2>
       </div>
       <div className={styles.cta}>
-        <Link href={"/"}>
+        <Link href="/">
           <ButtonComponent>بازگشت به خانه</ButtonComponent>
         </Link>
       </div>

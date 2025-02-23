@@ -19,9 +19,9 @@ export default function ActivityDetailComponent({
     <SectionCardComponent>
       <div className={styles["activity-detail"]}>
         <ActivityInfoComponent activityData={activityData} />
-        <div className={"perforations"}></div>
+        <div className="inline-perforations"></div>
         <div className={styles["activity-notice"]}>
-          <ul role={"list"}>
+          <ul role="list">
             {activityData.noticeList.map((item) => (
               <li key={item}>{item}</li>
             ))}

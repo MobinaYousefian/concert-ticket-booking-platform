@@ -8,57 +8,63 @@ import CtaSectionComponent from "@/app/activity/[id]/components/book-stats/cta-s
 
 import { SeatsContext } from "@/app/activity/[id]/providers/seats/seats.provider.component";
 
+import { SEAT_TAX_PERCENTAGE } from "@/lib/constants";
+
 import styles from "./book-stats.module.css";
 
 type Hint = {
   value: string;
   label: string;
-  color: string;
+  colorClass: string;
 };
+
 const hints: Hint[] = [
   {
     value: "booked",
     label: "فروخته شده",
-    color: "-destructive",
+    colorClass: "booked",
   },
   {
     value: "pending",
     label: "رزرو",
-    color: "-warning",
+    colorClass: "pending",
   },
   {
     value: "free",
     label: "قابل خرید",
-    color: "-success",
+    colorClass: "free",
   },
   {
     value: "nonSale",
     label: "غیر قابل خرید",
-    color: "-seat-nonSale",
+    colorClass: "non-sale",
   },
   {
     value: "selected",
     label: "انتخاب شما",
-    color: "-seat-selected",
+    colorClass: "selected",
   },
 ];
 
-export type ShowingSelectData = {
+export type CurrentShowingSelectData = {
   activityId: number;
+  showingId: number;
   time: string;
   date: string;
 };
 type Props = {
-  showingSelectData: ShowingSelectData;
+  currentShowingSelectData: CurrentShowingSelectData;
 };
 
 export default function BookStatsComponent({
-  showingSelectData,
+  currentShowingSelectData,
 }: Props): ReactElement {
   const { seats } = useContext(SeatsContext);
 
   const finalPrice = seats.reduce((prev, curr) => {
-    return curr.seatPrice * 0.1 + curr.seatPrice + prev;
+    const tax = curr.seatPrice * SEAT_TAX_PERCENTAGE;
+
+    return prev + curr.seatPrice + tax;
   }, 0);
 
   return (
@@ -69,29 +75,21 @@ export default function BookStatsComponent({
           تعداد صندلی‌های انتخاب شده: {seats.length}
         </div>
         <div className={styles.hint}>
-          {hints.map(({ value, label, color }) => (
+          {hints.map(({ value, label, colorClass }) => (
             <div key={value} className={styles.container}>
-              <div
-                style={{ backgroundColor: `var(--color${color})` }}
-                className={styles.circle}
-              ></div>
-              <span
-                style={{ color: `var(--color${color})` }}
-                className={styles.label}
-              >
+              <div className={clsx(styles.circle, styles[colorClass])}></div>
+              <span className={clsx(styles.label, styles[colorClass])}>
                 {label}
               </span>
             </div>
           ))}
         </div>
       </div>
-      <div className={clsx("perforations", styles["block-perforations"])}></div>
-      <div
-        className={clsx("perforations", styles["inline-perforations"])}
-      ></div>
+      <div className={"block-perforations"}></div>
+      <div className={"inline-perforations"}></div>
       <CtaSectionComponent
         finalPrice={finalPrice}
-        showingSelectData={showingSelectData}
+        currentShowingSelectData={currentShowingSelectData}
       />
     </div>
   );

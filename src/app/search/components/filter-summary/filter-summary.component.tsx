@@ -32,8 +32,8 @@ export default function FilterSummaryComponent(): ReactElement | null {
     <div className={styles["filter-summary"]}>
       <div className={styles.title}>فیلترها</div>
       <ButtonComponent
-        variant={"destructive"}
-        size={"sm"}
+        variant="destructive"
+        size="sm"
         type="button"
         onClick={handleRemoveAll}
         className={styles["remove-all"]}
@@ -43,7 +43,7 @@ export default function FilterSummaryComponent(): ReactElement | null {
       <ul className={styles.filters}>
         {filters.query && (
           <li onClick={() => handleRemoveFilter("query")}>
-            <ButtonComponent variant={"muted"} size={"sm"}>
+            <ButtonComponent variant="muted" size="sm">
               {filters.query}
               <HugeiconsCancel01 />
             </ButtonComponent>
@@ -51,7 +51,7 @@ export default function FilterSummaryComponent(): ReactElement | null {
         )}
         {filters.activityType && (
           <li onClick={() => handleRemoveFilter("activityType")}>
-            <ButtonComponent variant={"muted"} size={"sm"}>
+            <ButtonComponent variant="muted" size="sm">
               {filters.activityType}
               <HugeiconsCancel01 />
             </ButtonComponent>
@@ -59,7 +59,7 @@ export default function FilterSummaryComponent(): ReactElement | null {
         )}
         {filters.city && (
           <li onClick={() => handleRemoveFilter("city")}>
-            <ButtonComponent variant={"muted"} size={"sm"}>
+            <ButtonComponent variant="muted" size="sm">
               {filters.city}
               <HugeiconsCancel01 />
             </ButtonComponent>

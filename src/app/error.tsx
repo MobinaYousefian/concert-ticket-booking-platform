@@ -21,7 +21,7 @@ export default function Error({ error, reset }: Props): ReactElement {
         <p>با عرض پوزش لطفا با پشتیبانی تماس بگیرید</p>
       </div>
       <div className={styles.actions}>
-        <ButtonComponent onClick={reset} size={"lg"}>
+        <ButtonComponent onClick={reset} size="lg">
           تلاش مجدد
         </ButtonComponent>
       </div>

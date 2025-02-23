@@ -44,7 +44,7 @@ export default function HeaderComponent(): ReactElement {
         </ul>
       </nav>
       <div className={styles.cta}>
-        <ButtonComponent shape={"outline"} className={styles.login}>
+        <ButtonComponent shape="outline" className={styles.login}>
           ثبت‌نام | ورود
         </ButtonComponent>
       </div>

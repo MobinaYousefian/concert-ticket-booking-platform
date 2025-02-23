@@ -40,7 +40,7 @@ export default function RootLayout({
       <body>
         <HeaderComponent />
         <main>{children}</main>
-        <p className={"tagline"}>
+        <p className="tagline">
           رزرو بلیت، اطلاع از آخرین کنسرت‌ها و نمایش‌های هنری
         </p>
         <FooterComponent />

@@ -9,8 +9,8 @@ import styles from "./add-favorite.module.css";
 export default function AddFavoriteComponent(): ReactElement {
   return (
     <ButtonComponent
-      shape={"ghost"}
-      variant={"muted"}
+      shape="ghost"
+      variant="muted"
       className={styles["add-favorite"]}
     >
       <HugeiconsFavourite />

@@ -181,7 +181,7 @@ body {
     text-align: center;
   }
 
-  .perforations {
+  .inline-perforations {
     position: relative;
 
     inline-size: 100%;
@@ -212,6 +212,38 @@ body {
     &::after {
       inset-inline-start: -2rem;
       rotate: -90deg;
+    }
+  }
+
+  .block-perforations {
+    position: relative;
+
+    inline-size: 100%;
+    border-inline-start: 2px dashed var(--color-border);
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: var(--color-surface-97);
+
+      inline-size: 1.75rem;
+      block-size: 1.75rem;
+
+      border-radius: 50%;
+
+      box-shadow: var(--shadow-perforations);
+
+      position: absolute;
+      z-index: 1;
+      inset-inline: -1rem;
+    }
+
+    &::before {
+      inset-block-start: -2rem;
+      rotate: 180deg;
+    }
+    &::after {
+      inset-block-end: -2rem;
     }
   }
 }

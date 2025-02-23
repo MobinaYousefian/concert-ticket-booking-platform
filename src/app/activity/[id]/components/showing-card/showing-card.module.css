@@ -133,7 +133,7 @@
 
     border-block-end-color: transparent;
     border-inline-end-color: transparent;
-    /* Rotate the circle */
+
     transform: rotate(45deg);
   }
 

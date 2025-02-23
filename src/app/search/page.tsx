@@ -6,7 +6,6 @@ import ActivityTypeFilterComponent from "@/app/search/components/activity-type-f
 import FilterSummaryComponent from "@/app/search/components/filter-summary/filter-summary.component";
 import CityFilterComponent from "@/app/search/components/city-filter/city-filter.component";
 import StatsComponent from "@/app/search/components/stats/stats.component";
-// import FiltersCapsuleComponent from "@/app/search/components/mobile-filters/filters-capsule.component";
 
 import FiltersProvider from "@/app/search/providers/filters/filters.provider";
 import ActivityProvider from "@/app/search/providers/activity/activity.provider";
@@ -16,7 +15,7 @@ import { SearchParams } from "@/types/search-param.type";
 
 import { activity } from "@/lib/activity-data";
 
-import { normalizeSearchParam } from "@/utils/functions";
+import { normalizeSearchParam } from "@/utils/search-param.utils";
 
 import styles from "./page.module.css";
 
@@ -34,9 +33,6 @@ export default function SearchPage({ searchParams }: Props): ReactElement {
           <div className={styles.search}>
             <GlobalSearchBoxComponent />
           </div>
-          {/*<div className={styles["mobile-filters"]}>*/}
-          {/*  <FiltersCapsuleComponent />*/}
-          {/*</div>*/}
           <aside className={styles.filters}>
             <FilterSummaryComponent />
             <ActivityTypeFilterComponent />

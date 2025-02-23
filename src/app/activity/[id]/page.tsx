@@ -8,7 +8,7 @@ import ShowingDataComponent from "@/app/activity/[id]/components/showing-data/sh
 
 import { activity } from "@/lib/activity-data";
 
-import { normalizeSearchParam } from "@/utils/functions";
+import { normalizeSearchParam } from "@/utils/search-param.utils";
 
 import { ShowingId } from "@/types/showingId.type";
 import { SearchParams } from "@/types/search-param.type";
@@ -43,7 +43,7 @@ export default function Page({ params, searchParams }: Props): ReactElement {
         <>
           <ActivityDetailComponent activityData={activityData} />
           <section className={styles.showings}>
-            <div className={"section-heading"}>
+            <div className="section-heading">
               <h2>انتخاب سانس</h2>
             </div>
             <div className={styles["showing-card"]}>

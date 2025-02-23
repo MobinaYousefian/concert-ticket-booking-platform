@@ -36,13 +36,14 @@ export default function ShowingDataComponent(): ReactElement | null {
             }}
           />
         </SectionCardComponent>
-        <div className={"section-heading"}>
+        <div className="section-heading">
           <h2>انتخاب صندلی</h2>
         </div>
         <SectionCardComponent>
           <BookStatsComponent
-            showingSelectData={{
+            currentShowingSelectData={{
               activityId: activityData.id,
+              showingId: showingData.id,
               time: showingData.time,
               date: showingData.date,
             }}

@@ -2,8 +2,6 @@
   display: grid;
 
   .price {
-    margin-block-end: 1.5rem;
-
     > span {
       color: var(--color-zinc-500);
 
@@ -15,13 +13,15 @@
 
   .cta {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     justify-content: center;
     align-items: center;
     flex-flow: row-reverse wrap;
 
-    .select {
-      /*inline-size: 12rem;*/
+    margin-block-start: 2rem;
+
+    .button {
+      min-inline-size: 20ch;
     }
   }
 }

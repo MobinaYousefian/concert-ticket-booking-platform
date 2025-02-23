@@ -38,8 +38,8 @@ const replaceToastifyIcons = (type: TypeOptions, theme: Theme) => {
         <HugeiconsInformationCircle
           color={color}
           fill={fill}
-          width={"1.5em"}
-          height={"1.5em"}
+          width="1.5em"
+          height="1.5em"
         />
       );
     case "success":
@@ -47,8 +47,8 @@ const replaceToastifyIcons = (type: TypeOptions, theme: Theme) => {
         <HugeiconsCheckmarkCircle01
           color={color}
           fill={fill}
-          width={"1.5em"}
-          height={"1.5em"}
+          width="1.5em"
+          height="1.5em"
         />
       );
     case "warning":
@@ -56,8 +56,8 @@ const replaceToastifyIcons = (type: TypeOptions, theme: Theme) => {
         <HugeiconsAlert02
           color={color}
           fill={fill}
-          width={"1.5em"}
-          height={"1.5em"}
+          width="1.5em"
+          height="1.5em"
         />
       );
     case "error":
@@ -65,8 +65,8 @@ const replaceToastifyIcons = (type: TypeOptions, theme: Theme) => {
         <HugeiconsAlertCircle
           color={color}
           fill={fill}
-          width={"1.5em"}
-          height={"1.5em"}
+          width="1.5em"
+          height="1.5em"
         />
       );
     default:
