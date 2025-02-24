@@ -40,10 +40,17 @@ export default function SelectComponent({
   const containerRef = useRef<HTMLDivElement>(null);
 
   const maximumCharactersCount = useMemo(() => {
-    return Math.max(
-      placeholder?.length ?? 0,
-      ...options.map((option) => option.label.length),
-    );
+    const numbersArr = [...options.map((option) => option.label.length)];
+
+    const numbersLength = placeholder?.length
+      ? 1 + numbersArr.length
+      : numbersArr.length;
+
+    const sum = numbersArr.reduce((prev, curr) => {
+      return prev + curr;
+    }, placeholder?.length ?? 0);
+
+    return Math.floor(sum / numbersLength);
   }, [placeholder, options]);
 
   const selectOption = useCallback(

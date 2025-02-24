@@ -1,7 +1,7 @@
 .showing-data {
   grid-area: writings;
+}
 
-  .info {
-    margin-block-end: 3rem;
-  }
+.seat-selection {
+  grid-area: showings;
 }

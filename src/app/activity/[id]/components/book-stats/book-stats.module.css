@@ -9,14 +9,15 @@
     }
 
     .showing-price {
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(24ch, 1fr));
       align-items: start;
-      flex-wrap: wrap;
       gap: 1rem;
 
       > * {
-        flex: 1 1 auto;
+        > button {
+          inline-size: 100%;
+        }
       }
     }
 
@@ -88,7 +89,7 @@
 
 @media screen and (min-width: 768px) {
   .book-stats {
-    grid-template-columns: 5fr 0.5fr 2.75fr;
+    grid-template-columns: 5fr 0.5fr 2.5fr;
 
     :global(.block-perforations) {
       display: block;

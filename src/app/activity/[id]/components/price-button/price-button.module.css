@@ -4,10 +4,9 @@
   }
 
   .button {
-    inline-size: 100%;
     justify-content: space-between;
 
-    border-color: var(--color-border);
+    border-color: var(--color-zinc-300);
 
     font-size: var(--fz-300);
 

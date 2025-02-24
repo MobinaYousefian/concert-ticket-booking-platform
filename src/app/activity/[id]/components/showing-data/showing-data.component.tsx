@@ -26,16 +26,16 @@ export default function ShowingDataComponent(): ReactElement | null {
 
   return (
     <SeatsProviderComponent defaultSeats={[]}>
-      <div className={styles["showing-data"]}>
-        <SectionCardComponent className={styles.info}>
-          <ActivityInfoComponent
-            activityData={{
-              ...activityData,
-              time: showingData.time,
-              date: showingData.date,
-            }}
-          />
-        </SectionCardComponent>
+      <SectionCardComponent className={styles["showing-data"]}>
+        <ActivityInfoComponent
+          activityData={{
+            ...activityData,
+            time: showingData.time,
+            date: showingData.date,
+          }}
+        />
+      </SectionCardComponent>
+      <div className={styles["seat-selection"]}>
         <div className="section-heading">
           <h2>انتخاب صندلی</h2>
         </div>
@@ -49,8 +49,8 @@ export default function ShowingDataComponent(): ReactElement | null {
             }}
           />
         </SectionCardComponent>
+        <SeatMapComponent />
       </div>
-      <SeatMapComponent />
     </SeatsProviderComponent>
   );
 }
