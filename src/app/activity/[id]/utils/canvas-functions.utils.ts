@@ -24,7 +24,6 @@ const getCenter = (p1: Point, p2: Point) => {
 
 let lastCenter: Point | null = null;
 let lastDist = 0;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 let dragStopped = false;
 
 export const handleZoomOnTouch = (e: Konva.KonvaEventObject<TouchEvent>) => {
@@ -39,10 +38,10 @@ export const handleZoomOnTouch = (e: Konva.KonvaEventObject<TouchEvent>) => {
   const touch2 = e.evt.touches[1];
 
   // we need to restore dragging, if it was cancelled by multi-touch
-  // if (touch1 && !touch2 && !stage.isDragging() && dragStopped) {
-  //   stage.startDrag();
-  //   dragStopped = false;
-  // }
+  if (touch1 && !touch2 && !stage.isDragging() && dragStopped) {
+    stage.startDrag();
+    dragStopped = false;
+  }
 
   if (touch1 && touch2) {
     // if the stage was under Konva's drag&drop
