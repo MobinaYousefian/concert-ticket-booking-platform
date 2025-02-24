@@ -2,16 +2,28 @@
   display: grid;
 
   .writings {
-    .seatNumbers {
-      margin-block: 2rem 0.5rem;
+    display: grid;
+
+    > *:not(:last-child) {
+      margin-block-end: 2rem;
+    }
+
+    .showing-price {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      > * {
+        flex: 1 1 auto;
+      }
     }
 
     .hint {
       display: flex;
-      gap: 1.25rem;
+      gap: 1rem;
       flex-wrap: wrap;
-
-      margin-block-start: 1.5rem;
 
       .container {
         display: flex;

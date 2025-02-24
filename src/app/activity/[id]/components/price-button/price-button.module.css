@@ -1,46 +1,29 @@
 .price-button {
-  margin-block-end: 0.75rem;
+  &.hide {
+    display: none;
+  }
 
-  > button {
-    background-color: transparent;
-    color: var(--color-zinc-600);
+  .button {
+    inline-size: 100%;
+    justify-content: space-between;
 
-    border: none;
+    border-color: var(--color-border);
 
     font-size: var(--fz-300);
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: var(--animation-duration-normal) ease-in-out;
-    transition-property: all;
 
     &:hover,
     &:focus {
-      color: var(--color-primary);
+      background-color: var(--color-zinc-50);
+      color: var(--color-text);
 
-      .underline {
-        inline-size: 100%;
+      border-color: var(--color-primary);
+
+      .arrow {
+        transform: translateX(-0.25rem);
+        color: var(--color-primary);
+
+        transition-duration: var(--animation-duration-normal);
       }
-    }
-
-    &:disabled {
-      filter: grayscale(100%);
-      pointer-events: none;
-    }
-
-    .underline {
-      background-color: var(--color-border-primary);
-
-      inline-size: 0;
-      block-size: 2px;
-
-      border-radius: var(--border-radius);
-
-      margin-block-start: 0.25rem;
-
-      transition: var(--animation-duration-slow) ease-in-out;
-      transition-property: all;
     }
   }
 }

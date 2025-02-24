@@ -5,6 +5,7 @@ import { clsx } from "clsx";
 
 import PriceButtonComponent from "@/app/activity/[id]/components/price-button/price-button.component";
 import CtaSectionComponent from "@/app/activity/[id]/components/book-stats/cta-section/cta-section.component";
+import ChangeShowingComponent from "@/app/activity/[id]/components/change-showing/change-showing.component";
 
 import { SeatsContext } from "@/app/activity/[id]/providers/seats/seats.provider.component";
 
@@ -70,7 +71,12 @@ export default function BookStatsComponent({
   return (
     <div className={styles["book-stats"]}>
       <div className={styles.writings}>
-        <PriceButtonComponent remainingShowings={1} />
+        <div className={styles["showing-price"]}>
+          <PriceButtonComponent remainingShowings={1} />
+          <ChangeShowingComponent
+            currentShowingSelectData={currentShowingSelectData}
+          />
+        </div>
         <div className={styles["seatNumbers"]}>
           تعداد صندلی‌های انتخاب شده: {seats.length}
         </div>
@@ -87,10 +93,7 @@ export default function BookStatsComponent({
       </div>
       <div className={"block-perforations"}></div>
       <div className={"inline-perforations"}></div>
-      <CtaSectionComponent
-        finalPrice={finalPrice}
-        currentShowingSelectData={currentShowingSelectData}
-      />
+      <CtaSectionComponent finalPrice={finalPrice} />
     </div>
   );
 }

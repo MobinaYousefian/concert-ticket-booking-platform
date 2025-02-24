@@ -1,5 +1,6 @@
 .cta-section {
   display: grid;
+  gap: 1.5rem;
 
   .price {
     > span {
@@ -12,13 +13,9 @@
   }
 
   .cta {
-    display: flex;
-    gap: 0.5rem;
+    display: grid;
     justify-content: center;
-    align-items: center;
-    flex-flow: row-reverse wrap;
-
-    margin-block-start: 2rem;
+    align-items: end;
 
     .button {
       min-inline-size: 20ch;
