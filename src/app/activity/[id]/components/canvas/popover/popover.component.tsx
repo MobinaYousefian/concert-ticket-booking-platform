@@ -20,12 +20,12 @@ export default function PopoverComponent({
     let insetInline = popoverData.position.x;
 
     if (popoverData.position.x > halfWidth) {
-      insetInline = popoverData.position.x - 100;
+      insetInline = popoverData.position.x - 128;
     }
 
     return {
       insetInlineEnd: insetInline,
-      insetBlockStart: popoverData.position.y + 16,
+      insetBlockStart: popoverData.position.y - 92,
     };
   };
 
