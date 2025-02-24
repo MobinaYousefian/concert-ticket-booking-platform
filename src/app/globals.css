@@ -205,12 +205,12 @@ body {
     }
 
     &::before {
-      inset-inline-end: -2rem;
+      inset-inline-end: -2.125rem;
       rotate: 90deg;
     }
 
     &::after {
-      inset-inline-start: -2rem;
+      inset-inline-start: -2.125rem;
       rotate: -90deg;
     }
   }

@@ -1,5 +1,8 @@
 .showing-data {
   grid-area: writings;
+
+  padding-block-end: 2rem;
+  margin-block-end: 2rem;
 }
 
 .seat-selection {

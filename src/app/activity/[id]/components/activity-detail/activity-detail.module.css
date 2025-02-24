@@ -1,12 +1,16 @@
 .activity-detail {
   grid-area: writings;
 
+  :global(.inline-perforations) {
+    margin-block: 2rem;
+  }
+
   .activity-notice {
     > ul {
       display: grid;
       gap: 0.5rem;
 
-      margin-block: 2rem;
+      margin-block-end: 2rem;
 
       color: var(--color-zinc-700);
       font-size: var(--fz-300);

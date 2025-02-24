@@ -1,5 +1,13 @@
 .book-stats {
   display: grid;
+  gap: 0.5rem;
+
+  > :first-child {
+    padding: 0.75rem 0.5rem;
+  }
+  > :last-child {
+    padding-block: 0.75rem;
+  }
 
   .writings {
     display: grid;
@@ -79,7 +87,6 @@
 
   :global(.block-perforations) {
     display: none;
-    margin-inline: 1rem;
   }
 
   :global(.inline-perforations) {
@@ -89,7 +96,7 @@
 
 @media screen and (min-width: 768px) {
   .book-stats {
-    grid-template-columns: 5fr 0.5fr 2.5fr;
+    grid-template-columns: 5fr 0.125fr 2.25fr;
 
     :global(.block-perforations) {
       display: block;
