@@ -6,24 +6,25 @@ import KonvaEventObject = Konva.KonvaEventObject;
 import { SeatType } from "@/types/seats.type";
 import { PopoverType } from "@/types/popover.type";
 
-type P = {
+type Point = {
   x: number;
   y: number;
 };
 
-const getDistance = (p1: P, p2: P): number => {
+const getDistance = (p1: Point, p2: Point): number => {
   return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
 };
 
-const getCenter = (p1: P, p2: P) => {
+const getCenter = (p1: Point, p2: Point) => {
   return {
     x: (p1.x + p2.x) / 2,
     y: (p1.y + p2.y) / 2,
   };
 };
 
-let lastCenter: P | null = null;
+let lastCenter: Point | null = null;
 let lastDist = 0;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 let dragStopped = false;
 
 export const handleZoomOnTouch = (e: Konva.KonvaEventObject<TouchEvent>) => {
@@ -38,10 +39,10 @@ export const handleZoomOnTouch = (e: Konva.KonvaEventObject<TouchEvent>) => {
   const touch2 = e.evt.touches[1];
 
   // we need to restore dragging, if it was cancelled by multi-touch
-  if (touch1 && !touch2 && !stage.isDragging() && dragStopped) {
-    stage.startDrag();
-    dragStopped = false;
-  }
+  // if (touch1 && !touch2 && !stage.isDragging() && dragStopped) {
+  //   stage.startDrag();
+  //   dragStopped = false;
+  // }
 
   if (touch1 && touch2) {
     // if the stage was under Konva's drag&drop
