@@ -1,0 +1,62 @@
+.page {
+  display: grid;
+  grid-template-areas: "banner" "writings" "showings";
+  align-items: start;
+  gap: 1rem;
+
+  margin-block: 2rem;
+
+  overflow: hidden;
+
+  .banner {
+    grid-area: banner;
+    justify-self: center;
+
+    aspect-ratio: 5/6;
+
+    block-size: 16rem;
+
+    > img {
+      object-fit: cover;
+
+      inline-size: 100%;
+      block-size: 100%;
+
+      border-radius: var(--border-radius);
+    }
+  }
+
+  .showings {
+    grid-area: showings;
+
+    margin-block-start: 2rem;
+
+    .showing-card {
+      display: grid;
+      gap: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page {
+    grid-template-areas: "writings banner" "showings showings";
+    grid-template-columns: 3fr 1fr;
+
+    .banner {
+      justify-self: end;
+    }
+
+    .writings {
+      > ul {
+        gap: 2rem;
+      }
+    }
+
+    .showings {
+      .showing-card {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}

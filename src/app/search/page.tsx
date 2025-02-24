@@ -6,27 +6,25 @@ import ActivityTypeFilterComponent from "@/app/search/components/activity-type-f
 import FilterSummaryComponent from "@/app/search/components/filter-summary/filter-summary.component";
 import CityFilterComponent from "@/app/search/components/city-filter/city-filter.component";
 import StatsComponent from "@/app/search/components/stats/stats.component";
-import FiltersCapsuleComponent from "@/app/search/components/mobile-filters/filters-capsule.component";
 
 import FiltersProvider from "@/app/search/providers/filters/filters.provider";
 import ActivityProvider from "@/app/search/providers/activity/activity.provider";
 
-import { activity } from "@/lib/data";
-
 import { FiltersType } from "@/types/filters.type";
+import { SearchParams } from "@/types/search-param.type";
+
+import { activity } from "@/lib/activity-data";
+
+import { normalizeSearchParam } from "@/utils/search-param.utils";
 
 import styles from "./page.module.css";
 
-type SearchParams = { [key: string]: string | string[] | undefined };
-
 type Props = {
-  searchParams: Promise<SearchParams>;
+  searchParams: SearchParams;
 };
 
-export default async function SearchPage({
-  searchParams,
-}: Props): Promise<ReactElement> {
-  const defaultFilters = generateDefaultFilters(await searchParams);
+export default function SearchPage({ searchParams }: Props): ReactElement {
+  const defaultFilters = generateDefaultFilters(searchParams);
 
   return (
     <FiltersProvider defaultFilters={defaultFilters}>
@@ -35,14 +33,11 @@ export default async function SearchPage({
           <div className={styles.search}>
             <GlobalSearchBoxComponent />
           </div>
-          <div className={styles["mobile-filters"]}>
-            <FiltersCapsuleComponent />
-          </div>
-          <div className={styles.filters}>
+          <aside className={styles.filters}>
             <FilterSummaryComponent />
             <ActivityTypeFilterComponent />
             <CityFilterComponent />
-          </div>
+          </aside>
           <div className={styles.toolbar}>
             <div className={styles.stats}>
               <StatsComponent />
@@ -59,18 +54,8 @@ function generateDefaultFilters(searchParams: SearchParams): FiltersType {
   const { query, activityType, city } = searchParams;
 
   return {
-    query: normalizeFilter(query),
-    activityType: normalizeFilter(activityType),
-    city: normalizeFilter(city),
+    query: normalizeSearchParam(query),
+    activityType: normalizeSearchParam(activityType),
+    city: normalizeSearchParam(city),
   };
-}
-
-function normalizeFilter(
-  value: string | string[] | undefined,
-): string | undefined {
-  if (Array.isArray(value)) {
-    return value[0];
-  }
-
-  return value;
 }

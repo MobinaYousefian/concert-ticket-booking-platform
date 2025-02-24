@@ -1,0 +1,164 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.5rem 1rem;
+
+  border: none;
+
+  cursor: pointer;
+
+  transition: var(--animation-duration-fast) ease-in-out;
+  transition-property: all;
+
+  svg {
+    font-size: 1.25em;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: var(--color-surface-muted);
+    color: var(--color-text-muted);
+
+    border: 1px solid var(--color-border);
+  }
+
+  &.solid {
+    background-color: var(--background-color);
+    color: var(--color);
+
+    border-radius: var(--border-radius);
+
+    &:hover {
+      background-color: var(--background-color-hover);
+    }
+
+    &.primary {
+      --background-color: var(--color-primary);
+      --background-color-hover: var(--color-primary-700);
+      --color: var(--color-primary-opposite);
+    }
+
+    &.muted {
+      --background-color: var(--color-surface-muted);
+      --background-color-hover: var(--color-zinc-300);
+      --color: var(--color-text-muted);
+    }
+
+    &.destructive {
+      --background-color: var(--color-destructive);
+      --background-color-hover: var(--color-destructive-darker);
+      --color: var(--color-destructive-opposite);
+    }
+  }
+
+  &.outline {
+    background-color: transparent;
+    color: var(--color);
+
+    border: 1px solid currentcolor;
+    border-radius: var(--border-radius);
+
+    &:hover {
+      background-color: var(--background-color-hover);
+      color: var(--color-hover);
+    }
+
+    &.primary {
+      --background-color-hover: var(--color-primary);
+      --color: var(--color-primary);
+      --color-hover: var(--color-primary-opposite);
+    }
+
+    &.muted {
+      --background-color-hover: var(--color-text-muted);
+      --color: var(--color-text-muted);
+      --color-hover: var(--color-surface-muted);
+    }
+
+    &.destructive {
+      --background-color-hover: var(--color-destructive);
+      --color: var(--color-destructive);
+      --color-hover: var(--color-destructive-opposite);
+    }
+  }
+
+  &.link {
+    background-color: transparent;
+    color: var(--color);
+
+    border-block-end: 1px solid;
+    border-color: transparent;
+    padding: 0.25rem 0;
+
+    &:hover {
+      color: var(--color-hover);
+      border-color: currentColor;
+    }
+
+    &.primary {
+      --color: var(--color-primary);
+      --color-hover: var(--color-primary-900);
+    }
+
+    &.muted {
+      --color: var(--color-text-muted);
+      --color-hover: var(--color-zinc-700);
+    }
+
+    &.destructive {
+      --color: var(--color-destructive);
+      --color-hover: var(--color-destructive-darker);
+    }
+  }
+
+  &.ghost {
+    background-color: transparent;
+    color: var(--color);
+
+    &:hover {
+      color: var(--color-hover);
+    }
+
+    &.primary {
+      --color: var(--color-primary);
+    }
+
+    &.muted {
+      --color: var(--color-text-muted);
+    }
+
+    &.destructive {
+      --color: var(--color-destructive);
+    }
+  }
+
+  &.icon {
+    background-color: transparent;
+    color: var(--color);
+
+    padding: 0.5rem;
+
+    &.primary {
+      --color: var(--color-primary);
+    }
+
+    &.muted {
+      --color: var(--color-text-muted);
+    }
+
+    &.destructive {
+      --color: var(--color-destructive);
+    }
+  }
+
+  &.sm {
+    padding: 0.25rem 0.75rem;
+  }
+
+  &.lg {
+    padding: 0.625rem 1.25rem;
+  }
+}

@@ -2,6 +2,8 @@ import { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import ButtonComponent from "@/components/button/button.component";
+
 import quietStreet from "@/assets/illustrations/quiet-street.svg";
 
 import styles from "./not-found.module.css";
@@ -14,8 +16,8 @@ export default function NotFound(): ReactElement {
         <h2>صفحه مورد نظر یافت نشد!</h2>
       </div>
       <div className={styles.cta}>
-        <Link href={"/"}>
-          <button>بازگشت به خانه</button>
+        <Link href="/">
+          <ButtonComponent>بازگشت به خانه</ButtonComponent>
         </Link>
       </div>
       <div className={styles.visuals}>

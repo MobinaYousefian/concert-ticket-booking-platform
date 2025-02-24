@@ -28,24 +28,7 @@
     align-items: flex-end;
 
     button {
-      background-color: var(--color-primary);
-      color: var(--color-primary-opposite);
-
-      padding: 0.5rem 1.5rem;
-
-      border: none;
-      border-radius: var(--border-radius);
-
-      cursor: pointer;
-
-      font-size: var(--fz-400);
-      font-weight: 900;
-
-      &:hover,
-      &:focus {
-        background-color: var(--color-primary-lighter);
-        color: var(--color-primary-opposite);
-      }
+      font-weight: 500;
     }
   }
 

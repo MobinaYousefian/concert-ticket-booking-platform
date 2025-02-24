@@ -71,27 +71,27 @@ export default function FooterComponent(): ReactElement {
     <footer className={styles.footer}>
       <div className={styles.branding}>
         <div className={styles.logo}>
-          <Link href={"/"}>
+          <Link href="/">
             <TamashachiLogo />
           </Link>
           <div>تماشاچی</div>
         </div>
         <p className={styles.description}>
-          پلتفرم خرید بلیط کنسرت‌ها و تئاترهای سراسر کشور
+          پلتفرم خرید بلیت کنسرت‌ها و تئاترهای سراسر کشور
         </p>
       </div>
       <div className={styles.socials}>
         <ul className={styles.certificate}>
           {certificates.map(({ logo, key }) => (
             <li key={key}>
-              <Link href={"/"}>{logo}</Link>
+              <Link href="/">{logo}</Link>
             </li>
           ))}
         </ul>
         <ul className={styles.icons}>
           {socialIcons.map(({ icon, key }) => (
             <li key={key}>
-              <Link href={LINKEDIN_URL} target={"_blank"}>
+              <Link href={LINKEDIN_URL} target="_blank">
                 {icon}
               </Link>
             </li>
@@ -100,7 +100,7 @@ export default function FooterComponent(): ReactElement {
       </div>
       <p className={styles.copy}>
         تمامی حقوق مادی و معنوی این وب‌سایت متعلق به‌
-        <a href={LINKEDIN_URL} target={"_blank"}>
+        <a href={LINKEDIN_URL} target="_blank">
           مبینا یوسفیان‌
         </a>
         می‌باشد.

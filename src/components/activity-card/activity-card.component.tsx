@@ -1,5 +1,8 @@
 import { ReactElement } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+import ButtonComponent from "@/components/button/button.component";
 
 import HugeiconsCalendar03 from "@/icons/HugeiconsCalendar03";
 import HugeiconsLocation04 from "@/icons/HugeiconsLocation04";
@@ -16,8 +19,10 @@ type Props = {
 export default function ActivityCardComponent({
   activity,
 }: Props): ReactElement {
+  const ACTIVITY_PAGE_URL = `/activity/${activity.id.toString()}`;
+
   return (
-    <div className={styles["activity-card"]}>
+    <section className={styles["activity-card"]}>
       <div className={styles.visuals}>
         {/* todo: add sold out image here */}
         <Image
@@ -41,11 +46,13 @@ export default function ActivityCardComponent({
         </div>
       </div>
       <div className={styles.cta}>
-        <button>
-          <HugeiconsShoppingBag02 />
-          خرید بلیط
-        </button>
+        <Link href={ACTIVITY_PAGE_URL}>
+          <ButtonComponent className={styles.buy}>
+            <HugeiconsShoppingBag02 />
+            خرید بلیت
+          </ButtonComponent>
+        </Link>
       </div>
-    </div>
+    </section>
   );
 }

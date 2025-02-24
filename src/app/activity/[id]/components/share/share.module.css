@@ -1,0 +1,12 @@
+.share {
+  > span {
+    font-size: var(--fz-200);
+    color: var(--color-zinc-700);
+  }
+
+  &:hover {
+    > * {
+      color: var(--color-hover-share);
+    }
+  }
+}

@@ -12,9 +12,12 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "konva": "^9.3.18",
     "next": "14.2.18",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-konva": "^18.2.10",
+    "react-toastify": "^11.0.3"
   },
   "devDependencies": {
     "@types/node": "^20",

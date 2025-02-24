@@ -31,8 +31,6 @@ export default function ActivityProvider({
 }: Props): ReactElement {
   const { filters } = useContext(FiltersContext);
 
-  const [filteredActivity, setFilteredActivity] = useState<Activity[]>([]);
-
   const isVisible = useCallback(
     (activity: Activity): boolean => {
       return (
@@ -42,6 +40,10 @@ export default function ActivityProvider({
       );
     },
     [filters],
+  );
+
+  const [filteredActivity, setFilteredActivity] = useState<Activity[]>(
+    activity.filter(isVisible),
   );
 
   useEffect(() => {

@@ -161,7 +161,7 @@ export default function SelectComponent({
             key={option.value}
             className={clsx(
               styles.option,
-              option === selectedOption && styles.selected,
+              option.value === selectedOption?.value && styles.selected,
               index === highlightedIndex && styles.highlighted,
             )}
             onMouseEnter={() => setHighlightedIndex(index)}

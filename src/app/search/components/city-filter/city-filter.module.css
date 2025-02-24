@@ -2,20 +2,21 @@
   overflow-y: auto;
   block-size: 16rem;
 
-  .item {
-    background-color: transparent;
-    color: var(--color-gray-80);
-
-    padding: 0.75rem 0.5rem;
-
+  > li {
     border-block-end: 1px solid var(--color-border);
 
-    cursor: pointer;
-    transition: var(--animation-duration-fast) ease-in-out;
-    transition-property: background-color, color;
+    &:last-child {
+      border-block-end: none;
+    }
+  }
+
+  .item {
+    inline-size: 100%;
+    justify-content: start;
+    padding-block: 0.75rem;
 
     &:hover {
-      background-color: var(--color-gray-30);
+      background-color: var(--color-surface-muted);
       border-radius: var(--border-radius);
     }
 
@@ -24,10 +25,6 @@
       color: var(--color-primary-opposite);
 
       border-radius: var(--border-radius);
-    }
-
-    &:last-child {
-      border-block-end: none;
     }
   }
 }

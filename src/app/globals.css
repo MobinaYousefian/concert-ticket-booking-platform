@@ -1,47 +1,68 @@
 :root {
-  --color-gray-10: hsl(338deg 10% 99%);
-  --color-gray-12: hsl(338deg 10% 97%);
-  --color-gray-16: hsl(338deg 10% 93%);
-  --color-gray-20: hsl(338deg 10% 89%);
-  --color-gray-30: hsl(338deg 10% 80%);
-  --color-gray-40: hsl(338deg 10% 70%);
-  --color-gray-50: hsl(338deg 10% 60%);
-  --color-gray-70: hsl(338deg 10% 40%);
-  --color-gray-80: hsl(338deg 10% 30%);
-  --color-gray-90: hsl(338deg 10% 20%);
-  --color-gray-93: hsl(338deg 10% 16%);
-  --color-gray-97: hsl(338deg 10% 12%);
-  --color-gray-99: hsl(338deg 10% 10%);
+  /* new color pallet *********************************/
+  --color-zinc-50: hsl(0 0% 98%);
+  --color-zinc-100: hsl(240 4.8% 95.9%);
+  --color-zinc-200: hsl(240 5.9% 90%);
+  --color-zinc-300: hsl(240 4.9% 83.9%);
+  --color-zinc-400: hsl(240 5% 64.9%);
+  --color-zinc-500: hsl(240 3.8% 46.1%);
+  --color-zinc-600: hsl(240 5.2% 33.9%);
+  --color-zinc-700: hsl(240 5.3% 26.1%);
+  --color-zinc-800: hsl(240 3.7% 15.9%);
+  --color-zinc-900: hsl(240 5.9% 10%); /* --accent-foreground*/
+  --color-zinc-950: hsl(240 10% 3.9%);
 
-  --color-surface-300: var(--color-gray-16);
-  --color-surface-400: var(--color-gray-12);
-  --color-surface-700: var(--color-gray-10);
+  --color-primary-50: hsl(166.2 76.5% 96.7%);
+  --color-primary-100: hsl(167.2 85.5% 89.2%);
+  --color-primary-200: hsl(168.4 83.8% 78.2%);
+  --color-primary-300: hsl(170.6 76.9% 64.3%);
+  --color-primary-400: hsl(172.5 66% 50.4%);
+  --color-primary-500: hsl(173.4 80.4% 40%);
+  --color-primary-600: hsl(174.7 83.9% 31.6%);
+  --color-primary-700: hsl(175.3 77.4% 26.1%);
+  --color-primary: hsl(176.1 69.4% 21.8%);
+  --color-primary-900: hsl(175.9 60.8% 19%);
+  --color-primary-950: hsl(178.6 84.3% 10%);
 
-  --color-text-400: var(--color-gray-99);
-  --color-text-700: var(--color-gray-70);
-  --color-black: hsl(338deg 10% 12%);
+  --color-primary-fade: hsl(176.1 40% 92%);
+  --color-primary-opposite: hsl(176.1 10% 95%);
 
-  --color-primary: hsl(338deg 75% 62%);
-  --color-primary-fade: hsl(338deg 75% 95%);
-  --color-primary-lighter: hsl(338deg 75% 66%);
-  --color-primary-darker: hsl(338deg 75% 58%);
-  --color-primary-opposite: hsl(338deg 10% 95%);
+  --color-surface-90: hsl(176 7% 90%); /* 90*/
+  --color-surface-93: hsl(176 7% 93%); /* 93*/
+  --color-surface-97: hsl(176 7% 96%); /* 97*/
+  --color-surface: hsl(176 20% 99%); /* 99*/
+  --color-surface-muted: hsl(240 5.9% 92%);
+  --color-surface-modal: hsl(240 5% 20% / 0.55);
 
-  --color-secondary: hsl(174deg 45% 71%);
-  --color-secondary-fade: hsl(174deg 45% 94%);
-  --color-secondary-lighter: hsl(174deg 45% 75%);
-  --color-secondary-darker: hsl(174deg 45% 67%);
+  --color-text: var(--color-zinc-900);
+  --color-text-muted: var(--color-zinc-600);
 
-  --color-danger: hsl(10deg 70% 48%);
-  --color-danger-fade: hsl(10deg 70% 96%);
-  --color-danger-lighter: hsl(10deg 70% 52%);
-  --color-danger-darker: hsl(10deg 70% 44%);
-  --color-danger-opposite: var(--color-gray-99);
+  --color-seat-selected: hsl(219, 70%, 53%);
+  --color-seat-nonSale: hsl(240 10% 60%);
+
+  --color-success: hsl(142.1 76.2% 36.3%);
+  --color-success-opposite: hsl(142.1 76.2% 98%);
+  --color-success-lighter: hsla(142.1 76.2% 40.3%);
+  --color-success-darker: hsl(142.1 76.2% 32.3%);
+
+  --color-warning: hsl(32.1 90% 64%);
+  --color-warning-opposite: hsl(32.1 90% 98%);
+  --color-warning-lighter: hsla(32.1 90% 68%);
+  --color-warning-darker: hsl(32.1 90% 62%);
+
+  --color-destructive: hsl(2 75% 58%);
+  --color-destructive-opposite: hsl(2 75% 98%);
+  --color-destructive-lighter: hsla(2 75% 62%);
+  --color-destructive-darker: hsl(2 75% 54%);
 
   --border-radius: 0.75rem;
-  --color-border: var(--color-gray-30);
+  --color-border: hsl(240 5.9% 90%);
+  --color-border-primary: hsl(176.1 50% 21.8% / 0.4);
 
-  --color-scrollbar-thumb: hsla(338, 40%, 53%, 0.74);
+  --color-hover-favorite: hsl(346.8 62% 49.8%);
+  --color-hover-share: hsl(200.4 98% 39.4%);
+
+  --color-scrollbar-thumb: hsla(176 50% 21% / 0.8);
 
   --shadow-300: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-400: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -51,6 +72,7 @@
   --shadow-800: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
   --shadow-900: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-perforations: inset 0 4px 5px -3px rgb(0 0 0 / 0.1);
 
   --full-width: 75rem;
   --full-width-padding-inline: calc(max(100% - var(--full-width), 2rem) / 2);
@@ -58,31 +80,23 @@
   --animation-duration-fast: 0.1s;
   --animation-duration-normal: 0.2s;
   --animation-duration-slow: 0.6s;
+
+  /* replacing react-toastify colors */
+  --toastify-color-success: var(--color-success);
+  --toastify-color-warning: var(--color-warning);
+  --toastify-color-error: var(--color-destructive);
+
+  --toastify-font-family: Vazirmatn, system-ui;
+
+  --toastify-text-color-light: var(--color-zinc-500);
+  --toastify-text-color-success: var(--color-success-opposite);
+  --toastify-text-color-warning: var(--color-warning-opposite);
+  --toastify-text-color-error: var(--color-destructive-opposite);
+
+  --toastify-color-progress-dark: var(--color-primary-400);
 }
 
 [data-theme="dark"] {
-  --color-gray-99: hsl(338deg 10% 99%);
-  --color-gray-97: hsl(338deg 10% 97%);
-  --color-gray-93: hsl(338deg 10% 93%);
-  --color-gray-90: hsl(338deg 10% 89%);
-  --color-gray-80: hsl(338deg 10% 80%);
-  --color-gray-70: hsl(338deg 10% 70%);
-  --color-gray-50: hsl(338deg 10% 60%);
-  --color-gray-40: hsl(338deg 10% 40%);
-  --color-gray-30: hsl(338deg 10% 30%);
-  --color-gray-20: hsl(338deg 10% 20%);
-  --color-gray-16: hsl(338deg 10% 16%);
-  --color-gray-12: hsl(338deg 10% 12%);
-  --color-gray-10: hsl(338deg 10% 10%);
-
-  --color-surface-300: var(--color-gray-16);
-  --color-surface-400: var(--color-gray-12);
-  --color-surface-700: var(--color-gray-10);
-
-  --color-text-400: var(--color-gray-99);
-  --color-text-700: var(--color-gray-70);
-
-  --color-border: var(--color-gray-30);
 }
 
 *,
@@ -91,6 +105,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-zinc-400) transparent;
 }
 
 input,
@@ -117,19 +134,22 @@ a {
 }
 
 p {
-  color: var(--color-gray-80);
+  color: var(--color-text-muted);
 }
 
 html {
   scroll-behavior: smooth;
   accent-color: var(--color-primary);
   caret-color: var(--color-primary);
+
+  font-family: Vazirmatn, system-ui;
+  font-feature-settings: "ss01";
 }
 
 body {
   font-size: var(--fz-400);
-  background-color: var(--color-surface-400);
-  color: var(--color-text-400);
+  background-color: var(--color-surface-97);
+  color: var(--color-text);
 
   display: grid;
   grid-template-rows: auto 1fr auto auto;
@@ -144,24 +164,86 @@ body {
     padding-inline: var(--full-width-padding-inline);
   }
 
+  .section-heading {
+    margin-block-end: 1rem;
+
+    > h2 {
+      color: var(--color-zinc-700);
+
+      font-size: var(--fz-500);
+      font-weight: 500;
+    }
+  }
+
   .tagline {
-    background-color: var(--color-gray-20);
+    background-color: var(--color-surface-90);
     padding-block: 1rem;
     text-align: center;
   }
-}
 
-::-webkit-scrollbar {
-  width: 0.3125rem;
-  height: 0.3125rem;
-}
+  .inline-perforations {
+    position: relative;
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-scrollbar-thumb);
-  border-radius: 6.25rem;
-}
+    inline-size: 100%;
+    border-block-end: 2px dashed var(--color-border);
 
-::-webkit-scrollbar-track {
-  background: var(--color-gray-40);
-  border-radius: 6.25rem;
+    &::before,
+    &::after {
+      content: "";
+      background-color: var(--color-surface-97);
+
+      inline-size: 1.75rem;
+      block-size: 1.75rem;
+
+      border-radius: 50%;
+
+      box-shadow: var(--shadow-perforations);
+
+      position: absolute;
+      z-index: 1;
+      inset-block-end: -1rem;
+    }
+
+    &::before {
+      inset-inline-end: -2rem;
+      rotate: 90deg;
+    }
+
+    &::after {
+      inset-inline-start: -2rem;
+      rotate: -90deg;
+    }
+  }
+
+  .block-perforations {
+    position: relative;
+
+    inline-size: 100%;
+    border-inline-start: 2px dashed var(--color-border);
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: var(--color-surface-97);
+
+      inline-size: 1.75rem;
+      block-size: 1.75rem;
+
+      border-radius: 50%;
+
+      box-shadow: var(--shadow-perforations);
+
+      position: absolute;
+      z-index: 1;
+      inset-inline: -1rem;
+    }
+
+    &::before {
+      inset-block-start: -2rem;
+      rotate: 180deg;
+    }
+    &::after {
+      inset-block-end: -2rem;
+    }
+  }
 }

@@ -1,0 +1,74 @@
+.modal-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  inline-size: 100%;
+  block-size: 100vh;
+  block-size: 100dvh;
+
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  animation-duration: var(--animation-duration-normal);
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-name: modal-background-fade;
+
+  .modal {
+    background-color: var(--color-surface);
+
+    inline-size: min(34rem, 80%);
+
+    padding: 1rem;
+    border-radius: var(--border-radius);
+
+    box-shadow: var(--shadow-500);
+
+    animation-duration: var(--animation-duration-normal);
+    animation-timing-function: cubic-bezier(0.4, 0, 0, 1.5);
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-name: modal-transform;
+
+    .close {
+      > button {
+        padding: 0;
+
+        > svg {
+          font-size: var(--fz-500);
+        }
+
+        &:hover {
+          color: var(--color-destructive);
+        }
+      }
+    }
+  }
+}
+
+@keyframes modal-background-fade {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: var(--color-surface-modal);
+  }
+}
+
+@keyframes modal-transform {
+  from {
+    transform: translate3d(0px, 2rem, 0px);
+  }
+  to {
+    transform: translateZ(0px);
+  }
+}
