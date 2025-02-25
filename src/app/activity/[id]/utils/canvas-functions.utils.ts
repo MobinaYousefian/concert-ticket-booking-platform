@@ -79,7 +79,7 @@ export const handleZoomOnTouch = (e: Konva.KonvaEventObject<TouchEvent>) => {
     y: (newCenter.y - stage.y()) / stage.scaleX(),
   };
 
-  const scale = Math.max(Math.min(stage.scaleX() * (dist / lastDist), 0.1), 3);
+  const scale = Math.min(Math.max(stage.scaleX() * (dist / lastDist), 0.1), 3);
 
   stage.scaleX(scale);
   stage.scaleY(scale);
