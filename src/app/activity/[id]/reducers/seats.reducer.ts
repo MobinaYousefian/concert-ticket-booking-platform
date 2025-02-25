@@ -7,21 +7,24 @@ export type SeatsAction = {
   seatNumber: number;
 };
 
-export default function seatsReducer(seats: SeatType[], action: SeatsAction) {
+export default function seatsReducer(
+  seats: SeatType[],
+  action: SeatsAction,
+): SeatType[] {
   const isSelected = seats.find(({ id }) => action.id === id);
 
   if (isSelected) {
     return seats.filter(({ id }) => id !== action.id);
   } else {
     return [
+      ...seats,
       {
         id: action.id,
-        seatPrice: action.seatPrice,
-        seatNumber: action.seatNumber,
         rowNumber: action.rowNumber,
+        seatNumber: action.seatNumber,
+        seatPrice: action.seatPrice,
         status: "selected",
       },
-      ...seats,
     ];
   }
 }

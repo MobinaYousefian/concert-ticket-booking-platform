@@ -30,8 +30,6 @@ export default function SeatsProviderComponent({
   defaultSeats,
   children,
 }: Props): ReactElement {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
   const [seats, dispatchSeats] = useReducer(seatsReducer, defaultSeats);
 
   return (
