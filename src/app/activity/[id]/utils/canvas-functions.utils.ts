@@ -160,19 +160,27 @@ export const handleZoom = (
     const scaleOffsetX = (scaledWidth - canvasWidth) / 2;
     const scaleOffsetY = (scaledHeight - canvasHeight) / 2;
 
-    stageRefCurrent.scale({ x: newScale, y: newScale });
-
-    stageRefCurrent.position({
+    stageRefCurrent.to({
+      scaleX: newScale,
+      scaleY: newScale,
       x: -scaleOffsetX,
       y: -scaleOffsetY,
+
+      duration: 0.2,
     });
   }
 };
 
 export const resetScaleZoom = (stageRefCurrent: Konva.Stage | null) => {
   if (stageRefCurrent) {
-    stageRefCurrent.position({ x: 0, y: 0 });
-    stageRefCurrent.scale({ x: 1, y: 1 });
+    stageRefCurrent.to({
+      scaleX: 1,
+      scaleY: 1,
+      x: 0,
+      y: 0,
+
+      duration: 0.2,
+    });
   }
 };
 
