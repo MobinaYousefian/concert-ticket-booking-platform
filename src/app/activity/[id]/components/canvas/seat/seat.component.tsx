@@ -78,6 +78,8 @@ export default function SeatComponent({
           width={seatWidth}
           height={seatHeight}
           fill={handleChangeFill(seat.id, seat.status)}
+          perfectDrawEnabled={false}
+          listening={seat.status === "free"}
         />
         <Text
           key={"seat_number" + seat.id}
