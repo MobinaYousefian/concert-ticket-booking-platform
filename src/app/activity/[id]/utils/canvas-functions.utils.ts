@@ -141,17 +141,31 @@ export const handleZoomOnWheel = (e: Konva.KonvaEventObject<WheelEvent>) => {
 /* helper buttons functions */
 export const handleZoom = (
   stageRefCurrent: Konva.Stage | null,
+  canvasWidth: number,
+  canvasHeight: number,
   direction?: 1 | -1,
 ) => {
   if (stageRefCurrent) {
     const scaleBy = 1.3;
     const oldScale = stageRefCurrent.scaleX();
+
     const newScale =
       direction === 1
         ? Math.min(oldScale * scaleBy, 3)
         : Math.max(oldScale / scaleBy, 0.5);
 
+    const scaledWidth = canvasWidth * newScale;
+    const scaledHeight = canvasHeight * newScale;
+
+    const scaleOffsetX = (scaledWidth - canvasWidth) / 2;
+    const scaleOffsetY = (scaledHeight - canvasHeight) / 2;
+
     stageRefCurrent.scale({ x: newScale, y: newScale });
+
+    stageRefCurrent.position({
+      x: -scaleOffsetX,
+      y: -scaleOffsetY,
+    });
   }
 };
 

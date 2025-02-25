@@ -46,7 +46,7 @@ export default function CanvasComponent({
     {
       id: 1,
       icon: <HugeiconsSearchAdd />,
-      handleZoomToggle: () => handleZoom(stageRef.current, 1),
+      handleZoomToggle: () => handleZoom(stageRef.current, width, height, 1),
     },
     {
       id: 2,
@@ -56,7 +56,7 @@ export default function CanvasComponent({
     {
       id: 3,
       icon: <HugeiconsSearchMinus />,
-      handleZoomToggle: () => handleZoom(stageRef.current, -1),
+      handleZoomToggle: () => handleZoom(stageRef.current, width, height, -1),
     },
   ];
 
