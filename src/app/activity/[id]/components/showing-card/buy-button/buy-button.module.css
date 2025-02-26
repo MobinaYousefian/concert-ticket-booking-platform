@@ -4,11 +4,4 @@
   > svg {
     font-size: var(--fz-400);
   }
-
-  &:disabled {
-    background-color: var(--color-surface-muted);
-    color: var(--color-text-muted);
-
-    border: 1px solid var(--color-border);
-  }
 }

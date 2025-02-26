@@ -93,7 +93,7 @@ export default function BookStatsComponent({
       </div>
       <div className={"block-perforations"}></div>
       <div className={"inline-perforations"}></div>
-      <CtaSectionComponent finalPrice={finalPrice} />
+      <CtaSectionComponent finalPrice={finalPrice} seatsLength={seats.length} />
     </div>
   );
 }

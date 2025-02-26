@@ -17,14 +17,6 @@
     font-size: 1.25em;
   }
 
-  &:disabled {
-    pointer-events: none;
-    background-color: var(--color-surface-muted);
-    color: var(--color-text-muted);
-
-    border: 1px solid var(--color-border);
-  }
-
   &.solid {
     background-color: var(--background-color);
     color: var(--color);
@@ -160,5 +152,24 @@
 
   &.lg {
     padding: 0.625rem 1.25rem;
+  }
+
+  &:disabled {
+    pointer-events: none;
+
+    &.solid {
+      background-color: var(--background-color);
+      color: var(--color);
+
+      border: 1px solid var(--border-color);
+      filter: grayscale(100%);
+
+      &.primary {
+        --background-color: var(--color-surface-muted);
+        --color: var(--color-text-muted);
+
+        --border-color: var(--color-border);
+      }
+    }
   }
 }

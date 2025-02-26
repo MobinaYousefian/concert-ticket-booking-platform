@@ -7,10 +7,12 @@ import styles from "./cta-section.module.css";
 
 type Props = {
   finalPrice: number;
+  seatsLength: number;
 };
 
 export default function CtaSectionComponent({
   finalPrice,
+  seatsLength,
 }: Props): ReactElement {
   return (
     <div className={styles["cta-section"]}>
@@ -19,7 +21,7 @@ export default function CtaSectionComponent({
         <span>(با احتساب 10٪ مالیات)</span>
       </div>
       <div className={styles.cta}>
-        <ButtonComponent className={styles.button}>
+        <ButtonComponent className={styles.button} disabled={seatsLength < 1}>
           <Link href="#">ادامه خرید</Link>
         </ButtonComponent>
       </div>
