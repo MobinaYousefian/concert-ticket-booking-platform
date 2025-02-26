@@ -1,6 +1,6 @@
 .page {
   display: grid;
-  grid-template-areas: "banner" "writings" "showings";
+  grid-template-areas: "back-button" "banner" "writings" "showings";
   align-items: start;
   gap: 1rem;
 
@@ -12,9 +12,10 @@
     grid-area: banner;
     justify-self: center;
 
-    aspect-ratio: 5/6;
+    aspect-ratio: 8/9;
 
-    block-size: 16rem;
+    block-size: 15rem;
+    inline-size: 100%;
 
     > img {
       object-fit: cover;
@@ -40,11 +41,12 @@
 
 @media screen and (min-width: 768px) {
   .page {
-    grid-template-areas: "writings banner" "showings showings";
+    grid-template-areas: "back-button banner" "writings banner" "showings showings";
     grid-template-columns: 3fr 1fr;
 
     .banner {
       justify-self: end;
+      inline-size: max-content;
     }
 
     .writings {

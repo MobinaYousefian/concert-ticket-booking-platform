@@ -2,6 +2,7 @@
 import { ReactElement } from "react";
 import { redirect, usePathname, useSearchParams } from "next/navigation";
 
+import BackButtonComponent from "@/components/back-button/back-button.component";
 import SectionCardComponent from "@/app/activity/[id]/components/section-card/section-card.component";
 import ActivityInfoComponent from "@/app/activity/[id]/components/activity-info/activity-info.component";
 import SeatMapComponent from "@/app/activity/[id]/components/seat-map/seat-map.component";
@@ -26,6 +27,9 @@ export default function ShowingDataComponent(): ReactElement | null {
 
   return (
     <SeatsProviderComponent defaultSeats={[]}>
+      <div className={styles["back-button"]}>
+        <BackButtonComponent backUrl={pathname} />
+      </div>
       <SectionCardComponent className={styles["showing-data"]}>
         <ActivityInfoComponent
           activityData={{

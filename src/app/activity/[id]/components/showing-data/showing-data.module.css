@@ -1,3 +1,7 @@
+.back-button {
+  grid-area: back-button;
+}
+
 .showing-data {
   grid-area: writings;
 
