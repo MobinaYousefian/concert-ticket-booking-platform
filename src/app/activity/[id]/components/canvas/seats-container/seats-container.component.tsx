@@ -43,7 +43,7 @@ export default function SeatsContainerComponent({
 
                 if (seat)
                   return (
-                    <Group key={rowIndex}>
+                    <Group key={seatIndex}>
                       {sectionIndex === 0 && seatIndex === 0 && (
                         <Text
                           text={rowKey}

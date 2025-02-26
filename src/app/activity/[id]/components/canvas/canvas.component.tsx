@@ -91,7 +91,7 @@ export default function CanvasComponent({
         <Layer>
           <Group x={baseOffsetX} y={0}>
             <Path
-              fill="hsl(240 3.8% 46.1%)"
+              fill="hsl(240 12% 50%)"
               data={`M ${0},0 A ${width / 2} ${width / 6} 0 0, 0 ${(9 * width) / 10}, 0`}
             />
             <Text
