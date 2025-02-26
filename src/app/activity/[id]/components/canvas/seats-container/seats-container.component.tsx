@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-import { Group } from "react-konva";
+import { Group, Text } from "react-konva";
 
 import { SeatByRow } from "@/lib/data.type";
 
@@ -10,12 +10,14 @@ type Props = {
   seatByRow: SeatByRow;
   canvasWidth: number;
   sectionIndex: number;
+  seatSectionsLength: number;
 };
 
 export default function SeatsContainerComponent({
   seatByRow,
   canvasWidth,
   sectionIndex,
+  seatSectionsLength,
 }: Props): ReactElement {
   const desktopOffset = canvasWidth >= 736 ? canvasWidth / 70 : 0;
 
@@ -30,6 +32,17 @@ export default function SeatsContainerComponent({
         if (row !== null)
           return (
             <>
+              {sectionIndex === 0 && (
+                <Text
+                  text={rowKey}
+                  x={0}
+                  y={rowIndex * (canvasWidth / 46)}
+                  offsetX={rowIndex === 0 ? -(2 * (canvasWidth / 50)) + 10 : 20}
+                  offsetY={-canvasWidth / 200}
+                  fontFamily={"Vazirmatn"}
+                  fontSize={16}
+                />
+              )}
               {row.map((seat, seatIndex) => {
                 if (seat !== null)
                   return (
@@ -42,6 +55,17 @@ export default function SeatsContainerComponent({
                     />
                   );
               })}
+              {seatSectionsLength - sectionIndex === 1 && (
+                <Text
+                  text={rowKey}
+                  x={0}
+                  y={rowIndex * (canvasWidth / 46)}
+                  offsetX={-(row.length * (canvasWidth / 45))}
+                  offsetY={-canvasWidth / 200}
+                  fontFamily={"Vazirmatn"}
+                  fontSize={16}
+                />
+              )}
             </>
           );
       })}

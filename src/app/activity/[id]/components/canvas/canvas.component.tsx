@@ -108,6 +108,7 @@ export default function CanvasComponent({
                 seatByRow={seatByRow}
                 canvasWidth={width}
                 sectionIndex={sectionIndex}
+                seatSectionsLength={WEST_MALL.seatSections.length}
               />
             ))}
           </Group>
