@@ -2,6 +2,8 @@ import { ReactElement } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
+import { clsx } from "clsx";
+
 import ActivityDetailComponent from "@/app/activity/[id]/components/activity-detail/activity-detail.component";
 import ShowingCardComponent from "@/app/activity/[id]/components/showing-card/showing-card.component";
 import ShowingDataComponent from "@/app/activity/[id]/components/showing-data/showing-data.component";
@@ -29,7 +31,14 @@ export default function Page({ params, searchParams }: Props): ReactElement {
 
   if (!activityData) return notFound();
   return (
-    <div className={styles.page}>
+    <div
+      className={clsx(
+        styles.page,
+        defaultShowingId
+          ? styles["query-template"]
+          : styles["default-template"],
+      )}
+    >
       <div className={styles.banner}>
         <Image
           src={activityData.banner}

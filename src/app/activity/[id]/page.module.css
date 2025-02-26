@@ -1,8 +1,15 @@
 .page {
   display: grid;
-  grid-template-areas: "back-button" "banner" "writings" "showings";
   align-items: start;
   gap: 1rem;
+
+  &.default-template {
+    grid-template-areas: "banner" "writings" "showings";
+  }
+
+  &.query-template {
+    grid-template-areas: "back-button" "banner" "writings" "showings";
+  }
 
   margin-block: 2rem;
 
@@ -41,8 +48,15 @@
 
 @media screen and (min-width: 768px) {
   .page {
-    grid-template-areas: "back-button banner" "writings banner" "showings showings";
     grid-template-columns: 3fr 1fr;
+
+    &.default-template {
+      grid-template-areas: "writings banner" "showings showings";
+    }
+
+    &.query-template {
+      grid-template-areas: "back-button banner" "writings banner" "showings showings";
+    }
 
     .banner {
       justify-self: end;

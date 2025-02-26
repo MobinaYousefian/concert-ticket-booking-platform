@@ -24,6 +24,11 @@ export default function SeatsContainerComponent({
   const offsetX = desktopOffset + sectionIndex * (canvasWidth / 3.5);
   const offsetY = canvasWidth / 8;
 
+  const seatWidth = canvasWidth / 50;
+  const seatHeight = canvasWidth / 50;
+
+  const desktopRectMargin = canvasWidth >= 736 ? 2 : 1;
+
   return (
     <Group x={offsetX} y={offsetY}>
       {Object.keys(seatByRow).map((rowKey, rowIndex) => {
@@ -32,40 +37,48 @@ export default function SeatsContainerComponent({
         if (row !== null)
           return (
             <>
-              {sectionIndex === 0 && (
-                <Text
-                  text={rowKey}
-                  x={0}
-                  y={rowIndex * (canvasWidth / 46)}
-                  offsetX={rowIndex === 0 ? -(2 * (canvasWidth / 50)) + 10 : 20}
-                  offsetY={-canvasWidth / 200}
-                  fontFamily={"Vazirmatn"}
-                  fontSize={16}
-                />
-              )}
               {row.map((seat, seatIndex) => {
-                if (seat !== null)
+                const seatOffsetX = seatIndex * (seatWidth + desktopRectMargin);
+                const seatOffsetY = rowIndex * (seatHeight + desktopRectMargin);
+
+                if (seat)
                   return (
-                    <SeatComponent
-                      key={seat.id}
-                      rowIndex={rowIndex}
-                      seat={seat}
-                      seatIndex={seatIndex}
-                      canvasWidth={canvasWidth}
-                    />
+                    <Group key={rowIndex}>
+                      {sectionIndex === 0 && seatIndex === 0 && (
+                        <Text
+                          text={rowKey}
+                          x={seatOffsetX}
+                          y={seatOffsetY}
+                          offsetX={seatWidth}
+                          offsetY={-seatHeight / 3}
+                          fontFamily={"Vazirmatn"}
+                          fontSize={canvasWidth / 80}
+                        />
+                      )}
+                      <SeatComponent
+                        key={seat.id}
+                        seat={seat}
+                        canvasWidth={canvasWidth}
+                        seatOffsetX={seatOffsetX}
+                        seatOffsetY={seatOffsetY}
+                        seatWidth={seatWidth}
+                        seatHeight={seatHeight}
+                      />
+                      {seatSectionsLength - sectionIndex === 1 &&
+                        row.length - seatIndex === 1 && (
+                          <Text
+                            text={rowKey}
+                            x={seatOffsetX}
+                            y={seatOffsetY}
+                            offsetX={-1.5 * seatWidth}
+                            offsetY={-seatHeight / 3}
+                            fontFamily={"Vazirmatn"}
+                            fontSize={canvasWidth / 80}
+                          />
+                        )}
+                    </Group>
                   );
               })}
-              {seatSectionsLength - sectionIndex === 1 && (
-                <Text
-                  text={rowKey}
-                  x={0}
-                  y={rowIndex * (canvasWidth / 46)}
-                  offsetX={-(row.length * (canvasWidth / 45))}
-                  offsetY={-canvasWidth / 200}
-                  fontFamily={"Vazirmatn"}
-                  fontSize={16}
-                />
-              )}
             </>
           );
       })}

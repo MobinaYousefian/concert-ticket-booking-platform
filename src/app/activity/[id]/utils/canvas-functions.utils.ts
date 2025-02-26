@@ -79,7 +79,7 @@ export const handleZoomOnTouch = (e: Konva.KonvaEventObject<TouchEvent>) => {
     y: (newCenter.y - stage.y()) / stage.scaleX(),
   };
 
-  const scale = Math.min(Math.max(stage.scaleX() * (dist / lastDist), 0.1), 3);
+  const scale = Math.min(Math.max(stage.scaleX() * (dist / lastDist), 0.1), 4);
 
   stage.scaleX(scale);
   stage.scaleY(scale);
@@ -127,7 +127,7 @@ export const handleZoomOnWheel = (e: Konva.KonvaEventObject<WheelEvent>) => {
 
   const newScale =
     direction > 0
-      ? Math.min(oldScale * scaleBy, 3)
+      ? Math.min(oldScale * scaleBy, 4)
       : Math.max(oldScale / scaleBy, 0.5);
   stage.scale({ x: newScale, y: newScale });
 
@@ -151,7 +151,7 @@ export const handleZoom = (
 
     const newScale =
       direction === 1
-        ? Math.min(oldScale * scaleBy, 3)
+        ? Math.min(oldScale * scaleBy, 4)
         : Math.max(oldScale / scaleBy, 0.5);
 
     const scaledWidth = canvasWidth * newScale;

@@ -16,8 +16,8 @@ export default function ActivityDetailComponent({
   activityData,
 }: Props): ReactElement {
   return (
-    <SectionCardComponent>
-      <div className={styles["activity-detail"]}>
+    <SectionCardComponent className={styles["activity-detail"]}>
+      <div className={styles.content}>
         <ActivityInfoComponent activityData={activityData} />
         <div className="inline-perforations"></div>
         <div className={styles["activity-notice"]}>

@@ -1,32 +1,34 @@
 .activity-detail {
   grid-area: writings;
 
-  :global(.inline-perforations) {
-    margin-block: 2rem;
-  }
+  .content {
+    :global(.inline-perforations) {
+      margin-block: 2rem;
+    }
 
-  .activity-notice {
-    > ul {
-      display: grid;
-      gap: 0.5rem;
+    .activity-notice {
+      > ul {
+        display: grid;
+        gap: 0.5rem;
 
-      margin-block-end: 2rem;
+        margin-block-end: 2rem;
 
-      color: var(--color-zinc-700);
-      font-size: var(--fz-300);
+        color: var(--color-zinc-700);
+        font-size: var(--fz-300);
 
-      > li {
-        list-style: inside;
+        > li {
+          list-style: inside;
 
-        &::marker {
-          color: var(--color-primary);
-        }
+          &::marker {
+            color: var(--color-primary);
+          }
 
-        .terms {
-          padding-inline: 0.25rem;
-          color: var(--color-primary);
+          .terms {
+            padding-inline: 0.25rem;
+            color: var(--color-primary);
 
-          cursor: pointer;
+            cursor: pointer;
+          }
         }
       }
     }

@@ -19,26 +19,22 @@ const BookStats = {
 };
 
 type Props = {
-  rowIndex: number;
   seat: Seat;
-  seatIndex: number;
   canvasWidth: number;
+  seatOffsetX: number;
+  seatOffsetY: number;
+  seatWidth: number;
+  seatHeight: number;
 };
 
 export default function SeatComponent({
   seat,
-  seatIndex,
-  rowIndex,
   canvasWidth,
+  seatOffsetX,
+  seatOffsetY,
+  seatWidth,
+  seatHeight,
 }: Props): ReactElement | undefined {
-  const desktopRectMargin = canvasWidth >= 736 ? 2 : 1;
-
-  const seatWidth = canvasWidth / 50;
-  const seatHeight = canvasWidth / 50;
-
-  const seatOffsetX = seatIndex * (seatWidth + desktopRectMargin);
-  const seatOffsetY = rowIndex * (seatHeight + desktopRectMargin);
-
   const { seats, dispatchSeats } = useContext(SeatsContext);
   const { setPopoverData } = useContext(PopoverContext);
 
