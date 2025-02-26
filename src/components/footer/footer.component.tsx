@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
 import Link from "next/link";
 
-import HugeiconsLinkedin02 from "@/icons/HugeiconsLinkedin02";
-import HugeiconsYoutube from "@/icons/HugeiconsYoutube";
-import HugeiconsTelegram from "@/icons/HugeiconsTelegram";
-import HugeiconsInstagram from "@/icons/HugeiconsInstagram";
+import HugeiconsLinkedin02 from "@/icons/socials/HugeiconsLinkedin02";
+import HugeiconsYoutube from "@/icons/socials/HugeiconsYoutube";
+import HugeiconsTelegram from "@/icons/socials/HugeiconsTelegram";
+import HugeiconsInstagram from "@/icons/socials/HugeiconsInstagram";
 import TamashachiLogo from "@/logo/t-colored-logo";
 
 import ENamad from "@/logo/e-namad";

@@ -6,9 +6,9 @@ import BuyButtonComponent from "@/app/activity/[id]/components/showing-card/buy-
 
 import { ActivityShowing } from "@/lib/data.type";
 
-import HugeiconsCheckmarkCircle01 from "@/icons/HugeiconsCheckmarkCircle01";
-import HugeiconsInformationCircle from "@/icons/HugeiconsInformationCircle";
-import HugeiconsCancelCircle from "@/icons/HugeiconsCancelCircle";
+import HugeiconsCheckmarkCircle01 from "@/icons/circles/HugeiconsCheckmarkCircle01";
+import HugeiconsInformationCircle from "@/icons/circles/HugeiconsInformationCircle";
+import HugeiconsCancelCircle from "@/icons/circles/HugeiconsCancelCircle";
 
 import styles from "./showing-card.module.css";
 
