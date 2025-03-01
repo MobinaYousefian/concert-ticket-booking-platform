@@ -7,7 +7,7 @@ import PriceButtonComponent from "@/app/activity/[id]/components/price-button/pr
 import CtaSectionComponent from "@/app/activity/[id]/components/book-stats/cta-section/cta-section.component";
 import ChangeShowingComponent from "@/app/activity/[id]/components/change-showing/change-showing.component";
 
-import { SeatsContext } from "@/app/activity/[id]/providers/seats/seats.provider.component";
+import { SeatsContext } from "@/app/activity/[id]/providers/seats/seats.provider";
 
 import { SEAT_TAX_PERCENTAGE } from "@/lib/constants";
 

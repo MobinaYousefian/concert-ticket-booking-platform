@@ -26,7 +26,7 @@ type Props = PropsWithChildren & {
   defaultSeats: SeatType[];
 };
 
-export default function SeatsProviderComponent({
+export default function SeatsProvider({
   defaultSeats,
   children,
 }: Props): ReactElement {

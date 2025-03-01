@@ -6,7 +6,7 @@ import BackButtonComponent from "@/components/back-button/back-button.component"
 import SectionCardComponent from "@/app/activity/[id]/components/section-card/section-card.component";
 import ActivityInfoComponent from "@/app/activity/[id]/components/activity-info/activity-info.component";
 import SeatMapComponent from "@/app/activity/[id]/components/seat-map/seat-map.component";
-import SeatsProviderComponent from "@/app/activity/[id]/providers/seats/seats.provider.component";
+import SeatsProvider from "@/app/activity/[id]/providers/seats/seats.provider";
 import BookStatsComponent from "@/app/activity/[id]/components/book-stats/book-stats.component";
 
 import { showingsData } from "@/lib/showings-data";
@@ -26,7 +26,7 @@ export default function ShowingDataComponent(): ReactElement | null {
   const activityData = showingData.activityData;
 
   return (
-    <SeatsProviderComponent defaultSeats={[]}>
+    <SeatsProvider defaultSeats={[]}>
       <div className={styles["back-button"]}>
         <BackButtonComponent backUrl={pathname} />
       </div>
@@ -55,6 +55,6 @@ export default function ShowingDataComponent(): ReactElement | null {
         </SectionCardComponent>
         <SeatMapComponent />
       </div>
-    </SeatsProviderComponent>
+    </SeatsProvider>
   );
 }
