@@ -1,7 +1,21 @@
 import { RowOffsetObject } from "@/app/activity/[id]/types/canvas.type";
 
+export type HallsObj = {
+  "111": Hall;
+  "112": Hall;
+  "113": Hall;
+  "114": Hall;
+  "115": Hall;
+  "116": Hall;
+  "117": Hall;
+  "118": Hall;
+  "119": Hall;
+  "120": Hall;
+  "121": Hall;
+};
+
 export type Hall = {
-  id: number;
+  id: keyof HallsObj;
   name: string;
   capacity: number;
   city: string;

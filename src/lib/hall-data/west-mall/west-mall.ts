@@ -19,7 +19,7 @@ export const WEST_MALL_PRICES = {
 };
 
 export const WEST_MALL: Hall = {
-  id: 120,
+  id: "120",
   name: "سالن مال غربی",
   capacity: 490,
   city: "تهران",

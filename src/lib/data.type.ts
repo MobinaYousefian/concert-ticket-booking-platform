@@ -1,3 +1,5 @@
+import { HallsObj } from "@/lib/hall-data/hall.type";
+
 export interface Activity {
   id: number;
   banner: string;
@@ -5,7 +7,7 @@ export interface Activity {
   date: string;
   time: string;
   location: string;
-  hallId: number;
+  hallId: keyof HallsObj;
   city: string;
   activityType: string;
   noticeList: string[];

@@ -1,4 +1,5 @@
-import { ReactElement, useRef } from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import Konva from "konva";
 import { Group, Layer, Path, Stage, Text } from "react-konva";
@@ -18,7 +19,10 @@ import HugeiconsSearchAdd from "@/icons/HugeiconsSearchAdd";
 import HugeiconsCancel01 from "@/icons/HugeiconsCancel01";
 import HugeiconsSearchMinus from "@/icons/HugeiconsSearchMinus";
 
-import { WEST_MALL } from "@/lib/hall-data/west-mall/west-mall";
+import { activity } from "@/lib/activity-data";
+import { halls } from "@/lib/hall-data/halls";
+
+import { Hall } from "@/lib/hall-data/hall.type";
 
 import styles from "./canvas.module.css";
 
@@ -40,6 +44,8 @@ export default function CanvasComponent({
   width,
   height,
 }: Props): ReactElement {
+  const pathname = usePathname();
+  const [hallData, setHallData] = useState<Hall | null>(null);
   const stageRef = useRef<Konva.Stage | null>(null);
 
   const buttons: ButtonData[] = [
@@ -61,8 +67,18 @@ export default function CanvasComponent({
   ];
 
   const responsiveScale = width >= 736 ? 0.8 : 1;
-
   const baseOffsetX = width >= 736 ? width / 4 : width / 6;
+
+  /* this part is skipped when using a database */
+  useEffect(() => {
+    const activityId = pathname.split("/").at(-1);
+
+    const currentActivity = activity.find(
+      ({ id }) => id.toString() === activityId,
+    );
+
+    if (currentActivity) setHallData(halls[currentActivity.hallId]);
+  }, [pathname]);
 
   return (
     <>
@@ -109,19 +125,20 @@ export default function CanvasComponent({
               fontFamily="Vazirmatn"
               fontSize={width / 56}
             />
-            {WEST_MALL.seatsByRow.map((row, rowIndex) => {
-              if (row)
-                return (
-                  <RowComponent
-                    key={rowIndex}
-                    row={row}
-                    rowIndex={rowIndex}
-                    canvasWidth={width}
-                    getRowsOffsetX={WEST_MALL.getRowsOffsetX}
-                    getRowsOffsetY={WEST_MALL.getRowsOffsetY}
-                  />
-                );
-            })}
+            {hallData &&
+              hallData.seatsByRow.map((row, rowIndex) => {
+                if (row)
+                  return (
+                    <RowComponent
+                      key={rowIndex}
+                      row={row}
+                      rowIndex={rowIndex}
+                      canvasWidth={width}
+                      getRowsOffsetX={hallData.getRowsOffsetX}
+                      getRowsOffsetY={hallData.getRowsOffsetY}
+                    />
+                  );
+              })}
           </Group>
         </Layer>
       </Stage>
