@@ -1,14 +1,11 @@
+.loading {
+  margin-block: 3rem;
+}
+
 .seat-map {
   margin-block-start: 2rem;
 
   inline-size: 100%;
-  block-size: 16rem;
 
   position: relative;
-}
-
-@media screen and (min-width: 768px) {
-  .seat-map {
-    block-size: 32rem;
-  }
 }

@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 import PopoverProviderComponent from "@/app/activity/[id]/providers/popover/popover.provider";
 import PopoverComponent from "@/app/activity/[id]/components/canvas/popover/popover.component";
+import Loading from "@/app/loading";
 
 import styles from "./seat-map.module.css";
 
@@ -11,6 +12,11 @@ const Canvas = dynamic(
   () => import("@/app/activity/[id]/components/canvas/canvas.component"),
   {
     ssr: false,
+    loading: () => (
+      <div className={styles.loading}>
+        <Loading />
+      </div>
+    ),
   },
 );
 
@@ -21,8 +27,15 @@ export default function SeatMapComponent(): ReactElement {
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver((event) => {
-      setCanvasWidth(event[0].contentBoxSize[0].inlineSize);
-      setCanvasHeight(event[0].contentBoxSize[0].blockSize);
+      const inlineSize = event[0].contentBoxSize[0].inlineSize;
+      let blockSize = inlineSize / 2.25;
+
+      if (inlineSize >= 736) {
+        blockSize = inlineSize / 3;
+      }
+
+      setCanvasWidth(inlineSize);
+      setCanvasHeight(blockSize);
     });
 
     if (sectionRef.current) {

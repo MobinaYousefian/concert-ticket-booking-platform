@@ -12,13 +12,13 @@ import {
 } from "@/app/activity/[id]/utils/canvas-functions.utils";
 
 import ButtonComponent from "@/components/button/button.component";
-import SeatsContainerComponent from "@/app/activity/[id]/components/canvas/seats-container/seats-container.component";
+import RowComponent from "@/app/activity/[id]/components/canvas/row/row.component";
 
 import HugeiconsSearchAdd from "@/icons/HugeiconsSearchAdd";
 import HugeiconsCancel01 from "@/icons/HugeiconsCancel01";
 import HugeiconsSearchMinus from "@/icons/HugeiconsSearchMinus";
 
-import { WEST_MALL } from "@/lib/hall-data";
+import { WEST_MALL } from "@/lib/hall-data/west-mall/west-mall";
 
 import styles from "./canvas.module.css";
 
@@ -60,7 +60,9 @@ export default function CanvasComponent({
     },
   ];
 
-  const baseOffsetX = width / 20;
+  const responsiveScale = width >= 736 ? 0.8 : 1;
+
+  const baseOffsetX = width >= 736 ? width / 4 : width / 6;
 
   return (
     <>
@@ -89,28 +91,37 @@ export default function CanvasComponent({
         onTouchEnd={handleZoomOnTouchEnd}
       >
         <Layer>
-          <Group x={baseOffsetX} y={0}>
+          <Group
+            x={baseOffsetX}
+            y={0}
+            scaleX={responsiveScale}
+            scaleY={responsiveScale}
+          >
             <Path
               fill="hsl(240 12% 50%)"
-              data={`M ${0},0 A ${width / 2} ${width / 6} 0 0, 0 ${(9 * width) / 10}, 0`}
+              data={`M ${0},0 A ${width / 2} ${width / 5} 0 0, 0 ${(2 * width) / 3}, 0`}
             />
             <Text
               text="صحنه اجرا"
-              x={width / 2.4}
-              y={width / 28}
+              x={width / 3.35}
+              y={width / 50}
               fill="white"
               fontFamily="Vazirmatn"
               fontSize={width / 56}
             />
-            {WEST_MALL.seatSections.map(({ id, seatByRow }, sectionIndex) => (
-              <SeatsContainerComponent
-                key={id}
-                seatByRow={seatByRow}
-                canvasWidth={width}
-                sectionIndex={sectionIndex}
-                seatSectionsLength={WEST_MALL.seatSections.length}
-              />
-            ))}
+            {WEST_MALL.seatsByRow.map((row, rowIndex) => {
+              if (row)
+                return (
+                  <RowComponent
+                    key={rowIndex}
+                    row={row}
+                    rowIndex={rowIndex}
+                    canvasWidth={width}
+                    getRowsOffsetX={WEST_MALL.getRowsOffsetX}
+                    getRowsOffsetY={WEST_MALL.getRowsOffsetY}
+                  />
+                );
+            })}
           </Group>
         </Layer>
       </Stage>

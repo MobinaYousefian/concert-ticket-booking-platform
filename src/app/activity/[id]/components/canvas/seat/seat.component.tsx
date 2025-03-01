@@ -2,13 +2,13 @@ import { ReactElement, useContext } from "react";
 
 import { Group, Rect, Text } from "react-konva";
 
-import { SeatsContext } from "@/app/activity/[id]/providers/seats/seats.provider.component";
-import { PopoverContext } from "@/app/activity/[id]/providers/popover/popover.provider";
-
 import { handleShowPopover } from "@/app/activity/[id]/utils/canvas-functions.utils";
 
-import { Seat } from "@/lib/data.type";
+import { SeatsContext } from "@/app/activity/[id]/providers/seats/seats.provider";
+import { PopoverContext } from "@/app/activity/[id]/providers/popover/popover.provider";
+
 import { SeatType } from "@/types/seats.type";
+import { Seat } from "@/lib/hall-data/hall.type";
 
 const BookStats = {
   booked: "hsl(2 75% 58%)",
@@ -21,20 +21,29 @@ const BookStats = {
 type Props = {
   seat: Seat;
   canvasWidth: number;
-  seatOffsetX: number;
-  seatOffsetY: number;
+  seatIndex: number;
+  rowIndex: number;
+  desktopRectMargin: number;
   seatWidth: number;
   seatHeight: number;
+  seatsOffsetX: number;
+  seatsOffsetY: number;
 };
 
 export default function SeatComponent({
   seat,
   canvasWidth,
-  seatOffsetX,
-  seatOffsetY,
+  rowIndex,
+  seatIndex,
+  desktopRectMargin,
   seatWidth,
   seatHeight,
+  seatsOffsetX,
+  seatsOffsetY,
 }: Props): ReactElement | undefined {
+  const seatX = seatIndex * (seatWidth + desktopRectMargin);
+  const seatY = rowIndex * (seatHeight + desktopRectMargin);
+
   const { seats, dispatchSeats } = useContext(SeatsContext);
   const { setPopoverData } = useContext(PopoverContext);
 
@@ -58,9 +67,11 @@ export default function SeatComponent({
     return BookStats[status];
   };
 
-  if (seat !== null)
+  if (seat)
     return (
       <Group
+        offsetX={-seatsOffsetX}
+        offsetY={-seatsOffsetY}
         onMouseEnter={(e) => handleShowPopover(e, seat, setPopoverData)}
         onMouseLeave={() => {
           setPopoverData(null);
@@ -69,8 +80,8 @@ export default function SeatComponent({
         onTap={() => handleToggleSeat(seat)}
       >
         <Rect
-          x={seatOffsetX}
-          y={seatOffsetY}
+          x={seatX}
+          y={seatY}
           width={seatWidth}
           height={seatHeight}
           fill={handleChangeFill(seat.id, seat.status)}
@@ -78,10 +89,9 @@ export default function SeatComponent({
           listening={seat.status === "free"}
         />
         <Text
-          key={"seat_number" + seat.id}
-          text={`${seat.seatNumber}`}
-          x={seatOffsetX + seatWidth / 3}
-          y={seatOffsetY + seatHeight / 3}
+          x={seatX + seatWidth / 4}
+          y={seatY + seatHeight / 3}
+          text={seat.seatNumber.toString()}
           fontFamily="Vazirmatn"
           fontSize={canvasWidth / 100}
           fill="hsl(240 4.8% 95.9%)"

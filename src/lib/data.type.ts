@@ -32,29 +32,3 @@ export type Showing = {
   date: string;
   time: string;
 };
-
-/* Hall types */
-export type Hall = {
-  id: number;
-  name: string;
-  capacity: number;
-  city: string;
-  seatSections: Section[];
-};
-
-export type Section = {
-  id: number;
-  seatByRow: SeatByRow;
-};
-
-export type SeatByRow = {
-  [key: string]: Seat[] | null;
-};
-
-export type Seat = null | {
-  id: number;
-  rowNumber: number;
-  seatNumber: number;
-  seatPrice: number;
-  status: "free" | "booked" | "pending" | "nonSale" | "selected";
-};
