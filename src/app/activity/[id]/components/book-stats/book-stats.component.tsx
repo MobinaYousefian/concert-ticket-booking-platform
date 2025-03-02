@@ -9,7 +9,7 @@ import ChangeShowingComponent from "@/app/activity/[id]/components/change-showin
 
 import { SeatsContext } from "@/app/activity/[id]/providers/seats/seats.provider";
 
-import { SEAT_TAX_PERCENTAGE } from "@/lib/constants";
+import { SEAT_TAX_PERCENTAGE } from "@/app/activity/[id]/constants/booking.constants";
 
 import styles from "./book-stats.module.css";
 
