@@ -9,7 +9,7 @@ export const activity: Activity[] = [
     date: "جمعه 28 دی",
     time: "21:30",
     location: "سالن میلاد نمایشگاه بین المللی",
-    hallId: 111,
+    hallId: "111",
     city: "تهران",
     activityType: "کنسرت‌ها",
     noticeList: [
@@ -34,7 +34,7 @@ export const activity: Activity[] = [
     date: "پنج‌شنبه 1 تا 3 بهمن",
     time: "18:00",
     location: "پردیس تئاتر شهرزاد",
-    hallId: 112,
+    hallId: "112",
     city: "تهران",
     activityType: "تئاترها",
     noticeList: [
@@ -77,7 +77,7 @@ export const activity: Activity[] = [
     date: "پنج‌شنبه 4 بهمن",
     time: "20:30",
     location: "سالن تئاتر مرکزی",
-    hallId: 113,
+    hallId: "113",
     city: "تهران",
     activityType: "تئاترها",
     noticeList: [
@@ -102,7 +102,7 @@ export const activity: Activity[] = [
     date: "سه‌شنبه 25 دی",
     time: "21:00",
     location: "سالن میلاد نمایشگاه بین المللی",
-    hallId: 111,
+    hallId: "111",
     city: "تهران",
     activityType: "تئاترها",
     noticeList: [
@@ -127,7 +127,7 @@ export const activity: Activity[] = [
     date: "سه‌شنبه 25 تا 28 دی",
     time: "21:30",
     location: "تالار مرکزی",
-    hallId: 114,
+    hallId: "114",
     city: "شیراز",
     activityType: "کنسرت‌ها",
     noticeList: [
@@ -170,7 +170,7 @@ export const activity: Activity[] = [
     date: "شنبه 22 تا 23 دی",
     time: "19:00",
     location: "سالن اجرای موسیقی",
-    hallId: 115,
+    hallId: "115",
     city: "کرج",
     activityType: "کنسرت‌ها",
     noticeList: [
@@ -201,7 +201,7 @@ export const activity: Activity[] = [
     date: "شنبه 29 دی",
     time: "20:30",
     location: "سالن تئاتر شهر",
-    hallId: 116,
+    hallId: "116",
     city: "اصفهان",
     activityType: "تئاترها",
     noticeList: [
@@ -226,7 +226,7 @@ export const activity: Activity[] = [
     date: "سه‌شنبه 25 دی",
     time: "18:30",
     location: "سالن موسیقی مرکزی",
-    hallId: 117,
+    hallId: "117",
     city: "اصفهان",
     activityType: "کنسرت‌ها",
     noticeList: [
@@ -251,7 +251,7 @@ export const activity: Activity[] = [
     date: "سه‌شنبه 25 دی",
     time: "18:00",
     location: "پردیس تئاتر شهرزاد",
-    hallId: 112,
+    hallId: "112",
     city: "تهران",
     activityType: "کنسرت‌ها",
     noticeList: [
@@ -276,7 +276,7 @@ export const activity: Activity[] = [
     date: "پنج‌شنبه 27 دی",
     time: "20:00",
     location: "تالار اصلی شهر",
-    hallId: 118,
+    hallId: "118",
     city: "رشت",
     activityType: "کنسرت‌ها",
     noticeList: [
@@ -301,7 +301,7 @@ export const activity: Activity[] = [
     date: "جمعه 28 دی",
     time: "19:00",
     location: "سالن تئاتر شهر",
-    hallId: 116,
+    hallId: "116",
     city: "تهران",
     activityType: "تئاترها",
     noticeList: [
@@ -326,7 +326,7 @@ export const activity: Activity[] = [
     date: "چهارشنبه 3 تا 5 بهمن",
     time: "21:00",
     location: "سالن تئاتر شهر",
-    hallId: 116,
+    hallId: "116",
     city: "کرج",
     activityType: "تئاترها",
     noticeList: [
@@ -363,7 +363,7 @@ export const activity: Activity[] = [
     date: "پنج‌شنبه 27 دی",
     time: "19:30",
     location: "سالن میلاد نمایشگاه بین المللی",
-    hallId: 111,
+    hallId: "111",
     city: "تهران",
     activityType: "کنسرت‌ها",
     noticeList: [
@@ -388,7 +388,7 @@ export const activity: Activity[] = [
     date: "سه‌شنبه 2 تا 4 بهمن",
     time: "20:00",
     location: "سالن شهرداری",
-    hallId: 119,
+    hallId: "119",
     city: "گرگان",
     activityType: "تئاترها",
     noticeList: [
@@ -425,7 +425,7 @@ export const activity: Activity[] = [
     date: "پنج‌شنبه 4 تا 5 بهمن",
     time: "18:30",
     location: "سالن موسیقی مرکزی",
-    hallId: 117,
+    hallId: "117",
     city: "تبریز",
     activityType: "کنسرت‌ها",
     noticeList: [
@@ -456,7 +456,7 @@ export const activity: Activity[] = [
     date: "سه‌شنبه 25 دی",
     time: "21:30",
     location: "سالن مال غربی",
-    hallId: 120,
+    hallId: "120",
     city: "تهران",
     activityType: "کنسرت‌ها",
     noticeList: [
@@ -481,7 +481,7 @@ export const activity: Activity[] = [
     date: "سه‌شنبه 25 دی",
     time: "21:00",
     location: "سالن مال غربی",
-    hallId: 120,
+    hallId: "120",
     city: "تهران",
     activityType: "تئاترها",
     noticeList: [
@@ -506,7 +506,7 @@ export const activity: Activity[] = [
     date: "شنبه 1 بهمن",
     time: "20:00",
     location: "تالار بزرگ شهر",
-    hallId: 121,
+    hallId: "121",
     city: "قزوین",
     activityType: "تئاترها",
     noticeList: [
