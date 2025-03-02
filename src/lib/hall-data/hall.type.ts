@@ -19,10 +19,13 @@ export type Hall = {
   name: string;
   capacity: number;
   city: string;
+  getCanvasMidPoint: GetCanvasMidPoint;
   getRowsOffsetX: GetRowsOffset;
   getRowsOffsetY: GetRowsOffset;
   seatsByRow: Row[];
 };
+
+export type GetCanvasMidPoint = (canvasWidth: number) => number;
 
 export type GetRowsOffset = (
   seatWidth: number,

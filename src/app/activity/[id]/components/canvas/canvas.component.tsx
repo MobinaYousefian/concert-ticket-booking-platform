@@ -46,6 +46,7 @@ export default function CanvasComponent({
 }: Props): ReactElement {
   const pathname = usePathname();
   const [hallData, setHallData] = useState<Hall | null>(null);
+
   const stageRef = useRef<Konva.Stage | null>(null);
 
   const buttons: ButtonData[] = [
@@ -67,7 +68,7 @@ export default function CanvasComponent({
   ];
 
   const responsiveScale = width >= 736 ? 0.8 : 1;
-  const baseOffsetX = width >= 736 ? width / 4 : width / 6;
+  const baseOffsetX = width >= 736 ? width / 4.5 : width / 6;
 
   /* this part is skipped when using a database */
   useEffect(() => {
@@ -115,7 +116,7 @@ export default function CanvasComponent({
           >
             <Path
               fill="hsl(240 12% 50%)"
-              data={`M ${0},0 A ${width / 2} ${width / 5} 0 0, 0 ${(2 * width) / 3}, 0`}
+              data={`M 0,0 A ${width / 2} ${width / 5} 0 0, 0 ${(2 * width) / 3}, 0`}
             />
             <Text
               text="صحنه اجرا"
@@ -136,6 +137,7 @@ export default function CanvasComponent({
                       canvasWidth={width}
                       getRowsOffsetX={hallData.getRowsOffsetX}
                       getRowsOffsetY={hallData.getRowsOffsetY}
+                      getCanvasMidPoint={hallData.getCanvasMidPoint}
                     />
                   );
               })}

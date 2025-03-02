@@ -1,5 +1,10 @@
 import { Hall } from "@/lib/hall-data/hall.type";
 
+import {
+  MAX_MOBILE_WIDTH,
+  MIN_DESKTOP_WIDTH,
+} from "@/app/activity/[id]/constants/canvas.constants";
+
 export const MILAD_INTL_PRICES = {
   PRICE_ROW_1: 8500000,
   PRICE_ROW_2: 8500000,
@@ -14,24 +19,37 @@ export const MILAD_INTL: Hall = {
   name: "سالن میلاد نمایشگاه بین المللی",
   capacity: 100,
   city: "تهران",
+  getCanvasMidPoint: (canvasWidth) => {
+    let divideNumber;
+
+    if (canvasWidth >= MIN_DESKTOP_WIDTH) {
+      divideNumber = 3.75;
+    } else if (canvasWidth >= MAX_MOBILE_WIDTH) {
+      divideNumber = 3.8;
+    } else {
+      divideNumber = 3.65;
+    }
+
+    return canvasWidth / divideNumber;
+  },
   getRowsOffsetX: (seatWidth, desktopRectMargin) => {
     return {
-      0: -seatWidth - desktopRectMargin,
+      0: seatWidth + desktopRectMargin,
       1: 0,
-      2: seatWidth + desktopRectMargin,
+      2: -seatWidth - desktopRectMargin,
       3: 0,
-      4: -seatWidth - desktopRectMargin,
-      5: -2 * seatWidth - 2 * desktopRectMargin,
+      4: seatWidth + desktopRectMargin,
+      5: 2 * seatWidth + 2 * desktopRectMargin,
     };
   },
   getRowsOffsetY: (seatWidth, desktopRectMargin) => {
     return {
-      0: 0,
-      1: -seatWidth - desktopRectMargin,
-      2: -seatWidth - desktopRectMargin,
-      3: -seatWidth - desktopRectMargin,
-      4: -seatWidth - desktopRectMargin,
-      5: -seatWidth - desktopRectMargin,
+      0: -seatWidth - desktopRectMargin,
+      1: -2 * seatWidth - 2 * desktopRectMargin,
+      2: -2 * seatWidth - 2 * desktopRectMargin,
+      3: -2 * seatWidth - 2 * desktopRectMargin,
+      4: -2 * seatWidth - 2 * desktopRectMargin,
+      5: -2 * seatWidth - 2 * desktopRectMargin,
     };
   },
   seatsByRow: [

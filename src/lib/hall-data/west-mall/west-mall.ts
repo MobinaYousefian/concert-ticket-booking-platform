@@ -1,5 +1,10 @@
 import { Hall } from "@/lib/hall-data/hall.type";
 
+import {
+  MAX_MOBILE_WIDTH,
+  MIN_DESKTOP_WIDTH,
+} from "@/app/activity/[id]/constants/canvas.constants";
+
 export const WEST_MALL_PRICES = {
   PRICE_ROW_1: 1100000,
   PRICE_ROW_2: 1100000,
@@ -23,24 +28,37 @@ export const WEST_MALL: Hall = {
   name: "سالن مال غربی",
   capacity: 490,
   city: "تهران",
+  getCanvasMidPoint: (canvasWidth) => {
+    let divideNumber;
+
+    if (canvasWidth >= MIN_DESKTOP_WIDTH) {
+      divideNumber = 2.9;
+    } else if (canvasWidth >= MAX_MOBILE_WIDTH) {
+      divideNumber = 2.95;
+    } else {
+      divideNumber = 2.85;
+    }
+
+    return canvasWidth / divideNumber;
+  },
   getRowsOffsetX: (seatWidth, desktopRectMargin) => {
     return {
-      0: -3 * seatWidth - 3 * desktopRectMargin,
-      1: -2 * seatWidth - 2 * desktopRectMargin,
-      2: -seatWidth - desktopRectMargin,
+      0: 3 * seatWidth + 3 * desktopRectMargin,
+      1: 2 * seatWidth + 2 * desktopRectMargin,
+      2: seatWidth + desktopRectMargin,
       3: 0,
-      4: seatWidth + desktopRectMargin,
+      4: -seatWidth - desktopRectMargin,
       5: 0,
       6: 0,
-      7: -2 * seatWidth - 2 * desktopRectMargin,
-      8: -2 * seatWidth - 2 * desktopRectMargin,
-      9: -seatWidth - desktopRectMargin,
+      7: 2 * seatWidth + 2 * desktopRectMargin,
+      8: 2 * seatWidth + 2 * desktopRectMargin,
+      9: seatWidth + desktopRectMargin,
       10: 0,
-      11: seatWidth + desktopRectMargin,
-      12: -1 * seatWidth - desktopRectMargin,
-      13: -4 * seatWidth - 4 * desktopRectMargin,
-      14: -4 * seatWidth - 4 * desktopRectMargin,
-      15: -4 * seatWidth - 4 * desktopRectMargin,
+      11: -seatWidth - desktopRectMargin,
+      12: seatWidth + desktopRectMargin,
+      13: 4 * seatWidth + 4 * desktopRectMargin,
+      14: 4 * seatWidth + 4 * desktopRectMargin,
+      15: 4 * seatWidth + 4 * desktopRectMargin,
     };
   },
   getRowsOffsetY: (seatWidth, desktopRectMargin) => {

@@ -4,7 +4,11 @@ import { Group, Text } from "react-konva";
 
 import SeatComponent from "@/app/activity/[id]/components/canvas/seat/seat.component";
 
-import { GetRowsOffset, Seat } from "@/lib/hall-data/hall.type";
+import {
+  GetCanvasMidPoint,
+  GetRowsOffset,
+  Seat,
+} from "@/lib/hall-data/hall.type";
 
 type Props = {
   canvasWidth: number;
@@ -12,6 +16,7 @@ type Props = {
   rowIndex: number;
   getRowsOffsetX: GetRowsOffset;
   getRowsOffsetY: GetRowsOffset;
+  getCanvasMidPoint: GetCanvasMidPoint;
 };
 
 export default function RowComponent({
@@ -20,6 +25,7 @@ export default function RowComponent({
   rowIndex,
   getRowsOffsetX,
   getRowsOffsetY,
+  getCanvasMidPoint,
 }: Props): ReactElement | null {
   const desktopRectMargin = canvasWidth >= 736 ? 2 : 1;
 
@@ -29,9 +35,13 @@ export default function RowComponent({
   const seatsOffsetX = 0;
   const seatsOffsetY = canvasWidth / 14;
 
+  const groupWidth = row.length * (seatWidth + desktopRectMargin);
+  const groupX = getCanvasMidPoint(canvasWidth) - groupWidth / 2;
+
   return (
     <Group
-      offsetX={getRowsOffsetX(seatWidth, desktopRectMargin)[rowIndex]}
+      x={groupX}
+      offsetX={getRowsOffsetX(seatWidth, desktopRectMargin)[rowIndex] - groupX}
       offsetY={getRowsOffsetY(seatWidth, desktopRectMargin)[rowIndex]}
     >
       <Text
