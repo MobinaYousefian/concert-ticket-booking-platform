@@ -24,7 +24,6 @@
 
       > * {
         gap: 0.25rem;
-        padding: 0;
 
         > svg {
           font-size: var(--fz-400);

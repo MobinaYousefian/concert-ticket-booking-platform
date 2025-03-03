@@ -8,10 +8,15 @@
   border-radius: var(--border-radius);
 
   .button {
-    padding: 1.8vw;
+    padding-block: 1.25vw;
+    padding-inline: 1.125vw;
 
     > svg {
-      font-size: 1em;
+      font-size: 2.125vw;
+    }
+
+    &:nth-child(2) {
+      padding-block: 0.5vw;
     }
   }
 }
@@ -34,10 +39,15 @@
 @media screen and (min-width: 768px) {
   .zoom-buttons {
     .button {
-      padding: 0.75vw;
+      padding-block: 0.875vw;
+      padding-inline: 0.75vw;
 
       > svg {
-        font-size: 1.2em;
+        font-size: 1.5vw;
+      }
+
+      &:nth-child(2) {
+        padding-block: 0.4vw;
       }
     }
   }

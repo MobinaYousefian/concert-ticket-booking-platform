@@ -110,6 +110,8 @@
     background-color: transparent;
     color: var(--color);
 
+    padding: 0;
+
     &:hover {
       color: var(--color-hover);
     }
