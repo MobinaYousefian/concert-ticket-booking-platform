@@ -9,8 +9,6 @@ import ChangeShowingComponent from "@/app/activity/[id]/components/change-showin
 
 import { SeatsContext } from "@/app/activity/[id]/providers/seats/seats.provider";
 
-import { SEAT_TAX_PERCENTAGE } from "@/app/activity/[id]/constants/booking.constants";
-
 import styles from "./book-stats.module.css";
 
 type Hint = {
@@ -62,12 +60,6 @@ export default function BookStatsComponent({
 }: Props): ReactElement {
   const { seats } = useContext(SeatsContext);
 
-  const finalPrice = seats.reduce((prev, curr) => {
-    const tax = curr.seatPrice * SEAT_TAX_PERCENTAGE;
-
-    return prev + curr.seatPrice + tax;
-  }, 0);
-
   return (
     <div className={styles["book-stats"]}>
       <div className={styles.writings}>
@@ -93,7 +85,7 @@ export default function BookStatsComponent({
       </div>
       <div className={"block-perforations"}></div>
       <div className={"inline-perforations"}></div>
-      <CtaSectionComponent finalPrice={finalPrice} seatsLength={seats.length} />
+      <CtaSectionComponent />
     </div>
   );
 }

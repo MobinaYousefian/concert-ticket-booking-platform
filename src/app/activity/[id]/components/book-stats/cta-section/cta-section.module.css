@@ -19,6 +19,12 @@
 
     .button {
       min-inline-size: 20ch;
+      padding: 0;
+
+      .link {
+        inline-size: 100%;
+        padding: 0.5rem 1rem;
+      }
     }
   }
 }
