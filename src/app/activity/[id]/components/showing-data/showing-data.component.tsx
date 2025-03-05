@@ -8,6 +8,7 @@ import ActivityInfoComponent from "@/app/activity/[id]/components/activity-info/
 import SeatMapComponent from "@/app/activity/[id]/components/seat-map/seat-map.component";
 import SeatsProvider from "@/app/activity/[id]/providers/seats/seats.provider";
 import BookStatsComponent from "@/app/activity/[id]/components/book-stats/book-stats.component";
+import ChosenSeatSectionComponent from "@/app/activity/[id]/components/chosen-seat-section/chosen-seat-section.component";
 
 import { showingsData } from "@/lib/showings-data";
 
@@ -54,6 +55,7 @@ export default function ShowingDataComponent(): ReactElement | null {
           />
         </SectionCardComponent>
         <SeatMapComponent />
+        <ChosenSeatSectionComponent />
       </div>
     </SeatsProvider>
   );

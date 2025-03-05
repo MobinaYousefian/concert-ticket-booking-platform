@@ -37,6 +37,7 @@
   --color-text: var(--color-zinc-900);
   --color-text-muted: var(--color-zinc-600);
 
+  --color-seat-selected-lighter: hsl(219, 90%, 90%);
   --color-seat-selected: hsl(219, 70%, 53%);
   --color-seat-nonSale: hsl(240 10% 60%);
 

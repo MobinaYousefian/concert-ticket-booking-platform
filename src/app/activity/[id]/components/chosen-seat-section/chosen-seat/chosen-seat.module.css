@@ -1,0 +1,78 @@
+.chosen-seat {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr 0.375fr;
+  align-items: center;
+  gap: 0.5rem;
+
+  background-color: var(--color-seat-selected-lighter);
+
+  font-size: var(--fz-200);
+  font-weight: 600;
+
+  border-radius: var(--border-radius);
+
+  .position {
+    background-color: var(--color-seat-selected);
+    color: var(--color-primary-opposite);
+
+    border-start-start-radius: var(--border-radius);
+    border-end-start-radius: var(--border-radius);
+
+    > * {
+      padding: 0.375rem 0.875rem;
+    }
+
+    > *:not(:last-child) {
+      border-block-end: 2px dashed var(--color-border);
+    }
+
+    .row,
+    .chair {
+      display: grid;
+      grid-template-columns: 1fr 0.25fr;
+      gap: 0.375rem;
+    }
+  }
+
+  :global(.block-perforations) {
+    border: none;
+
+    &::before,
+    &::after {
+      inline-size: 1rem;
+      block-size: 1rem;
+
+      background-color: var(--color-surface);
+    }
+
+    &::before {
+      inset-block-start: -2.375rem;
+    }
+    &::after {
+      inset-block-end: -2.375rem;
+    }
+  }
+
+  .price {
+    justify-self: center;
+  }
+
+  .delete {
+    background-color: var(--color-destructive);
+    color: var(--color-destructive-opposite);
+
+    block-size: 100%;
+
+    border-start-end-radius: var(--border-radius);
+    border-end-end-radius: var(--border-radius);
+
+    > svg {
+      font-size: 1.5em;
+    }
+
+    &:hover {
+      background-color: var(--color-destructive-lighter);
+      color: var(--color-destructive-opposite);
+    }
+  }
+}

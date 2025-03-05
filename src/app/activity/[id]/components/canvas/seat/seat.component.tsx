@@ -50,6 +50,7 @@ export default function SeatComponent({
   const handleToggleSeat = (seat: Seat) => {
     if (!seat || seat.status !== "free") return;
     dispatchSeats({
+      type: "toggle_seat",
       id: seat.id,
       seatNumber: seat.seatNumber,
       seatPrice: seat.seatPrice,

@@ -1,0 +1,13 @@
+.chosen-seat-section {
+  margin-block-start: 2rem;
+
+  .title {
+    margin-block-end: 1rem;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+}
