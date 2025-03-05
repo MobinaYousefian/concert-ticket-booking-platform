@@ -112,10 +112,6 @@
 
     padding: 0;
 
-    &:hover {
-      color: var(--color-hover);
-    }
-
     &.primary {
       --color: var(--color-primary);
     }
