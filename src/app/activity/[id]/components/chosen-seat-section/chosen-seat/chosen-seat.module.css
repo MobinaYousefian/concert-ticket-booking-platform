@@ -43,6 +43,7 @@
       block-size: 1rem;
 
       background-color: var(--color-surface);
+      box-shadow: none;
     }
 
     &::before {

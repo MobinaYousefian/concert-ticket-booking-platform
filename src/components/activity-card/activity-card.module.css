@@ -71,23 +71,25 @@
 
     white-space: nowrap;
 
-    > * {
+    .title {
+      font-size: var(--fz-400);
+
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .title {
-      font-size: var(--fz-400);
-    }
-
     .date,
     .location {
-      display: flex;
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: start;
       align-items: center;
       gap: 0.5rem;
 
       > p {
         font-size: var(--fz-200);
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }

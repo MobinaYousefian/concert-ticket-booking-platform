@@ -28,7 +28,7 @@ export default function ActivityDetailComponent({
             <li>
               تکمیل فرآیند خرید به معنای پذیرفتن‌
               <strong className={styles.terms}>قوانین و شرایط</strong>
-              ‌این وب‌سایت می‌باشد.
+              ‌وب‌سایت تماشاچی می‌باشد.
             </li>
           </ul>
           <PriceButtonComponent

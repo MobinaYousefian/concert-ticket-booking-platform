@@ -19,19 +19,19 @@ type Hint = {
 
 const hints: Hint[] = [
   {
+    value: "free",
+    label: "آزاد",
+    colorClass: "free",
+  },
+  {
     value: "booked",
-    label: "فروخته شده",
+    label: "خریداری شده",
     colorClass: "booked",
   },
   {
     value: "pending",
-    label: "رزرو",
+    label: "منتظر پرداخت",
     colorClass: "pending",
-  },
-  {
-    value: "free",
-    label: "قابل خرید",
-    colorClass: "free",
   },
   {
     value: "nonSale",
@@ -51,6 +51,7 @@ export type CurrentShowingSelectData = {
   time: string;
   date: string;
 };
+
 type Props = {
   currentShowingSelectData: CurrentShowingSelectData;
 };
