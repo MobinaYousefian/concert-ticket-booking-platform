@@ -20,6 +20,9 @@
     "react-konva": "^18.2.10",
     "react-toastify": "^11.0.3"
   },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
@@ -30,6 +33,7 @@
     "postcss-nesting": "^13.0.1",
     "prettier": "^3.4.2",
     "prisma": "^6.4.1",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   }
 }
