@@ -24,6 +24,9 @@
     background-color: var(--color-surface);
 
     inline-size: min(34rem, 80%);
+    max-block-size: 50%;
+
+    overflow: auto;
 
     padding: 1rem;
     border-radius: var(--border-radius);
@@ -41,12 +44,6 @@
 
     .close {
       > button {
-        padding: 0;
-
-        > svg {
-          font-size: var(--fz-500);
-        }
-
         &:hover {
           color: var(--color-destructive);
         }
@@ -70,5 +67,13 @@
   }
   to {
     transform: translateZ(0px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-background {
+    .modal {
+      max-block-size: 60%;
+    }
   }
 }

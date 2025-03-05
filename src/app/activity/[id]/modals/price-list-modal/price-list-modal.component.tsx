@@ -1,6 +1,18 @@
-import { Dispatch, ReactElement, SetStateAction } from "react";
+import {
+  Dispatch,
+  ReactElement,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
+import { usePathname } from "next/navigation";
 
 import ModalBackgroundComponent from "@/components/modal-background/modal-background.component";
+
+import { activity } from "@/lib/activity-data";
+import { hallsPrices } from "@/lib/hall-data/halls-prices";
+
+import { RowPrices } from "@/lib/hall-data/halls-prices.type";
 
 import styles from "./price-list-modal.module.css";
 
@@ -8,49 +20,40 @@ type Props = {
   setShowModal: Dispatch<SetStateAction<boolean>>;
 };
 
-type TempPrice = {
-  label: string;
-  price: number;
-};
-const tempPrices: TempPrice[] = [
-  {
-    label: "همکف - ردیف ۱ تا ۴: ",
-    price: 840000,
-  },
-  {
-    label: "همکف - ردیف ۵ تا ۶: ",
-    price: 750000,
-  },
-  {
-    label: "همکف - ردیف ۷ تا ۱۰: ",
-    price: 600000,
-  },
-  {
-    label: "بالکن - ردیف ۱ تا ۵: ",
-    price: 420000,
-  },
-  {
-    label: "بالکن - ردیف ۵ تا ۱۰: ",
-    price: 350000,
-  },
-];
-
 export default function PriceListModalComponent({
   setShowModal,
 }: Props): ReactElement {
+  const pathname = usePathname();
+  const [priceData, setPriceData] = useState<RowPrices>({});
+
+  /* this part is skipped when using a database */
+  useEffect(() => {
+    const activityId = pathname.split("/").at(-1);
+
+    const currentActivity = activity.find(
+      ({ id }) => id.toString() === activityId,
+    );
+
+    if (currentActivity) setPriceData(hallsPrices[currentActivity.hallId]);
+  }, [pathname]);
+
   return (
     <ModalBackgroundComponent setShowModal={setShowModal}>
       <div className={styles["price-list-modal"]}>
         <ul role={"list"}>
-          {tempPrices.map(({ label, price }) => (
-            <li key={price}>
-              <span className={styles.label}>{label}</span>
-              <span className={styles.price}>
-                {price.toLocaleString()}
-                <span>تومان</span>
-              </span>
-            </li>
-          ))}
+          {Object.keys(priceData).map((priceKey) => {
+            const priceObj = priceData[priceKey];
+
+            return (
+              <li key={priceObj.label}>
+                <span className={styles.label}>{priceObj.label}</span>
+                <span className={styles.price}>
+                  {priceObj.value.toLocaleString()}
+                  <span>تومان</span>
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </ModalBackgroundComponent>
