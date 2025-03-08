@@ -161,7 +161,7 @@ body {
   transition: var(--animation-duration-slow) ease-in-out;
   transition-property: background-color, color;
 
-  > * {
+  .padding {
     padding-inline: var(--full-width-padding-inline);
   }
 

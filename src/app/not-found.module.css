@@ -5,9 +5,8 @@
   align-items: center;
   row-gap: 1rem;
 
-  min-block-size: 100%;
-
-  margin-block-start: 1rem;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
 
   .writings {
     grid-area: writings;

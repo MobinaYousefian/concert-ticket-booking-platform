@@ -2,15 +2,12 @@ import React from "react";
 import type { Metadata, Viewport } from "next";
 import dynamic from "next/dynamic";
 
-import HeaderComponent from "@/components/header/header.component";
-import FooterComponent from "@/components/footer/footer.component";
-
 import "@/styles/typography.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "تماشاچی | خرید آنلاین بلیت کنسرت و تئاتر",
-  description: "با یک کلید، تماشاچی کنسرت‌ها و نمایش‌های شهر خود باشید.",
+  description: "با یک کلیک، تماشاچی کنسرت‌ها و نمایش‌های شهر خود باشید.",
 };
 
 export const viewport: Viewport = {
@@ -38,12 +35,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <HeaderComponent />
-        <main>{children}</main>
-        <p className="tagline">
-          رزرو بلیت، اطلاع از آخرین کنسرت‌ها و نمایش‌های هنری
-        </p>
-        <FooterComponent />
+        {children}
         <DynamicToastComponent />
       </body>
     </html>

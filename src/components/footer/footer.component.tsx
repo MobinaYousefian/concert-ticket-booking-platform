@@ -1,5 +1,7 @@
-import { ReactElement } from "react";
+import { ComponentProps, ReactElement } from "react";
 import Link from "next/link";
+
+import { clsx } from "clsx";
 
 import HugeiconsLinkedin02 from "@/icons/socials/HugeiconsLinkedin02";
 import HugeiconsYoutube from "@/icons/socials/HugeiconsYoutube";
@@ -66,9 +68,11 @@ const certificates: Certificate[] = [
   },
 ];
 
-export default function FooterComponent(): ReactElement {
+type Props = ComponentProps<"footer">;
+
+export default function FooterComponent({ className }: Props): ReactElement {
   return (
-    <footer className={styles.footer}>
+    <footer className={clsx(styles.footer, className)}>
       <div className={styles.branding}>
         <div className={styles.logo}>
           <Link href="/">
