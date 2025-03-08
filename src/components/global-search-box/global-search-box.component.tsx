@@ -13,7 +13,7 @@ import ButtonComponent from "@/components/button/button.component";
 import HugeiconsSearch01 from "@/icons/HugeiconsSearch01";
 import HugeiconsLocation04 from "@/icons/HugeiconsLocation04";
 
-import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
+import { FiltersContext } from "@/app/(application)/search/providers/filters/filters.provider";
 
 import styles from "./global-search-box.module.css";
 

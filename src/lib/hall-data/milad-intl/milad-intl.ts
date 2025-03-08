@@ -5,7 +5,7 @@ import { Hall } from "@/lib/hall-data/hall.type";
 import {
   MAX_MOBILE_WIDTH,
   MIN_DESKTOP_WIDTH,
-} from "@/app/activity/[id]/constants/canvas.constants";
+} from "@/app/(application)/activity/[id]/constants/canvas.constants";
 
 export const MILAD_INTL_PRICES: RowPrices = {
   PRICE_ROW_1: {

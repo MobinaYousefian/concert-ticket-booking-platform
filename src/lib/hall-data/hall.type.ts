@@ -1,4 +1,4 @@
-import { RowOffsetObject } from "@/app/activity/[id]/types/canvas.type";
+import { RowOffsetObject } from "@/app/(application)/activity/[id]/types/canvas.type";
 
 export type HallsObj = {
   "111": Hall;

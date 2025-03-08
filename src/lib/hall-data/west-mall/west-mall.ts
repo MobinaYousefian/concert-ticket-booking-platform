@@ -5,7 +5,7 @@ import { RowPrices } from "@/lib/hall-data/halls-prices.type";
 import {
   MAX_MOBILE_WIDTH,
   MIN_DESKTOP_WIDTH,
-} from "@/app/activity/[id]/constants/canvas.constants";
+} from "@/app/(application)/activity/[id]/constants/canvas.constants";
 
 export const WEST_MALL_PRICES: RowPrices = {
   PRICE_ROW_1: {
