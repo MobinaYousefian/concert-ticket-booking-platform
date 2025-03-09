@@ -12,11 +12,13 @@ import styles from "./back-button.module.css";
 
 type Props = ComponentProps<"button"> & {
   backUrl: string;
+  label?: string;
 };
 
 export default function BackButtonComponent({
   backUrl,
   className,
+  label = "بازگشت",
   ...otherProps
 }: Props): ReactElement {
   const router = useRouter();
@@ -34,7 +36,7 @@ export default function BackButtonComponent({
       {...otherProps}
     >
       <HugeiconsArrowRight02 />
-      بازگشت
+      {label}
     </ButtonComponent>
   );
 }
