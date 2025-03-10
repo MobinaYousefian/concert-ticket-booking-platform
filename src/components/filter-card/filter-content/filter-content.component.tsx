@@ -7,7 +7,7 @@ import ButtonComponent, {
   ButtonVariant,
 } from "@/components/button/button.component";
 
-import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
+import { FiltersContext } from "@/app/(application)/search/providers/filters/filters.provider";
 
 import { FiltersType } from "@/types/filters.type";
 

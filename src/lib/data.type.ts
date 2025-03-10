@@ -1,3 +1,5 @@
+import { HallsObj } from "@/lib/hall-data/hall.type";
+
 export interface Activity {
   id: number;
   banner: string;
@@ -5,7 +7,7 @@ export interface Activity {
   date: string;
   time: string;
   location: string;
-  hallId: number;
+  hallId: keyof HallsObj;
   city: string;
   activityType: string;
   noticeList: string[];
@@ -31,30 +33,4 @@ export type Showing = {
   remainingTickets: number;
   date: string;
   time: string;
-};
-
-/* Hall types */
-export type Hall = {
-  id: number;
-  name: string;
-  capacity: number;
-  city: string;
-  seatSections: Section[];
-};
-
-export type Section = {
-  id: number;
-  seatByRow: SeatByRow;
-};
-
-export type SeatByRow = {
-  [key: string]: Seat[] | null;
-};
-
-export type Seat = null | {
-  id: number;
-  rowNumber: number;
-  seatNumber: number;
-  seatPrice: number;
-  status: "free" | "booked" | "pending" | "nonSale" | "selected";
 };

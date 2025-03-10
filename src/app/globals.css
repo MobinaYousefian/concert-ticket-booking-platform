@@ -32,11 +32,12 @@
   --color-surface-97: hsl(176 7% 96%); /* 97*/
   --color-surface: hsl(176 20% 99%); /* 99*/
   --color-surface-muted: hsl(240 5.9% 92%);
-  --color-surface-modal: hsl(240 5% 20% / 0.55);
+  --color-surface-modal: hsl(240 5% 10% / 0.55);
 
   --color-text: var(--color-zinc-900);
   --color-text-muted: var(--color-zinc-600);
 
+  --color-seat-selected-lighter: hsl(219, 90%, 90%);
   --color-seat-selected: hsl(219, 70%, 53%);
   --color-seat-nonSale: hsl(240 10% 60%);
 
@@ -160,7 +161,7 @@ body {
   transition: var(--animation-duration-slow) ease-in-out;
   transition-property: background-color, color;
 
-  > * {
+  .padding {
     padding-inline: var(--full-width-padding-inline);
   }
 
@@ -205,12 +206,12 @@ body {
     }
 
     &::before {
-      inset-inline-end: -2rem;
+      inset-inline-end: -2.125rem;
       rotate: 90deg;
     }
 
     &::after {
-      inset-inline-start: -2rem;
+      inset-inline-start: -2.125rem;
       rotate: -90deg;
     }
   }

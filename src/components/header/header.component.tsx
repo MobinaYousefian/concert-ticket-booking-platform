@@ -1,5 +1,5 @@
 "use client";
-import { ReactElement } from "react";
+import { ComponentProps, ReactElement } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -24,11 +24,13 @@ const navMenu: NavMenu[] = [
   },
 ];
 
-export default function HeaderComponent(): ReactElement {
+type Props = ComponentProps<"header">;
+
+export default function HeaderComponent({ className }: Props): ReactElement {
   const pathname = usePathname();
 
   return (
-    <header className={styles.header}>
+    <header className={clsx(styles.header, className)}>
       <nav>
         <ul>
           {navMenu.map(({ url, title }) => (
@@ -44,9 +46,11 @@ export default function HeaderComponent(): ReactElement {
         </ul>
       </nav>
       <div className={styles.cta}>
-        <ButtonComponent shape="outline" className={styles.login}>
-          ثبت‌نام | ورود
-        </ButtonComponent>
+        <Link href={"/auth/sign-up"}>
+          <ButtonComponent shape="outline" className={styles.login}>
+            ثبت‌نام | ورود
+          </ButtonComponent>
+        </Link>
       </div>
     </header>
   );

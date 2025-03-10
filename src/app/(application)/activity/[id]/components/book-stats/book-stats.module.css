@@ -1,0 +1,109 @@
+.book-stats {
+  display: grid;
+  gap: 0.5rem;
+
+  > :first-child {
+    padding: 0.75rem 0.5rem;
+  }
+  > :last-child {
+    padding-block: 0.75rem;
+  }
+
+  .writings {
+    display: grid;
+
+    > *:not(:last-child) {
+      margin-block-end: 2rem;
+    }
+
+    .showing-price {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(24ch, 1fr));
+      align-items: start;
+      gap: 1rem;
+
+      > * {
+        > button {
+          inline-size: 100%;
+        }
+      }
+    }
+
+    .hint {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+
+      .container {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+
+        .circle {
+          inline-size: 0.5rem;
+          block-size: 0.5rem;
+
+          border-radius: 50%;
+
+          &.booked {
+            background-color: var(--color-destructive);
+          }
+          &.pending {
+            background-color: var(--color-warning);
+          }
+          &.free {
+            background-color: var(--color-success);
+          }
+          &.non-sale {
+            background-color: var(--color-seat-nonSale);
+          }
+          &.selected {
+            background-color: var(--color-seat-selected);
+          }
+        }
+
+        .label {
+          font-size: var(--fz-300);
+
+          &.booked {
+            color: var(--color-destructive);
+          }
+          &.pending {
+            color: var(--color-warning);
+          }
+          &.free {
+            color: var(--color-success);
+          }
+          &.non-sale {
+            color: var(--color-seat-nonSale);
+          }
+          &.selected {
+            color: var(--color-seat-selected);
+          }
+        }
+      }
+    }
+  }
+
+  :global(.block-perforations) {
+    display: none;
+  }
+
+  :global(.inline-perforations) {
+    margin-block: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .book-stats {
+    grid-template-columns: 5fr 0.125fr 2.25fr;
+
+    :global(.block-perforations) {
+      display: block;
+    }
+
+    :global(.inline-perforations) {
+      display: none;
+    }
+  }
+}

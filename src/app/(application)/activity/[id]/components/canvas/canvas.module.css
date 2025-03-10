@@ -1,0 +1,54 @@
+.zoom-buttons {
+  position: absolute;
+  z-index: 1;
+
+  background-color: var(--color-surface);
+
+  margin: 0.5rem;
+  border-radius: var(--border-radius);
+
+  .button {
+    padding-block: 1.25vw;
+    padding-inline: 1.125vw;
+
+    > svg {
+      font-size: 2.125vw;
+    }
+
+    &:nth-child(2) {
+      padding-block: 0.5vw;
+    }
+  }
+}
+
+.stage {
+  inline-size: 100%;
+  block-size: 100%;
+
+  background-color: var(--color-surface-muted);
+
+  border-radius: var(--border-radius);
+
+  > * {
+    > canvas {
+      image-rendering: pixelated;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .zoom-buttons {
+    .button {
+      padding-block: 0.875vw;
+      padding-inline: 0.75vw;
+
+      > svg {
+        font-size: 1.5vw;
+      }
+
+      &:nth-child(2) {
+        padding-block: 0.4vw;
+      }
+    }
+  }
+}

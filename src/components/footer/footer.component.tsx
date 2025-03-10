@@ -1,10 +1,12 @@
-import { ReactElement } from "react";
+import { ComponentProps, ReactElement } from "react";
 import Link from "next/link";
 
-import HugeiconsLinkedin02 from "@/icons/HugeiconsLinkedin02";
-import HugeiconsYoutube from "@/icons/HugeiconsYoutube";
-import HugeiconsTelegram from "@/icons/HugeiconsTelegram";
-import HugeiconsInstagram from "@/icons/HugeiconsInstagram";
+import { clsx } from "clsx";
+
+import HugeiconsLinkedin02 from "@/icons/socials/HugeiconsLinkedin02";
+import HugeiconsYoutube from "@/icons/socials/HugeiconsYoutube";
+import HugeiconsTelegram from "@/icons/socials/HugeiconsTelegram";
+import HugeiconsInstagram from "@/icons/socials/HugeiconsInstagram";
 import TamashachiLogo from "@/logo/t-colored-logo";
 
 import ENamad from "@/logo/e-namad";
@@ -66,9 +68,11 @@ const certificates: Certificate[] = [
   },
 ];
 
-export default function FooterComponent(): ReactElement {
+type Props = ComponentProps<"footer">;
+
+export default function FooterComponent({ className }: Props): ReactElement {
   return (
-    <footer className={styles.footer}>
+    <footer className={clsx(styles.footer, className)}>
       <div className={styles.branding}>
         <div className={styles.logo}>
           <Link href="/">

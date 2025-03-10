@@ -1,0 +1,12 @@
+.auth-main {
+  block-size: 100vh;
+  block-size: 100dvh;
+
+  display: grid;
+}
+
+@media screen and (min-width: 960px) {
+  .auth-main {
+    overflow-y: hidden;
+  }
+}

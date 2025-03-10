@@ -1,0 +1,30 @@
+.cta-section {
+  display: grid;
+  gap: 1.5rem;
+
+  .price {
+    > span {
+      color: var(--color-zinc-500);
+
+      padding-inline: 0.5rem;
+
+      font-size: var(--fz-100);
+    }
+  }
+
+  .cta {
+    display: grid;
+    justify-content: center;
+    align-items: end;
+
+    .button {
+      min-inline-size: 20ch;
+      padding: 0;
+
+      .link {
+        inline-size: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+}

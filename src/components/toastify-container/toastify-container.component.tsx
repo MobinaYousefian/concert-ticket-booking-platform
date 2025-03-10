@@ -3,10 +3,10 @@ import React, { ReactElement } from "react";
 
 import { Theme, ToastContainer, TypeOptions } from "react-toastify";
 
-import HugeiconsInformationCircle from "@/icons/HugeiconsInformationCircle";
-import HugeiconsCheckmarkCircle01 from "@/icons/HugeiconsCheckmarkCircle01";
+import HugeiconsInformationCircle from "@/icons/circles/HugeiconsInformationCircle";
+import HugeiconsCheckmarkCircle01 from "@/icons/circles/HugeiconsCheckmarkCircle01";
 import HugeiconsAlert02 from "@/icons/HugeiconsAlert02";
-import HugeiconsAlertCircle from "@/icons/HugeiconsAlertCircle";
+import HugeiconsAlertCircle from "@/icons/circles/HugeiconsAlertCircle";
 
 import "./toastify-container.css";
 

@@ -2,9 +2,11 @@
   display: grid;
   grid-template-areas: "writings" "cta" "visuals";
   place-content: center;
+  align-items: center;
   row-gap: 1rem;
 
-  min-block-size: 100%;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
 
   .writings {
     grid-area: writings;
@@ -22,20 +24,17 @@
 
   .cta {
     grid-area: cta;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    button {
-      font-weight: 500;
-    }
+    justify-self: center;
   }
 
   .visuals {
     grid-area: visuals;
 
+    margin-block-start: 1rem;
+
     img {
+      max-block-size: 17rem;
+      block-size: 100%;
       inline-size: 100%;
     }
   }

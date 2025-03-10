@@ -1,0 +1,78 @@
+.page {
+  display: grid;
+  align-items: start;
+  gap: 1rem;
+
+  &.default-template {
+    grid-template-areas: "banner" "writings" "showings";
+  }
+
+  &.query-template {
+    grid-template-areas: "back-button" "banner" "writings" "showings";
+  }
+
+  margin-block: 2rem;
+
+  overflow: hidden;
+
+  .banner {
+    grid-area: banner;
+    justify-self: center;
+
+    aspect-ratio: 8/9;
+
+    block-size: 15rem;
+    inline-size: 100%;
+
+    > img {
+      object-fit: cover;
+
+      inline-size: 100%;
+      block-size: 100%;
+
+      border-radius: var(--border-radius);
+    }
+  }
+
+  .showings {
+    grid-area: showings;
+
+    margin-block-start: 2rem;
+
+    .showing-card {
+      display: grid;
+      gap: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page {
+    grid-template-columns: 3fr 1fr;
+
+    &.default-template {
+      grid-template-areas: "writings banner" "showings showings";
+    }
+
+    &.query-template {
+      grid-template-areas: "back-button banner" "writings banner" "showings showings";
+    }
+
+    .banner {
+      justify-self: end;
+      inline-size: max-content;
+    }
+
+    .writings {
+      > ul {
+        gap: 2rem;
+      }
+    }
+
+    .showings {
+      .showing-card {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}

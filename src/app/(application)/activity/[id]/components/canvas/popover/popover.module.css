@@ -1,0 +1,15 @@
+.popover {
+  position: absolute;
+  z-index: 10;
+
+  background-color: var(--color-surface);
+
+  box-shadow: var(--shadow-500);
+
+  padding: 1rem;
+  border-radius: var(--border-radius);
+
+  .price {
+    margin-block-start: 0.25rem;
+  }
+}

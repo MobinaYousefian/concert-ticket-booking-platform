@@ -39,7 +39,7 @@ export default function ModalBackgroundComponent({
     <div className={styles["modal-background"]} onClick={handleClickOutside}>
       <div ref={modalRef} className={styles.modal}>
         <div className={styles.close}>
-          <ButtonComponent shape="icon" variant="muted" onClick={handleClose}>
+          <ButtonComponent shape="ghost" variant="muted" onClick={handleClose}>
             <HugeiconsCancel01 />
           </ButtonComponent>
         </div>

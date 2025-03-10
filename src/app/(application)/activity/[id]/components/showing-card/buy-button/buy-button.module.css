@@ -1,0 +1,7 @@
+.buy-button {
+  justify-self: end;
+
+  > svg {
+    font-size: var(--fz-400);
+  }
+}
