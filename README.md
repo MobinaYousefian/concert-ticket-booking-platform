@@ -40,13 +40,13 @@ All cultural and artistic events nationwide are accessible via the Search tab, w
 - Advanced search through all available events using keywords like event name, city, artist, or date.
 - Filter options to refine results by city or event type.
 - Essential event details (image, title, date, location, and city) are displayed on a card layout.
-- Sold-out events are clearly marked and remain accessible until the event date for reference.
+- Sold-out events are clearly marked and remain accessible until the event's due date for reference.
 
 &nbsp;
 
 #### Event Detail Page
 
-- Expanded event information including organizer notes.
+- Expanded event information including organizer's specified notes.
 - A "Share" button lets users share via device-native tools or copies the event name and URL on fallback.
 - A price list modal provides quick access to pricing info.
 - All showtimes are listed with real-time status updates.
@@ -81,4 +81,4 @@ All cultural and artistic events nationwide are accessible via the Search tab, w
 
 &nbsp;
 
-##### For more information or contributions, feel free to connect via [LinkedIn](https://linkedin.com/in/mobina-yousefian)
+##### For more information or contributions, feel free to contact me via [LinkedIn](https://linkedin.com/in/mobina-yousefian)
